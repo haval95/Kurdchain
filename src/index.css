@@ -1,13 +1,92 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --Primary: #60d394;
+  --Secondary: #227c9d;
+  --Light: #ffffff;
+  --dark: #fafafa;
+  --danger: #ba1e12;
+  --info: #eef5f8;
+  --warnning: #ffcb77;
+}
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+@font-face {
+  font-family: 'Speda-Bold';
+  src: url(font/Speda-Bold.ttf);
+}
+@font-face {
+  font-family: 'k24';
+  src: url(font/K24KurdishLight-Light.ttf);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+  background: none;
+}
+.underline-start.rtl {
+  display: inline-block;
+  position: relative;
+}
+
+.underline-start.rtl::after {
+  content: '';
+  height: 2px;
+  width: 65%;
+  background: currentColor;
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+}
+
+.underline-start.ltr {
+  display: inline-block;
+  position: relative;
+}
+
+.underline-start.ltr::after {
+  content: '';
+  height: 2px;
+  width: 65%;
+  background: currentColor;
+  position: absolute;
+  left: 0;
+
+  bottom: -5px;
+}
+
+.underline-center {
+  display: inline-block;
+  position: relative;
+}
+
+.underline-center::after {
+  content: '';
+  height: 2px;
+  width: 40%;
+  background: currentColor;
+  position: absolute;
+  left: calc(50% - 20%);
+  bottom: -5px;
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.subTitle {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

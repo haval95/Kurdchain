@@ -1,22 +1,29 @@
 {
-  "name": "portfolio",
+  "name": "kurchain",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.2.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "i18next": "^20.3.5",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "i18next-http-backend": "^1.2.8",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-i18next": "^11.11.4",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "fix": "prettier --write 'src/**/*.js*' 'src/**/*.css' '!src/**/*/*.snap'"
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +44,8 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.4",
+    "autoprefixer": "9",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -47,7 +56,9 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
     "pinst": "^2.1.6",
-    "prettier": "^2.3.2"
+    "postcss": "7",
+    "prettier": "^2.3.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "husky": {
     "hooks": {
@@ -59,5 +70,9 @@
       "yarn prettier --write",
       "eslint --fix"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/haval95/Kurdchain.git",
+  "author": "haval95 <40795444+halenkurdi@users.noreply.github.com>",
+  "license": "MIT"
 }
