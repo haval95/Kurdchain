@@ -90,3 +90,18 @@ img {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.text-start {
+  text-align: start !important;
+}
+
+.transform-translate-50 {
+  transform: translateX(-50%);
+}
+.p-inline-start-1 {
+  padding-inline-start: 10px;
+}
+
+.ltr {
+  direction: ltr !important;
+}

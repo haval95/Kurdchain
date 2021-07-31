@@ -13,7 +13,7 @@ export default function ImageJumbotron({ image, title, detail }) {
         <div className="mb-1">
           <Title text={title} color="Light" />
         </div>
-        <p className="text-Light text-2xl w-8/12 text-center mt-1 justify-self-center">
+        <p className="text-Light text-xl w-8/12 text-center mt-1 justify-self-center ">
           {detail}
         </p>
       </div>
@@ -30,6 +30,7 @@ ImageJumbotron.propTypes = {
 
 ImageJumbotron.defaultProps = {
   image: `https://via.placeholder.com/${window.innerWidth}x150`,
-  detail: 'Secondary',
+  detail:
+    'decription will be set here and lets see how does it show on the screen',
   title: 'title',
 }

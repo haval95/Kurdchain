@@ -1,11 +1,11 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import { useTranslation } from 'react-i18next'
-export default function Title({ text, color, type, underline }) {
+export default function Title({ text, color, type, underline, style }) {
   const { i18n } = useTranslation()
   return (
     <h1
-      className={`text-${color} ${type} underline-${underline}  ${i18n.dir()} m-1 capitalize font-semibold `}
+      className={`text-${color} ${type} underline-${underline}  ${i18n.dir()}  capitalize font-semibold ${style}`}
     >
       {text}
     </h1>
@@ -17,6 +17,7 @@ Title.propTypes = {
   color: PropTypes.string,
   type: PropTypes.string,
   underline: PropTypes.string,
+  style: PropTypes.string,
 }
 
 Title.defaultProps = {
@@ -24,4 +25,5 @@ Title.defaultProps = {
   color: 'Primary',
   type: 'title',
   underline: 'center',
+  style: 'text-center',
 }
