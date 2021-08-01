@@ -5,7 +5,7 @@ export default function Title({ text, color, type, underline, style }) {
   const { i18n } = useTranslation()
   return (
     <h1
-      className={`text-${color} ${type} underline-${underline}  ${i18n.dir()}  capitalize font-semibold ${style}`}
+      className={`text-${color} ${type} underline-${underline}  ${i18n.dir()}   font-semibold ${style}`}
     >
       {text}
     </h1>
@@ -25,5 +25,5 @@ Title.defaultProps = {
   color: 'Primary',
   type: 'title',
   underline: 'center',
-  style: 'text-center',
+  style: 'text-center Capitalize',
 }

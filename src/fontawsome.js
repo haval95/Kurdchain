@@ -7,6 +7,17 @@ import {
   faPhoneAlt,
   faGlobe,
   faUser,
+  faMapMarkedAlt,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab, faUser, faCheckSquare, faClock, faPhoneAlt, faGlobe)
+library.add(
+  fab,
+  faUser,
+  faCheckSquare,
+  faClock,
+  faPhoneAlt,
+  faGlobe,
+  faMapMarkedAlt,
+  faEnvelope
+)

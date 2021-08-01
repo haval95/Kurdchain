@@ -23,6 +23,7 @@ import Navbar from './Containers/Navbar/Navbar'
 
 import { useTranslation } from 'react-i18next'
 import Exchange from './Pages/Exchange'
+import Footer from './Containers/Footer/Footer'
 
 function App() {
   const { pathname } = useLocation()
@@ -62,6 +63,7 @@ function App() {
 
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </div>
   )
 }

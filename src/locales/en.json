@@ -1,4 +1,5 @@
 {
+  "language": "language",
   "en": "en",
   "ar": "ar",
   "ku-text": "ku",
@@ -27,13 +28,19 @@
   },
 
   "footer": {
-    "menu": "Menu",
-    "profile": "Profile",
-    "type": "Main Types",
-    "crafted": "Crafted",
-    "used": "Used",
-    "donated": "Donated",
-    "follow": "Follow Us"
+    "company": "Company",
+    "feature": "Feature",
+    "getInTouch": "Get In Touch",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "home": "home",
+    "courses": "Courses",
+    "news": "News",
+    "investment": "Investment",
+    "signal": "Signal",
+    "exchange": "Exchange",
+    "currencies": "Currencies",
+    "copy": " © Copyright - All Rights Reserved"
   },
   "proudctDetail": {
     "price": "Price",

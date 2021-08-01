@@ -1,4 +1,5 @@
 {
+  "language": "زمان",
   "en": "en",
   "ar": "ar",
   "ku-text": "ku",
@@ -9,24 +10,38 @@
   "loading": "بارکردن",
   "back": "گەڕانەوە",
   "navbar": {
-    "home": "کوردی",
+    "home": "سەرەکی",
+    "courses": "کۆرسەکان",
+    "news": "هەواڵ",
+    "investment": "وەبەرهێنان",
+    "signal": "سیگناڵ",
+
+    "exchange": "ئاڵوگۆڕ",
     "contact": "پەیوەندی",
     "about": "دەربارە",
-    "logIn": "چونەژوورەوە",
-    "signUp": "تۆمارکردن"
+    "login": "چونەژوورەوە",
+    "signup": "تۆمارکردن",
+    "logout": "چونەدەرەوە"
   },
   "toast": {
     "successAdd": " بە سەرکەوتووی زیادکرا",
     "warningDelete": " سڕایەوە "
   },
   "footer": {
-    "menu": "لیست",
-    "profile": "پرۆفایل",
-    "type": "جۆرە سەرەکیەکان",
-    "crafted": "دەستکردەکان",
-    "used": "بەکارهاتووەکان ",
-    "donated": "بەخشراوەکان",
-    "follow": "لە گەڵمان بن "
+    "company": "کۆماپنیا",
+    "feature": "فیچەر",
+    "getInTouch": "با قسە بکەین",
+    "home": "سەرەکی",
+    "courses": "کۆرسەکان",
+    "news": "هەواڵ",
+    "investment": "وەبەرهێنان",
+    "signal": "سیگناڵ",
+    "exchange": "ئاڵوگۆڕ",
+    "contact": "پەیوەندی",
+    "about": "دەربارە",
+    "copy": "مافی پارێزراوە",
+
+    "currencies": "دراوەکان"
   },
   "cform": {
     "cont": "پەیوەندیمان پێوە بکە",

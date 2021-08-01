@@ -13,17 +13,18 @@
   --warnning: #ffcb77;
 }
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
   font-size: 16px;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
 @font-face {
-  font-family: 'Speda-Bold';
-  src: url(font/Speda-Bold.ttf);
-}
-@font-face {
-  font-family: 'k24';
-  src: url(font/K24KurdishLight-Light.ttf);
+  font-family: 'CustomFont';
+  src: url('./font/custom.eot');
+  src: url('./font/custom.woff') format('woff'),
+    url('./font/custom.svg') format('svg');
 }
 
 img {
@@ -85,6 +86,11 @@ img {
   line-height: 2rem;
 }
 
+.smallSubTitle {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
 .bg {
   background-size: cover;
   background-position: center;
@@ -100,6 +106,9 @@ img {
 }
 .p-inline-start-1 {
   padding-inline-start: 10px;
+}
+.m-inline-end-5percent {
+  margin-inline-end: 6%;
 }
 
 .ltr {
