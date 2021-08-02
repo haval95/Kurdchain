@@ -49,7 +49,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-Light  sticky top-0 shadow-md  w-full">
+      <nav className="bg-Light   shadow-md  w-full z-50">
         <div className="bg-LightGray flex flex-row justify-between ltr  items-center px-5 ">
           <div className=" text-Secondary  flex space-x-2 items-center">
             <FontAwesomeIcon icon="phone-alt" />
@@ -77,6 +77,8 @@ export default function Navbar() {
             </a>
           </div>
         </div>
+      </nav>
+      <nav className="bg-Light   shadow-md  w-full z-50 sticky top-0">
         <div className=" px-2 ">
           <div className="relative flex items-center justify-around md:justify-between h-16 w-full">
             <div className=" flex items-center mx-8  md:justify-start   ">
@@ -289,7 +291,7 @@ export default function Navbar() {
                 <div
                   className={`${
                     langDropDown ? ' show' : ' hidden'
-                  }  origin-center  transform translate-x-1/4 click-text1 absolute right-0 mt-0 w-10 rounded-md shadow-lg bg-Light border border-GrayBorder focus:outline-none`}
+                  }  origin-center  transform  click-text1 absolute right-0 mt-0 w-10 rounded-md shadow-lg bg-Light border border-GrayBorder focus:outline-none`}
                   role="lang"
                   aria-orientation="vertical"
                   aria-labelledby="menu-button"

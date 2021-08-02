@@ -9,6 +9,8 @@ module.exports = {
       current: 'currentColor',
       Primary: '#60D394',
       PrimaryHover: '#50c283',
+      PrimaryLight: '#17C3B2',
+      PrimaryLightHover: '#06b2a1',
       Secondary: '#227C9D',
 
       SecondaryLight: '#F3F8F9',
@@ -29,7 +31,7 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: { grayscale: ['hover', 'focus'] },
   },
   plugins: [],
 }

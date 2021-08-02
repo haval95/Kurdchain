@@ -9,6 +9,7 @@ import {
   faUser,
   faMapMarkedAlt,
   faEnvelope,
+  faCheckCircle,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -19,5 +20,6 @@ library.add(
   faPhoneAlt,
   faGlobe,
   faMapMarkedAlt,
-  faEnvelope
+  faEnvelope,
+  faCheckCircle
 )

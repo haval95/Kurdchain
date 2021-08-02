@@ -25,6 +25,8 @@ import { useTranslation } from 'react-i18next'
 import Exchange from './Pages/Exchange'
 import Footer from './Containers/Footer/Footer'
 
+//import PricingCard from './Containers/Cards/PricingCard'
+
 function App() {
   const { pathname } = useLocation()
 
@@ -44,6 +46,7 @@ function App() {
   return (
     <div className="">
       <Navbar />
+
       <Switch>
         <Route exact path={ROUTES.HOME_ROUTE} component={Home} />
         <PrivateRoute path={ROUTES.PROFILE_ROUTE}>
@@ -63,6 +66,14 @@ function App() {
 
         <Route component={NotFound} />
       </Switch>
+
+      {
+        // <div className="     grid justify-content-center grid-cols-1 sm:grid-cols-3 gap-4   justify-items-center ">
+        //   <PricingCard />
+        //   <PricingCard />
+        //   <PricingCard />
+        // </div>
+      }
       <Footer />
     </div>
   )

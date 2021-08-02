@@ -2,6 +2,7 @@ import React from 'react'
 import { PropTypes } from 'prop-types'
 import Title from '../../Components/Title'
 import NavigationButton from '../../Components/NavigationButton'
+import { useTranslation } from 'react-i18next'
 export default function NewsCard({
   id,
   title,
@@ -10,12 +11,14 @@ export default function NewsCard({
   created_at,
   writer,
 }) {
+  const { t } = useTranslation()
+
   return (
-    <div className="max-w-md  bg-white rounded-xl shadow-lg overflow-hidden md:max-w-2xl mt-8 border border-GrayBorder ">
+    <div className="max-w-xs hover:shadow-none transition-all ease-in-out duration-300 bg-Light rounded-xl shadow-lg overflow-hidden md:max-w-2xl  border border-GrayBorder ">
       <div className="md:flex ">
         <div className="md:flex-shrink-0">
           <img
-            className="h-full w-full object-cover md:w-72"
+            className="h-full w-full  object-cover  md:w-60 lg:w-40 xl:w-60 "
             src={`${image}`}
             alt={`${title}`}
           />
@@ -38,7 +41,11 @@ export default function NewsCard({
           <div className="flex flex-row justify-between flex-wrap content-center">
             <div className="font-light">{writer}</div>
             <div>
-              <NavigationButton text="Read" location={`/newsDetail/${id}`} />
+              <NavigationButton
+                text={t('read')}
+                location={`/newsDetail/${id}`}
+                style="px-2"
+              />
             </div>
           </div>
         </div>
@@ -61,7 +68,7 @@ NewsCard.defaultProps = {
   title: 'Title',
   description:
     'lorem 1 lorem 1 lorem 1 lorem 1lorem 1lorem 1lorem 1lorem 1lorem 1lorem 2 lorem 1  lorem 2lorem 2lorem 2lorem 2lorem 2lorem 2lorem 2lorem 2lorem 2lorem 2 2lorem 22lorem 22lorem 22lorem 22lorem 22lorem 2lorem 3  lorem 3lorem 3 lorem 3lorem 3lorem 3lorem 3lorem 3lorem 3lorem 3lorem 3lorem 3lorem 3',
-  image: `https://via.placeholder.com/200x150`,
+  image: `https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg`,
   created_at: '12/1/2021',
   writer: 'Firstname Lastname',
 }

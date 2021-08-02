@@ -4,11 +4,22 @@
   "ar": "ar",
   "ku-text": "ku",
   "ku": "he",
+  "website": "kurdchain",
   "login": "Log In",
   "loginSlogan": " Log in to start donating and / or sell what you don’t need",
   "loginAddItem": " You are not Authorized! Please, Log in. ",
   "loading": "Uploading",
-  "back": "Go Back",
+  "getStarted": "get started",
+  "detail": "Detail",
+  "seemore": "See more",
+  "read": "Read",
+  "news": "Latest news",
+  "newsSlogan": "The latest headlines around the world",
+  "partners": "partners",
+  "partnersSlogan": "Official partners of Kurdchain",
+  "coinMarket": "Coin Market",
+  "coinMarketSlogan": "Top coin values of the market",
+  "contactusnow": "Talk to us today and see how we can help you!",
   "navbar": {
     "home": "home",
     "courses": "courses",
@@ -86,11 +97,8 @@
     ]
   },
   "home": {
-    "slogan": "Find or Sell whatever you want and wherever you are!",
-    "addItem": "Add Item",
-    "donatedItems": "Donated Items",
-    "usedItems": "Used Items",
-    "craftedItems": "Crafted Items"
+    "slogan": "Think and trade like a champion",
+    "courseSlogan": "Learn today for a better tomorrow"
   },
   "setting": {
     "setting": "Settings",

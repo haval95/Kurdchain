@@ -1,21 +1,25 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import { Link } from 'react-router-dom'
-
+import ScrollAnimation from 'react-animate-on-scroll'
 export default function NavigationButton({
   location,
   text,
   style,
   colors,
   fontWeight,
+  animation,
 }) {
   return (
-    <Link
-      to={location}
-      className={` py-1 px-3  rounded-xl ${colors} text-center  font-${fontWeight} transition duration-300 ease-in-out ${style}`}
-    >
-      {text}
-    </Link>
+    <ScrollAnimation animateIn={animation} initiallyVisible>
+      <Link to={location}>
+        <button
+          className={` py-1   rounded-xl w-full ${colors} text-center  font-${fontWeight} transition duration-500 ease-in-out ${style}`}
+        >
+          {text}
+        </button>
+      </Link>
+    </ScrollAnimation>
   )
 }
 
@@ -25,13 +29,15 @@ NavigationButton.propTypes = {
   style: PropTypes.string,
   colors: PropTypes.string,
   fontWeight: PropTypes.string,
+  animation: PropTypes.string,
 }
 
 NavigationButton.defaultProps = {
   location: '/',
   text: 'Button',
   colors:
-    'bg-SecondaryLight text-Secondary hover:bg-SecondaryOpacity hover:text-SecondaryLight',
+    'bg-SecondaryLight text-Secondary hover:bg-SecondaryOpacity hover:text-SecondaryLight  shadow-md',
   style: '',
-  fontWeight: 'semibold',
+  fontWeight: 'semibold ',
+  animation: 'null',
 }

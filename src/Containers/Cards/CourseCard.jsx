@@ -1,11 +1,10 @@
 import React from 'react'
 import Title from '../../Components/Title'
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import NavigationButton from '../../Components/NavigationButton'
 import { PropTypes } from 'prop-types'
 import Paragraph from '../../Components/Paragraph'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { useTranslation } from 'react-i18next'
 export default function CourseCard({
   id,
   name,
@@ -17,10 +16,12 @@ export default function CourseCard({
   duration,
   time,
 }) {
+  const { t } = useTranslation()
+
   return (
-    <div className="w-72 h-96 bg-white  cursor-pointer border border-GrayBorder rounded-3xl hover:-translate-y-2 focus:outline-none relative bg-LightGray shadow-lg hover:shadow-sm transform  transition duration-500 ease-in-out">
+    <div className="w-72 h-96   cursor-pointer   rounded-3xl hover:-translate-y-2 focus:outline-none relative bg-Light shadow-xl hover:shadow-none hover:bg-light transform  transition duration-500 ease-in-out">
       <div className="relative">
-        <div className="bg-Warning text-Light px-5 py-1 text-right absolute bottom-3 rounded-l-xl  right-0">
+        <div className="bg-PrimaryHover text-Light px-5 py-1 text-right absolute bottom-3 rounded-l-xl  right-0">
           {`$${new Intl.NumberFormat().format(price)}`}
         </div>
         <img
@@ -48,15 +49,15 @@ export default function CourseCard({
           colors="text-Gray"
         />
 
-        <div className=" text-Secondary flex space-x-2 items-center p-1">
+        <div className=" text-Secondary grid grid-flow-col  items-center p-1 justify-start gap-3">
           <FontAwesomeIcon icon="clock" className="text-sm" />
-          <Paragraph text={time + duration} style="mt-1 inline self-center" />
+          <Paragraph text={time + duration} style=" inline " />
         </div>
 
-        <div className="text-xs flex justify-between  absolute inset-x-0 bottom-0  ">
+        <div className="text-xs    absolute inset-x-0 bottom-0  w-full ">
           <NavigationButton
             location={`/course/${id}`}
-            text="DETAIL"
+            text={t('detail')}
             style="w-full mt-2 rounded-b-xl rounded-t-none py-2  "
             colors="bg-Primary text-Light hover:bg-PrimaryHover   "
           />
@@ -81,7 +82,8 @@ CourseCard.propTypes = {
 CourseCard.defaultProps = {
   id: '0',
   name: 'name is gonna',
-  image: 'https://i.pravatar.cc/150?img=31',
+  image:
+    'https://analyticsinsight.b-cdn.net/wp-content/uploads/2020/01/online-course-main-800x549.png',
   price: 0,
   date: '14/1/2021',
   description:

@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next'
 export default function Footer() {
   const { t } = useTranslation()
   return (
-    <footer className="   px-8 pt-12 justify-items-center mt-12 border-t border-GrayBorder ">
+    <footer className="   px-8 pt-12 justify-items-center  border-t border-GrayBorder ">
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
         <div className=" w-full ">
           <img src={logo} className="h-40 min-h text-center mx-auto " />
@@ -121,7 +121,9 @@ export default function Footer() {
       <div className="bg-LightGray">
         <hr className="text-GrayBorder mt-10"></hr>
         <p className="text-center p-3">
-          {t('footer.copy')} - {new Date().getFullYear()}
+          {t('footer.copy')} -{' '}
+          <span className="text-Secondary">{t('website')}</span> -{' '}
+          {new Date().getFullYear()}
         </p>
       </div>
     </footer>

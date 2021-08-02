@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types'
 
 export default function UserCard({ name, position, linkedin, image }) {
   return (
-    <div className="sm:w-1/4 p-1">
+    <div className=" p-1">
       <div className="bg-white px-6 py-8 rounded-lg shadow-lg text-center">
         <div className="mb-3">
           <img className="w-auto mx-auto rounded-full" src={image} alt="" />
@@ -16,17 +16,27 @@ export default function UserCard({ name, position, linkedin, image }) {
 
         <a
           href={linkedin}
-          className="px-4 text-2xl py-2    text-Primary "
+          className="px-2 text-2xl py-2    text-Primary "
           target="_blank"
           rel="noreferrer"
         >
           <FontAwesomeIcon icon={['fab', 'linkedin']} />
         </a>
-        <a href={linkedin} className="px-4 text-2xl py-2    text-Primary">
+        <a
+          href={linkedin}
+          className="px-2 text-2xl py-2    text-Primary"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon icon={['fab', 'facebook-square']} />
         </a>
-        <a href={linkedin} className="px-4 text-2xl py-2    text-Primary">
-          <FontAwesomeIcon icon={['fab', 'twitter']} />
+        <a
+          href={linkedin}
+          className="px-2 text-2xl py-2    text-Primary"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon icon={['fab', 'twitter-square']} />
         </a>
       </div>
     </div>
