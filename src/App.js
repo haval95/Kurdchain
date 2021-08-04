@@ -74,6 +74,7 @@ function App() {
         //   <PricingCard />
         // </div>
       }
+
       <Footer />
     </div>
   )

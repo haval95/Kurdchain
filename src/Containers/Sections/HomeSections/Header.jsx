@@ -32,7 +32,7 @@ export default function Header() {
               <ScrollAnimation animateIn="fadeIn">
                 <Button
                   clickAction
-                  style="rounded-xl md:px-6   px-3 sm:px-0"
+                  style="rounded-xl md:px-6   px-3 sm:px-0  "
                   text={t('getStarted')}
                   font="text-md sm:text-sm md:text-xl"
                 />
@@ -43,7 +43,7 @@ export default function Header() {
                 location={ROUTES.COURSES_ROUTE}
                 text={t('navbar.courses')}
                 style="uppercase  md:px-6 md:text-xl sm:text-xs"
-                colors="bg-Light border border-Primary text-Primary hover:bg-Primary hover:text-Light hover:border-none"
+                colors="bg-Light border border-Primary text-Primary hover:LightGray  hover:border-none shadow-lg"
                 animation="fadeIn"
               />
             </div>

@@ -1,8 +1,11 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import logo from '../../../Assets/Images/logo.svg'
+
 export default function CoinWedgie() {
   return (
     <div className="relative ltr">
+      <Helmet></Helmet>
       <div className="absolute top-0 bg-Light w-28 h-14 items-center grid justify-center m-1">
         <img src={logo} />
       </div>

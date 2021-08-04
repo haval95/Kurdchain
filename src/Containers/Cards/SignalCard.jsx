@@ -4,15 +4,18 @@ import Title from '../../Components/Title'
 import Button from '../../Components/Button'
 import { PropTypes } from 'prop-types'
 import Paragraph from '../../Components/Paragraph'
-
+import { useTranslation } from 'react-i18next'
+import img from '../../Assets/Images/signalService.svg'
 export default function CourseCard({ name, image, color, description }) {
+  const { t } = useTranslation()
+
   return (
-    <div className="w-72 h-96 bg-white z-0 cursor-pointer border border-GrayBorder rounded-3xl  focus:outline-none relative bg-Light shadow-lg  transform  transition duration-500 ease-in-out">
+    <div className="w-72 h-96 bg-white z-0 cursor-pointer border border-GrayBorder rounded-3xl    focus:outline-none relative bg-Light shadow-xl  transform  transition duration-500 ease-in-out">
       <div className="relative">
         <img
           src={image}
           alt="item card"
-          className="rounded-t-3xl border-none  object-cover  h-40 w-full"
+          className="rounded-t-3xl border-none  object-contain  h-40 w-full"
         />
       </div>
 
@@ -31,8 +34,8 @@ export default function CourseCard({ name, image, color, description }) {
           colors="text-Gray"
         />
 
-        <div className="text-xs flex justify-between  mt-3  ">
-          <Button text="SUBSCRIBE" color={color} style="font-light" />
+        <div className="text-xs flex justify-between    ">
+          <Button text={t('subscribe')} color={color} style="font-light" />
         </div>
       </div>
     </div>
@@ -48,9 +51,9 @@ CourseCard.propTypes = {
 
 CourseCard.defaultProps = {
   name: 'TITLE',
-  image: 'https://i.pravatar.cc/150?img=31',
+  image: img,
 
   description:
-    'Enim voluptate nulla minim id nostrud non mollit incididunt et proident quis. Do consectetur culpa excepteur commodo laboris voluptate laborum fugiat Lorem aliquip veniam consectetur. Aute sunt voluptate ea quis aliquip nisi sint veniam dolore ullamco qui qui eu quis. Lorem sint cupidatat veniam do in. Mollit excepteur ipsum eu minim consectetur officia aliquip do consequat Lorem Lorem ea irure voluptate. Enim deserunt ullamco minim cupidatat incididunt occaecat qui excepteur ullamco officia.',
+    'Enim deserunt ullamco minim cupidatat incididunt occaecat qui excepteur ullamco officia.',
   color: 'Primary',
 }

@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="   px-8 pt-12 justify-items-center  border-t border-GrayBorder ">
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
         <div className=" w-full ">
-          <img src={logo} className="h-40 min-h text-center mx-auto " />
+          <img src={logo} className="h-24 sm:h-40 text-center mx-auto " />
           <Title
             text="kurd chain"
             type="title"

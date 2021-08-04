@@ -76,22 +76,6 @@ img {
   bottom: -5px;
 }
 
-.title {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  text-transform: capitalize;
-}
-
-.subTitle {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.smallSubTitle {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-}
-
 .bg {
   background-size: cover;
   background-position: center;
@@ -108,14 +92,32 @@ img {
 .p-inline-start-1 {
   padding-inline-start: 10px;
 }
+.p-inline-start-2 {
+  padding-inline-start: 2rem;
+}
 .m-inline-end-5percent {
   margin-inline-end: 6%;
+}
+.m-inline-start-2 {
+  margin-inline-start: 2rem;
+}
+.max-h {
+  max-height: 200rem;
 }
 
 .ltr {
   direction: ltr !important;
 }
+.z-51 {
+  z-index: 51;
+}
+.z-52 {
+  z-index: 52;
+}
 
+.h-100 {
+  height: 100vh;
+}
 /* .bg-header {
   background-image: url('./Assets//Images/logo.svg');
   background-repeat: repeat;
@@ -128,5 +130,37 @@ img {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
+  }
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.subTitle {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.smallSubTitle {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+@media only screen and (max-width: 800px) {
+  .title {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .title {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+
+  .subTitle {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }

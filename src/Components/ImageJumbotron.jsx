@@ -1,19 +1,19 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import Title from './Title'
+
 export default function ImageJumbotron({ image, title, detail }) {
   return (
     <div
       style={{
         backgroundImage: `url(${image})`,
       }}
-      className="  w-screen   max-h-full    bg "
     >
-      <div className="bg-SecondaryOpacity py-9 w-screen grid justify-center items-center h-full   content-center text-center">
+      <div className="bg-SecondaryOpacity py-9  grid justify-center items-center h-full   content-center text-center">
         <div className="mb-1">
-          <Title text={title} color="Light" />
+          <Title text={title} color="Light" style="sm:uppercase" />
         </div>
-        <p className="text-Light text-xl w-8/12 text-center mt-1 justify-self-center ">
+        <p className="text-Light font-medium  text-xl  px-3 lg:max-w-screen-lg   mt-1 justify-self-center text-center  ">
           {detail}
         </p>
       </div>
@@ -30,7 +30,6 @@ ImageJumbotron.propTypes = {
 
 ImageJumbotron.defaultProps = {
   image: `https://via.placeholder.com/${window.innerWidth}x150`,
-  detail:
-    'decription will be set here and lets see how does it show on the screen',
+  detail: 'decription will be set here ',
   title: 'title',
 }

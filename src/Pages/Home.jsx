@@ -8,22 +8,22 @@ import CoinMarket from '../Containers/Sections/HomeSections/CoinMarket'
 import ContactJumbotron from '../Components/ContactJumbotron'
 export default function Home() {
   return (
-    <div>
+    <>
       <Header />
       <CoinFlow />
-      <div className=" bg-Light grid justify-center md:px-24 py-16 gap-20">
+      <div className=" bg-Light grid justify-center md:px-24 py-16">
         <CoursesSection />
       </div>
-      <div className="bg-LightGray grid justify-center md:px-24 py-16 gap-20">
+      <div className="bg-LightGray grid justify-center md:px-24 py-16  ">
         <NewsSection />
       </div>
-      <div className="bg-Light grid justify-center md:px-24 py-16 gap-20">
+      <div className="bg-Light grid justify-center md:px-24 py-16  ">
         <PartnersSection />
       </div>
-      <div className="bg-LightGray grid justify-center md:px-24 py-16 gap-20">
+      <div className="bg-LightGray grid justify-center md:px-24 py-16  ">
         <CoinMarket />
       </div>
       <ContactJumbotron />
-    </div>
+    </>
   )
 }

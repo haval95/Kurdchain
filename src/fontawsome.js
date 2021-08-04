@@ -10,6 +10,7 @@ import {
   faMapMarkedAlt,
   faEnvelope,
   faCheckCircle,
+  faFilter,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -21,5 +22,6 @@ library.add(
   faGlobe,
   faMapMarkedAlt,
   faEnvelope,
-  faCheckCircle
+  faCheckCircle,
+  faFilter
 )

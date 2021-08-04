@@ -1,9 +1,16 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
-export default function Button({ font, text, color, clickAction, style }) {
+export default function Button({
+  font,
+  text,
+  color,
+  clickAction,
+  style,
+  textcolor,
+}) {
   return (
     <button
-      className={`bg-${color} ${font} hover:bg-${color}Hover ${style} w-full py-1 uppercase text-Light rounded-md transition duration-500 ease-in-out`}
+      className={`bg-${color} ${font} hover:bg-${color}Hover text-${textcolor} ${style} w-full py-1 uppercase shadow-lg hover:shadow-none  rounded-md transition duration-500 ease-in-out`}
       onClick={clickAction}
     >
       {text}
@@ -17,6 +24,7 @@ Button.propTypes = {
   color: PropTypes.string,
   style: PropTypes.string,
   font: PropTypes.string,
+  textcolor: PropTypes.string,
 }
 
 Button.defaultProps = {
@@ -24,5 +32,6 @@ Button.defaultProps = {
   font: 'text-xl',
   style: 'Primary',
   color: 'Primary',
+  textcolor: 'Light',
   clickAction: () => [],
 }

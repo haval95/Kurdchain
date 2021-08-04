@@ -1,14 +1,25 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import { useTranslation } from 'react-i18next'
-export default function Title({ text, color, type, underline, style }) {
+import ScrollAnimation from 'react-animate-on-scroll'
+
+export default function Title({
+  text,
+  color,
+  type,
+  underline,
+  style,
+  animation,
+}) {
   const { i18n } = useTranslation()
   return (
-    <h1
-      className={`text-${color} ${type} underline-${underline}  ${i18n.dir()}   font-semibold ${style}`}
-    >
-      {text}
-    </h1>
+    <ScrollAnimation animateIn={animation} initiallyVisible>
+      <h1
+        className={`text-${color} ${type} uppercase underline-${underline}  ${i18n.dir()} py-1  font-semibold ${style}`}
+      >
+        {text}
+      </h1>
+    </ScrollAnimation>
   )
 }
 
@@ -18,6 +29,7 @@ Title.propTypes = {
   type: PropTypes.string,
   underline: PropTypes.string,
   style: PropTypes.string,
+  animation: PropTypes.string,
 }
 
 Title.defaultProps = {
@@ -26,4 +38,5 @@ Title.defaultProps = {
   type: 'title',
   underline: 'center',
   style: 'text-center Capitalize',
+  animation: 'none',
 }
