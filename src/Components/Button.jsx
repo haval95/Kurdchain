@@ -33,5 +33,5 @@ Button.defaultProps = {
   style: 'Primary',
   color: 'Primary',
   textcolor: 'Light',
-  clickAction: () => [],
+  clickAction: () => alert('no actions provied'),
 }

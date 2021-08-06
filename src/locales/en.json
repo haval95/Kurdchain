@@ -4,7 +4,21 @@
   "ar": "ar",
   "ku-text": "ku",
   "ku": "he",
+  "phoneNumber": "Phone Number",
+  "pwd": "Password",
+  "changePwd": "Change Password",
+  "confirmPwd": "Confirm Password",
+  "oldPwd": "Old Password",
+  "newPwd": "New Password",
+  "reset": "Reset Password",
+  "change": "Change",
+  "forgot": "Forgot Password?",
+  "resetSlogan": "Please enter the following information to recover your password.",
+  "payment": "Payment",
+  "paymentSlogan": "You can make your payment in the following  ways",
+  "contactUsForProblem": "If you have difficulties, please contact us.",
   "website": "kurdchain",
+  "register": "Register",
   "login": "Log In",
   "loginSlogan": " Log in to start donating and / or sell what you don’t need",
   "loginAddItem": " You are not Authorized! Please, Log in. ",
@@ -58,6 +72,58 @@
   "sellUSDT": "Sell USDT",
   "todayPrice": "Price of Today",
   "makeDeal": "Make the Deal",
+  "api": "Capital Management - API",
+  "apiSlogan": "Application Programming Interface (API) is a software intermediary that allows two applications to connect with each other",
+  "contract": "Capital Management - Contract",
+  "contractSlogan": "Contract is a document that states and explains a formal agreement between two different parties to deal with each other",
+  "key": "Key",
+  "secret": "secret",
+  "apikey": "api key",
+  "typeOfTrade": "Type Of Trade",
+  "agree": "I agree with the terms and conditions",
+  "shareOn": "share on",
+  "gold": [
+    "Kurdchain’s profit share rate %30",
+    "Investors’s profit share rate %70",
+    "Investor’s risk rate %20",
+    "One-Time Subscription fee $500"
+  ],
+  "silver": [
+    "Kurdchain’s profit share rate %30",
+    "Investors’s profit share rate %70",
+    "Investor’s risk rate %20",
+    "One-Time Subscription fee $250"
+  ],
+
+  "platinum": [
+    "Kurdchain’s profit share rate %30",
+    "Investors’s profit share rate %70",
+    "Investor’s risk rate %20",
+    "One-Time Subscription fee $1000"
+  ],
+
+  "contractGold": [
+    "Kurdchain’s profit share rate %30",
+    "Investors’s profit share rate %70",
+    "Investor’s risk rate %20",
+    "One-Time Subscription fee $50"
+  ],
+  "contractSilver": [
+    "Kurdchain’s profit share rate %30",
+    "Investors’s profit share rate %70",
+    "Investor’s risk rate %20",
+    "One-Time Subscription fee $50"
+  ],
+
+  "contractPlatinum": [
+    "Kurdchain’s profit share rate %30",
+    "Investors’s profit share rate %70",
+    "Investor’s risk rate %20",
+    "One-Time Subscription fee $50"
+  ],
+
+  "howItWorks": "How it works",
+  "terms": "terms and conditions",
   "navbar": {
     "home": "home",
     "courses": "courses",
@@ -138,15 +204,15 @@
     "close": "Close"
   },
   "profile": {
-    "slogan": "Dilmun Should be your first choice to buy or sell anything!",
-    "myItems": "My Items",
-    "delete": "Delete ",
-    "oops": " OOPS! You have not put anything for sell!",
-    "explain": "Add your item now and start selling!",
+    "myItems": "My Courses",
+    "delete": "Remove ",
+    "oops": " OOPS! You do't have access to any of our courses.",
+    "explain": "Buy a course now, and start learning!",
     "deleting": "Are you sure?",
-    "deletingNote": "Once deleted, you will not be able to recover this item!",
-    "deleted": " file has been deleted!",
-    "notDeleted": " File not deleted"
+    "deletingNote": "Once deleted, you will not be able to recover this course!",
+    "deleted": " Course has been Removed!",
+    "notDeleted": " Course Not Removed",
+    "findCourse": "New Courses"
   },
 
   "addItem": "Add Item",

@@ -16,7 +16,11 @@ export default function NewSection() {
           <Title text={t('news')} type="title" underline="center" />
         </ScrollAnimation>
         <ScrollAnimation animateIn="zoomInUp">
-          <Paragraph text={t('newsSlogan')} style="text-lg" />
+          <Paragraph
+            text={t('newsSlogan')}
+            style="text-lg"
+            textalign="text-center"
+          />
         </ScrollAnimation>
       </div>
 

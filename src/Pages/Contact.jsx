@@ -53,52 +53,52 @@ export default function Contact() {
       <div className="bg-Light grid  md:px-16 lg:px-24 py-16">
         <div className="  mb-10 px-8 text-start grid gap-6">
           <div className="grid grid-cols-1 md:grid-cols-5 text-justify gap-8 ">
-            <div className="flex flex-col space-y-8 col-span-2 ">
+            <div className="flex flex-col space-y-8 col-span-2 text-start">
               <Title
                 text={t('footer.getInTouch')}
                 underline="start"
                 style="text-start mb-6"
                 animation="bounceIn"
               />
-              <div className=" text-start font-medium   pb-1 flex items-center ">
+              <div className=" text-start-importan font-medium   pb-1 flex items-center  ">
                 <FontAwesomeIcon
-                  size="3x"
+                  size="2x"
                   className="text-Secondary"
                   icon="phone-alt"
                 />
                 <div className="flex flex-col">
                   <a
                     href="tel:+9647701234567"
-                    className="text-start px-2 hover:text-PrimaryHover"
+                    className="text-start-importan px-2 hover:text-PrimaryHover"
                   >
                     009647701234567
                   </a>
                   <a
                     href="tel:+9647701234567"
-                    className="text-start px-2 hover:text-PrimaryHover"
+                    className="text-start-importan px-2 hover:text-PrimaryHover"
                   >
                     009647701234567
                   </a>
                 </div>
               </div>
 
-              <div className=" text-start font-medium   pb-1 flex items-center ">
+              <div className=" text-start-importan font-medium   pb-1 flex items-center ">
                 <FontAwesomeIcon
-                  size="3x"
+                  size="2x"
                   className="text-Secondary   "
                   icon="envelope"
                 />
                 <a
                   href="mailto:someone@yoursite.com"
-                  className="text-start px-2 hover:text-PrimaryHover"
+                  className="text-start-importan px-2 hover:text-PrimaryHover"
                 >
                   example@example.com
                 </a>
               </div>
 
-              <div className=" text-start font-medium   pb-1  flex items-center">
+              <div className=" text-start-importan font-medium   pb-1  flex items-center">
                 <FontAwesomeIcon
-                  size="3x"
+                  size="2x"
                   className="text-Secondary "
                   icon="map-marked-alt"
                 />
@@ -109,7 +109,7 @@ export default function Contact() {
               <div className="grid  grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 justify-center items-center text-center  gap-4 content-center ">
                 <a
                   href="#"
-                  className=" text-4xl p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray    text-Secondary "
+                  className=" text-2xl p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray    text-Secondary "
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -117,19 +117,19 @@ export default function Contact() {
                 </a>
                 <a
                   href="#"
-                  className=" text-4xl py-2  p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray   text-Secondary"
+                  className=" text-2xl py-2  p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray   text-Secondary"
                 >
                   <FontAwesomeIcon icon={['fab', 'facebook-f']} />
                 </a>
                 <a
                   href="#"
-                  className=" text-4xl py-2   p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray  text-Secondary"
+                  className=" text-2xl py-2   p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray  text-Secondary"
                 >
                   <FontAwesomeIcon icon={['fab', 'twitter']} />
                 </a>
                 <a
                   href="#"
-                  className=" text-4xl py-2   p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray  text-Secondary"
+                  className=" text-2xl py-2   p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray  text-Secondary"
                 >
                   <FontAwesomeIcon icon={['fab', 'telegram-plane']} />
                 </a>
@@ -151,7 +151,7 @@ export default function Contact() {
                 {!isSubmitSuccessful && (
                   <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="text-start"
+                    className="text-start-importan"
                   >
                     <input
                       type="hidden"
@@ -206,7 +206,10 @@ export default function Contact() {
                     </div>
 
                     <div className="mb-5">
-                      <label htmlFor={t('email')} className="text-start">
+                      <label
+                        htmlFor={t('email')}
+                        className="text-start-importan"
+                      >
                         {t('email')}
                       </label>
                       <input
@@ -236,7 +239,10 @@ export default function Contact() {
                     </div>
 
                     <div className="mb-3">
-                      <label htmlFor={t('message')} className="text-start">
+                      <label
+                        htmlFor={t('message')}
+                        className="text-start-importan"
+                      >
                         {t('message')}
                       </label>
                       <textarea

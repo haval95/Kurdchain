@@ -15,7 +15,11 @@ export default function PartnersSection() {
           <Title text={t('partners')} type="title" underline="center" />
         </ScrollAnimation>
         <ScrollAnimation animateIn="zoomInUp">
-          <Paragraph text={t('partnersSlogan')} style="text-lg" />
+          <Paragraph
+            text={t('partnersSlogan')}
+            style="text-lg"
+            textalign="text-center"
+          />
         </ScrollAnimation>
       </div>
 

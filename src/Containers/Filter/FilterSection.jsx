@@ -19,13 +19,13 @@ export default function FilterSection({ state }) {
         <Title text={t('filterBy')} color="Secondary" />
       </div>
       <hr className="w-full my-5  text-GrayBorder"></hr>
-      <div className=" w-full text-start justify-start items-center grid">
+      <div className=" w-full text-start-important justify-start items-center grid">
         <Title
           text={t('type')}
           color="Secondary"
           type="smallSubTitle"
           underline="none"
-          style="text-start justify-self-start mb-4"
+          style="text-start-important justify-self-start mb-4"
         />
         <div className="block">
           <label className="block items-center">
@@ -58,7 +58,7 @@ export default function FilterSection({ state }) {
           color="Secondary"
           type="smallSubTitle"
           underline="none"
-          style="text-start justify-self-start my-4"
+          style="text-start-important justify-self-start my-4"
         />
         <div className="block">
           <label className="block items-center">
@@ -91,7 +91,7 @@ export default function FilterSection({ state }) {
           color="Secondary"
           type="smallSubTitle"
           underline="none"
-          style="text-start justify-self-start my-4"
+          style="text-start-important justify-self-start my-4"
         />
         <div className="block">
           <label className="block items-center">
@@ -145,7 +145,7 @@ export default function FilterSection({ state }) {
           color="Secondary"
           type="smallSubTitle"
           underline="none"
-          style="text-start justify-self-start my-4"
+          style="text-start-important justify-self-start my-4"
         />
         <div className="block">
           <label className="block items-center">

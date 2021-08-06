@@ -49,6 +49,20 @@ img {
   display: inline-block;
   position: relative;
 }
+.d-blcok {
+  display: block !important;
+}
+.vp-center {
+  display: block !important;
+  display: block !important;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
 
 .underline-start.ltr::after {
   content: '';
@@ -57,7 +71,6 @@ img {
   background: currentColor;
   position: absolute;
   left: 0;
-
   bottom: -5px;
 }
 
@@ -85,15 +98,20 @@ img {
 .text-start {
   text-align: start !important;
 }
+.text-start-important {
+  text-align: start !important;
+}
 
 .transform-translate-50 {
   transform: translateX(-50%);
 }
 .p-inline-start-1 {
-  padding-inline-start: 10px;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 .p-inline-start-2 {
   padding-inline-start: 2rem;
+  padding-inline-end: 2rem;
 }
 .m-inline-end-5percent {
   margin-inline-end: 6%;
@@ -123,6 +141,14 @@ img {
   background-repeat: repeat;
   background-size: contain;
 } */
+.bg-profile {
+  background-image: url('./Assets//Images/Bgprofile.jpg') !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-red {
+  background-color: red !important;
+}
 
 @media only screen and (max-width: 640px) {
   .bg-header {
@@ -153,14 +179,40 @@ img {
     line-height: 2.25rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
+  .p-inline-start-2 {
+    padding-inline-start: auto !important;
+    padding-inline-end: auto !important;
+  }
   .title {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
   }
 
   .subTitle {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .text-start {
+    text-align: center !important;
+  }
+
+  .underline-start.ltr::after {
+    content: '';
+    height: 2px;
+    width: 40%;
+    background: currentColor;
+    position: absolute;
+    left: calc(50% - 20%);
+    bottom: -5px;
+  }
+  .underline-start.rtl::after {
+    content: '';
+    height: 2px;
+    width: 40%;
+    background: currentColor;
+    position: absolute;
+    right: calc(50% - 20%);
+    bottom: -5px;
   }
 }

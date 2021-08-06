@@ -13,7 +13,7 @@ export default function Navbar() {
   const [langDropDown, setLangDropDown] = useState(false)
   const [navCollapse, setnavCollapse] = useState(false)
   const { t } = useTranslation()
-  const user = { isLoggedIn: true, user: { photo: null } }
+  const user = { isLoggedIn: false, user: { photo: null } }
   const handleLanguageChange = lang => {
     setLangDropDown(false)
     i18n.changeLanguage(lang)
@@ -234,7 +234,7 @@ export default function Navbar() {
                       <button
                         type="button"
                         className="py-1  px-2 rounded-xl capitalize  items-center transition duration-500 ease-in-out  hover:bg-PrimaryHover transform hover:-translate-y-1 hover:scale-105  text-Light bg-Primary     focus:outline-none"
-                        onClick={() => alert('open login modal')}
+                        onClick={() => alert('login')}
                       >
                         {t('navbar.login')}
                       </button>

@@ -27,6 +27,7 @@ module.exports = {
       GrayBorder: '#E0E0E0',
       LightGray: '#F7F7F7',
       Gray: '#6c757d',
+      CurrencyBorder: '#E1E5EA',
     },
     extend: {},
   },

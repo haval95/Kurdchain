@@ -2,12 +2,17 @@ import React from 'react'
 import { PropTypes } from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from '../../Components/Button'
+
+import { useTranslation } from 'react-i18next'
+
 export default function PricingCard({ style, price, services, title, dark }) {
+  const { t } = useTranslation()
+
   return (
     <div
       className={`${
         dark ? 'text-Light bg-Secondary' : 'text-Dark bg-Light'
-      } ${style}   border-GrayBorder border   px-3 md:px-6 py-8 md:py-10 mb-3 md:my-6 rounded-lg shadow-lg lg:w-72 `}
+      } ${style}   border-GrayBorder border   px-3  py-8 md:py-10 mb-3 md:my-6 rounded-lg shadow-lg lg:w-9/12 `}
     >
       <div className="w-full flex-grow">
         <h2 className="text-center font-bold capitalize text-2xl mb-4">
@@ -20,11 +25,11 @@ export default function PricingCard({ style, price, services, title, dark }) {
         >
           {price}
         </h3>
-        <ul className=" px-5 mb-8">
+        <ul className=" px-2 lg:px-5 mb-8 ">
           {services.map(service => {
             return (
               <li
-                className=" grid grid-flow-col items-center mb-2 gap-3 justify-center"
+                className=" grid grid-flow-col items-center mb-2 gap-3 justify-start "
                 key={service}
               >
                 <FontAwesomeIcon
@@ -38,7 +43,11 @@ export default function PricingCard({ style, price, services, title, dark }) {
         </ul>
       </div>
       <div className="w-full">
-        <Button text="SUBSCRIBE" color={'PrimaryLight'} style="font-light" />
+        <Button
+          text={t('subscribe')}
+          color={'PrimaryLight'}
+          style="font-light"
+        />
       </div>
     </div>
   )
@@ -54,7 +63,7 @@ PricingCard.propTypes = {
 }
 
 PricingCard.defaultProps = {
-  services: ['no service', 'no service'],
+  services: '',
   price: '$5,000 - $25,000',
   style: '',
 

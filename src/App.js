@@ -16,7 +16,7 @@ import NewsDetail from './Pages/NewsDetail'
 import NotFound from './Pages/NotFound'
 import Profile from './Pages/Profile.jsx'
 import Signal from './Pages/Signal.jsx'
-import PrivateRoute from './PrivateRoute'
+//import PrivateRoute from './PrivateRoute'
 import Navbar from './Containers/Navbar/Navbar'
 
 //import { useEffect } from 'react'
@@ -24,10 +24,25 @@ import Navbar from './Containers/Navbar/Navbar'
 import { useTranslation } from 'react-i18next'
 import Exchange from './Pages/Exchange'
 import Footer from './Containers/Footer/Footer'
-
-//import PricingCard from './Containers/Cards/PricingCard'
+import LoginModal from './Containers/Modals/LoginModal'
+import RegisterModal from './Containers/Modals/RegisterModal'
+import ResetPassword from './Containers/Modals/ResetPassword'
+import ChangePassword from './Containers/Modals/ChangePassword'
+import PaymentModal from './Containers/Modals/PaymentModal'
 
 function App() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://files.coinmarketcap.com/static/widget/coinMarquee.js'
+    script.async = true
+
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
   const { pathname } = useLocation()
 
   useEffect(() => {
@@ -46,13 +61,21 @@ function App() {
   return (
     <div className="">
       <Navbar />
+      <LoginModal />
+      <RegisterModal />
+      <ResetPassword />
+      <ChangePassword />
+      <PaymentModal />
 
       <Switch>
         <Route exact path={ROUTES.HOME_ROUTE} component={Home} />
-        <PrivateRoute path={ROUTES.PROFILE_ROUTE}>
-          <Profile />
-        </PrivateRoute>
+        {
+          // <PrivateRoute path={ROUTES.PROFILE_ROUTE}>
+          // <Profile />
+          // </PrivateRoute>
+        }
         <Route path={ROUTES.ABOUT_ROUTE} component={About} />
+        <Route path={ROUTES.PROFILE_ROUTE} component={Profile} />
         <Route path={ROUTES.CONTACT_ROUTE} component={Contact} />
         <Route path={ROUTES.NEWS_ROUTE} component={News} />
         <Route exact path={ROUTES.NEWS_DETAILS_ROUTE} component={NewsDetail} />
@@ -66,14 +89,6 @@ function App() {
 
         <Route component={NotFound} />
       </Switch>
-
-      {
-        // <div className="     grid justify-content-center grid-cols-1 sm:grid-cols-3 gap-4   justify-items-center ">
-        //   <PricingCard />
-        //   <PricingCard />
-        //   <PricingCard />
-        // </div>
-      }
 
       <Footer />
     </div>

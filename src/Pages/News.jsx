@@ -16,13 +16,14 @@ export default function News() {
         detail={t('newsPageSlogan')}
         image={img}
       />
-      <div className=" bg-Light grid px-10  md:px-24 py-16">
+      <div className=" bg-Light grid px-10  md:px-24 py-16 text-start">
         <Title
           text={t('navbar.news')}
-          style="sm:uppercase mb-10"
+          style="mb-14 text-center"
           underline="start"
           animation="bounceIn"
         />
+
         <div className="grid gap-10 justify-center grid-cols-1 sm:grid-cols-2  px-4  md:grid-cols-1 lg:grid-cols-2 mb-16">
           <NewsCard />
           <NewsCard />

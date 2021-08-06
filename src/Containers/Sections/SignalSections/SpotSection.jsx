@@ -18,7 +18,7 @@ export default function SpotSection() {
         />
         <Paragraph text={t('spotSlogan') + '.'} style="text-lg" />
       </div>
-      <div className=" items-center mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-start  justify-evenly justify-items-center gap-10">
+      <div className=" items-center mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-start  justify-evenly justify-items-center gap-10">
         <SiganlCard />
         <SiganlCard />
         <SiganlCard />

@@ -6,6 +6,7 @@ import Paragraph from '../../../Components/Paragraph'
 import ScrollAnimation from 'react-animate-on-scroll'
 import NavigationButton from '../../../Components/NavigationButton'
 import * as ROUTES from '../../../router'
+
 export default function CoinMarket() {
   const { t } = useTranslation()
 
@@ -16,22 +17,75 @@ export default function CoinMarket() {
           <Title text={t('coinMarket')} type="title" underline="center" />
         </ScrollAnimation>
         <ScrollAnimation animateIn="zoomInUp">
-          <Paragraph text={t('coinMarketSlogan')} style="text-lg" />
+          <Paragraph
+            text={t('coinMarketSlogan')}
+            style="text-lg"
+            textalign="text-center"
+          />
         </ScrollAnimation>
       </div>
-      <div className=" relative ltr w-screen md:w-full  justify-self-center">
-        <div className="absolute text-transparent top-10 right-0 bg-transparent w-full  h-14 items-center grid justify-center m-1"></div>
-        <div className="absolute bottom-10 right-0 bg-LightGray w-2/4 h-14 items-center grid justify-center m-1"></div>
-        <div className="w-full overflow-hidden mb-16">
-          <div
-            className="text-center"
-            id="coinmarketcap-widget-coin-price-block"
-            coins="1,1027,825,2010,52"
-            currency="USD"
-            theme="light"
-            transparent="false"
-            show-symbol-logo="true"
-          ></div>
+      <div className=" relative ltr w-screen md:w-full  justify-self-center px-5">
+        <div className="w-full overflow-hidden mb-16 grid grid-cols-1 xl:grid-cols-4  sm:grid-cols-2 gap-5 overflow-x-auto ">
+          <div className="relative h-36 overflow-hidden border-b-2 border-CurrencyBorder rounded-lg">
+            <div className="absolute h-5 w-full top-5 bg-transparent "></div>
+            <div
+              className="coinmarketcap-currency-widget"
+              data-currencyid="1"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="true"
+              data-rank="true"
+              data-marketcap="true"
+              data-volume="true"
+              data-statsticker="true"
+              data-stats="USD"
+            ></div>
+          </div>
+          <div className="relative h-36 overflow-hidden border-b-2 border-CurrencyBorder rounded-lg">
+            <div className="absolute h-5 w-full top-5 bg-transparent "></div>
+            <div
+              className="coinmarketcap-currency-widget"
+              data-currencyid="1027"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="true"
+              data-rank="true"
+              data-marketcap="true"
+              data-volume="true"
+              data-statsticker="true"
+              data-stats="USD"
+            ></div>
+          </div>
+          <div className="relative h-36 overflow-hidden border-b-2 border-CurrencyBorder rounded-lg">
+            <div className="absolute h-5 w-full top-5 bg-transparent "></div>
+            <div
+              className="coinmarketcap-currency-widget"
+              data-currencyid="825"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="true"
+              data-rank="true"
+              data-marketcap="true"
+              data-volume="true"
+              data-statsticker="true"
+              data-stats="USD"
+            ></div>
+          </div>
+          <div className="relative h-36 overflow-hidden border-b-2 border-CurrencyBorder rounded-lg">
+            <div className="absolute h-5 w-full top-5 bg-transparent "></div>
+            <div
+              className="coinmarketcap-currency-widget"
+              data-currencyid="1839"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="true"
+              data-rank="true"
+              data-marketcap="true"
+              data-volume="true"
+              data-statsticker="true"
+              data-stats="USD"
+            ></div>
+          </div>
         </div>
       </div>
 

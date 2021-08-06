@@ -12,15 +12,15 @@ export default function Exchange() {
   return (
     <>
       <ImageJumbotron title={t('navbar.exchange')} detail={''} image={img} />
-      <div className=" bg-Light grid px-6  md:px-24 py-16 ">
+      <div className=" bg-Light  px-6  md:px-24 py-16 text-start ">
         <Title
           text={t('exchangeMoney')}
           style="sm:uppercase mb-10 "
           underline="start"
           animation="bounceIn"
         />
-        <div className="items-center justify-around mx-3 grid md:grid-cols-2 r gap-16">
-          <div>
+        <div className=" grid justify-center md:grid-cols-2 r gap-16">
+          <div className="max-w-xs bg-LightGray">
             <Title
               text={t('buyUSDT')}
               style="sm:capitalize  px-3 bg-Light shadow-md py-1 rounded mb-5"
@@ -30,10 +30,12 @@ export default function Exchange() {
             />
             <p className="px-4"> {t('todayPrice')}</p>
             <p className="px-4"> 100 USDT = $ 98 = 144,000 IQD</p>
-            <Button text={t('makeDeal')} style="mt-4 " color="Secondary" />
+            <div className="m-4">
+              <Button text={t('makeDeal')} style="mt-4 " color="Secondary" />
+            </div>
           </div>
 
-          <div>
+          <div className="max-w-xs bg-LightGray">
             <Title
               text={t('sellUSDT')}
               style="sm:capitalize  px-3 bg-Light shadow-md  py-1 rounded mb-5"
@@ -43,7 +45,9 @@ export default function Exchange() {
             />
             <p className="px-4"> {t('todayPrice')}</p>
             <p className="px-4"> 100 USDT = $ 98 = 144,000 IQD</p>
-            <Button text={t('makeDeal')} style="mt-4 " color="Secondary" />
+            <div className="m-4">
+              <Button text={t('makeDeal')} style="mt-4 " color="Secondary" />
+            </div>
           </div>
         </div>
       </div>

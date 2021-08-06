@@ -16,7 +16,11 @@ export default function CoursesSection() {
           <Title text={t('navbar.courses')} type="title" underline="center" />
         </ScrollAnimation>
         <ScrollAnimation animateIn="zoomInUp">
-          <Paragraph text={t('home.courseSlogan')} style="text-lg" />
+          <Paragraph
+            text={t('home.courseSlogan')}
+            style="text-lg"
+            textalign="text-center"
+          />
         </ScrollAnimation>
       </div>
 

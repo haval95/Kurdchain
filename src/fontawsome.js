@@ -11,10 +11,16 @@ import {
   faEnvelope,
   faCheckCircle,
   faFilter,
+  faBinoculars,
+  faTrashAlt,
+  faCalendarAlt,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   fab,
+  faCalendarAlt,
+  faTrashAlt,
+  faBinoculars,
   faUser,
   faCheckSquare,
   faClock,
