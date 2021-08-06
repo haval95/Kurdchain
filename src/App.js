@@ -34,7 +34,7 @@ import { loginUser } from './Redux'
 function App() {
   const { i18n } = useTranslation()
   const dispatch = useDispatch()
-  dispatch(loginUser({ username: 'admin', password: '123' }))
+  dispatch(loginUser({ username: '07500000000', password: 'haval1' }))
 
   useEffect(() => {
     document.dir = i18n.dir()

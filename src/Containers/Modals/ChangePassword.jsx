@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import SweetAlert from 'react-bootstrap-sweetalert'
-
+import { CloseChangePasswordModal } from '../../Redux/Modals/ModalActions'
+import { useSelector, useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 export default function ChangePassword() {
   const { t } = useTranslation()
-  const [show, setshow] = useState(false)
-
+  const dispatch = useDispatch()
+  const state = useSelector(state => state.modals.changePasswordModalState)
   return (
     <SweetAlert
       custom
+      showCloseButton
       title={<h1 className="text-Primary">{t('changePwd')}</h1>}
-      show={show}
+      show={state}
       showConfirm={false}
-      onConfirm={() => setshow(false)}
-      onCancel={() => setshow(false)}
+      onConfirm={() => dispatch(CloseChangePasswordModal())}
+      onCancel={() => dispatch(CloseChangePasswordModal())}
     >
       <form className="  px-8 pt-6 mb-4 bg-transparent">
         <div className="mb-4">

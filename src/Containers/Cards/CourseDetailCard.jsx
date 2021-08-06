@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next'
 
 import Title from '../../Components/Title'
 import Button from '../../Components/Button'
-
+import { OpenPaymentModal } from '../../Redux/Modals/ModalActions'
+import { useDispatch } from 'react-redux'
 export default function CourseDetailCard({
   duration,
   level,
@@ -15,6 +16,8 @@ export default function CourseDetailCard({
   id,
 }) {
   const { t } = useTranslation()
+  const dispatch = useDispatch()
+
   return (
     <div className="bg-LightGray shadow p-5 rounded-xl    ">
       <Title
@@ -49,7 +52,11 @@ export default function CourseDetailCard({
       </div>
       <div className=" my-2 grid">
         <div className="w-28 justify-self-center  items-center">
-          <Button clickAction={() => alert(id)} text="button" style="my-4 " />
+          <Button
+            clickAction={() => dispatch(OpenPaymentModal(id))}
+            text="button"
+            style="my-4 "
+          />
         </div>
       </div>
     </div>

@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import SweetAlert from 'react-bootstrap-sweetalert'
-
+import { ClosePaymentModal } from '../../Redux/Modals/ModalActions'
+import { useSelector, useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import NavigationButton from '../../Components/NavigationButton'
 
 export default function PaymentModal() {
   const { t } = useTranslation()
-  const [show, setshow] = useState(false)
+  const dispatch = useDispatch()
+  const state = useSelector(state => state.modals.paymentModalState)
 
   return (
     <SweetAlert
       custom
+      showCloseButton
       title={<h1 className="text-Primary">{t('payment')}</h1>}
-      show={show}
+      show={state}
       showConfirm={false}
-      onConfirm={() => setshow(false)}
-      onCancel={() => setshow(false)}
+      onConfirm={() => dispatch(ClosePaymentModal())}
+      onCancel={() => dispatch(ClosePaymentModal())}
     >
       <form className="  px-8 pt-6 mb-4 bg-transparent">
         <h1 className="text-xl text-Secondary font-medium mb-6">

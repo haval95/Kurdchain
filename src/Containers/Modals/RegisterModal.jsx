@@ -1,21 +1,27 @@
-import React, { useState } from 'react'
+import React from 'react'
 import SweetAlert from 'react-bootstrap-sweetalert'
 
 import { useTranslation } from 'react-i18next'
+import { useSelector, useDispatch } from 'react-redux'
+import {
+  OpenLoginModal,
+  CloseRegisterModal,
+} from '../../Redux/Modals/ModalActions'
 
 export default function RegisterModal() {
   const { t } = useTranslation()
-  const [show, setshow] = useState(false)
+  const dispatch = useDispatch()
+  const state = useSelector(state => state.modals.registerModalState)
 
   return (
     <SweetAlert
       custom
       showCloseButton
       title={<h1 className="text-Primary">{t('register')}</h1>}
-      show={show}
+      show={state}
       showConfirm={false}
-      onConfirm={() => setshow(false)}
-      onCancel={() => setshow(false)}
+      onConfirm={() => dispatch(CloseRegisterModal())}
+      onCancel={() => dispatch(CloseRegisterModal())}
       closeBtnStyle={{ padding: '10px' }}
     >
       <form className="  px-8 pt-6  mb-4 bg-transparent">
@@ -117,6 +123,9 @@ export default function RegisterModal() {
           <button
             className="shadow px-10 text-Primary border border-Primary transition-all ease-in-out duration-500 hover:bg-PrimaryHover hover:text-Light focus:shadow-outline focus:outline-none bg-Light font-bold py-2  rounded"
             type="button"
+            onClick={() => {
+              dispatch(CloseRegisterModal()) && dispatch(OpenLoginModal())
+            }}
           >
             {t('login')}
           </button>

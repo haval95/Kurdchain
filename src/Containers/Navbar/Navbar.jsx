@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { useDispatch } from 'react-redux'
 import Logo from '../../Assets/Images/logo.svg'
 import * as ROUTES from '../../router'
 import i18n from 'i18next'
 import { useTranslation } from 'react-i18next'
-import { NavLink, Redirect, useLocation } from 'react-router-dom'
+import { Link, NavLink, Redirect, useLocation } from 'react-router-dom'
+import {
+  OpenLoginModal,
+  OpenRegisterModal,
+  OpenChangePasswordModal,
+} from '../../Redux/Modals/ModalActions'
 
 export default function Navbar() {
   const location = useLocation()
+  const dispatch = useDispatch()
   const [profileDropDown, setprofileDropDown] = useState(false)
   const [langDropDown, setLangDropDown] = useState(false)
   const [navCollapse, setnavCollapse] = useState(false)
   const { t } = useTranslation()
-  const user = { isLoggedIn: false, user: { photo: null } }
+  const user = { isLoggedIn: true, user: { photo: null } }
   const handleLanguageChange = lang => {
     setLangDropDown(false)
     i18n.changeLanguage(lang)
@@ -234,14 +240,14 @@ export default function Navbar() {
                       <button
                         type="button"
                         className="py-1  px-2 rounded-xl capitalize  items-center transition duration-500 ease-in-out  hover:bg-PrimaryHover transform hover:-translate-y-1 hover:scale-105  text-Light bg-Primary     focus:outline-none"
-                        onClick={() => alert('login')}
+                        onClick={() => dispatch(OpenLoginModal())}
                       >
                         {t('navbar.login')}
                       </button>
                       <button
                         type="button"
                         className="capitalize py-1 px-2  transition duration-500 ease-in-out   items-center  transform hover:-translate-y-1 hover:scale-105 rounded-xl text-Primary      focus:outline-none"
-                        onClick={() => alert('open signup modal')}
+                        onClick={() => dispatch(OpenRegisterModal())}
                       >
                         {t('navbar.signup')}
                       </button>
@@ -252,23 +258,29 @@ export default function Navbar() {
                 <div
                   className={`${
                     profileDropDown ? ' show' : ' hidden'
-                  } origin-center right-0 transform md:translate-x-1/4   bg-Light absolute rounded-lg py-2 click-text  mt-2 w-auto  border border-GrayBorder items-center   shadow-lg focus:outline-none`}
+                  } origin-center right-0 transform md:translate-x-1/4   bg-Light absolute rounded-lg py-2 click-text  mt-2 w-32  border border-GrayBorder items-center   shadow-lg focus:outline-none`}
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="user-menu"
                 >
+                  <Link
+                    to={ROUTES.PROFILE_ROUTE}
+                    className="m-auto text-center block focus:outline-none px-4 py-2 text-sm text-gray-700 hover:bg-Primary hover:text-Light w-full "
+                  >
+                    Profle
+                  </Link>
                   <button
                     type="button"
-                    className="m-auto text-left block focus:outline-none px-4 py-2 text-sm text-gray-700 hover:bg-Primary hover:text-Light w-full"
-                    onClick={() => alert('Open Settings modal')}
+                    className="m-auto text-center block focus:outline-none px-4 py-2 text-sm text-gray-700 hover:bg-Primary hover:text-Light w-full"
+                    onClick={() => dispatch(OpenChangePasswordModal())}
                   >
-                    Settings
+                    {t('changePwd')}
                   </button>
 
                   <button
                     type="button"
                     onClick={signOut}
-                    className="m-auto  my-0 text-left block focus:outline-none px-4 py-2 text-sm  hover:bg-Primary hover:text-Light w-full"
+                    className="m-auto  my-0 text-center block focus:outline-none px-4 py-2 text-sm  hover:bg-Primary hover:text-Light w-full"
                     role="menuitem"
                   >
                     {t('navbar.logout')}
