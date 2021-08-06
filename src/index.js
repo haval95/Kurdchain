@@ -1,16 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import Store from './Redux/Store'
+
+import { HashRouter } from 'react-router-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import './i18n'
-;+ReactDOM.render(
+
+ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={Store}>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </Provider>
   </React.StrictMode>,
+
   document.getElementById('root')
 )
 

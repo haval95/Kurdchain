@@ -20,6 +20,7 @@ import Signal from './Pages/Signal.jsx'
 import Navbar from './Containers/Navbar/Navbar'
 
 //import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 import { useTranslation } from 'react-i18next'
 import Exchange from './Pages/Exchange'
@@ -29,20 +30,15 @@ import RegisterModal from './Containers/Modals/RegisterModal'
 import ResetPassword from './Containers/Modals/ResetPassword'
 import ChangePassword from './Containers/Modals/ChangePassword'
 import PaymentModal from './Containers/Modals/PaymentModal'
-
+import { loginUser } from './Redux'
 function App() {
+  const { i18n } = useTranslation()
+  const dispatch = useDispatch()
+  dispatch(loginUser({ username: 'admin', password: '123' }))
+
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://files.coinmarketcap.com/static/widget/coinMarquee.js'
-    script.async = true
-
-    document.body.appendChild(script)
-
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
-
+    document.dir = i18n.dir()
+  }, [i18n, i18n.language])
   const { pathname } = useLocation()
 
   useEffect(() => {
@@ -50,14 +46,6 @@ function App() {
     return null
   }, [pathname])
 
-  const { i18n } = useTranslation()
-
-  useEffect(() => {
-    document.dir = i18n.dir()
-  }, [i18n, i18n.language])
-  // const handleLanguageChange = lang => {
-  //   i18n.changeLanguage(lang)
-  // }
   return (
     <div className="">
       <Navbar />
