@@ -16,12 +16,9 @@ import NewsDetail from './Pages/NewsDetail'
 import NotFound from './Pages/NotFound'
 import Profile from './Pages/Profile.jsx'
 import Signal from './Pages/Signal.jsx'
-//import PrivateRoute from './PrivateRoute'
+import PrivateRoute from './PrivateRoute'
 import Navbar from './Containers/Navbar/Navbar'
-
-//import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-
+import SweetAlert from 'react-bootstrap-sweetalert'
 import { useTranslation } from 'react-i18next'
 import Exchange from './Pages/Exchange'
 import Footer from './Containers/Footer/Footer'
@@ -30,11 +27,15 @@ import RegisterModal from './Containers/Modals/RegisterModal'
 import ResetPassword from './Containers/Modals/ResetPassword'
 import ChangePassword from './Containers/Modals/ChangePassword'
 import PaymentModal from './Containers/Modals/PaymentModal'
-import { loginUser } from './Redux'
+import { useSelector } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 function App() {
+  const { t } = useTranslation()
+  const IsLoading = useSelector(state => state.loading)
+
+  console.log(IsLoading)
   const { i18n } = useTranslation()
-  const dispatch = useDispatch()
-  dispatch(loginUser({ username: '07500000000', password: 'haval1' }))
 
   useEffect(() => {
     document.dir = i18n.dir()
@@ -49,6 +50,25 @@ function App() {
   return (
     <div className="">
       <Navbar />
+      <SweetAlert
+        title=""
+        show={IsLoading.isLoading}
+        showConfirm={false}
+        closeOnClickOutside
+        style={{ backgroundColor: 'transparent', borderRadius: '20px' }}
+      >
+        <div className=" p-3 grid justify-center justify-items-center gap-2 text-center">
+          <FontAwesomeIcon
+            icon="spinner"
+            className="text-Light mb-5"
+            pulse
+            size="7x"
+          />
+          <h1 className=" text-Light m-3 mt-4 text-3xl font-black ">
+            {t('loading')}
+          </h1>
+        </div>
+      </SweetAlert>
       <LoginModal />
       <RegisterModal />
       <ResetPassword />
@@ -57,13 +77,13 @@ function App() {
 
       <Switch>
         <Route exact path={ROUTES.HOME_ROUTE} component={Home} />
-        {
-          // <PrivateRoute path={ROUTES.PROFILE_ROUTE}>
-          // <Profile />
-          // </PrivateRoute>
-        }
+
+        <PrivateRoute path={ROUTES.PROFILE_ROUTE}>
+          <Profile />
+        </PrivateRoute>
+
         <Route path={ROUTES.ABOUT_ROUTE} component={About} />
-        <Route path={ROUTES.PROFILE_ROUTE} component={Profile} />
+
         <Route path={ROUTES.CONTACT_ROUTE} component={Contact} />
         <Route path={ROUTES.NEWS_ROUTE} component={News} />
         <Route exact path={ROUTES.NEWS_DETAILS_ROUTE} component={NewsDetail} />

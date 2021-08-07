@@ -7,14 +7,11 @@ const localStorageData = localData
       isLoading: false,
       isAuthenticated: true,
       user: {
-        id: localData.id,
-        email: localData.email,
-        username: localData.username,
-        role: localData.role,
+        data: localData.user,
         config: {
           headers: {
             'content-type': 'application/json',
-            authorization: `bearer ${localData.token}`,
+            authorization: `bearer ${localData.access_token}`,
           },
         },
       },
@@ -23,10 +20,8 @@ const localStorageData = localData
       isLoading: false,
       isAuthenticated: false,
       user: {
-        id: '',
-        email: '',
-        username: '',
-        role: '',
+        data: '',
+
         config: {
           headers: {
             'content-type': 'application/json',
@@ -54,14 +49,11 @@ const UserReducer = (state = initialState, action) => {
         isAuthenticated: true,
         isLoading: false,
         user: {
-          id: action.payload.id,
-          email: action.payload.email,
-          username: action.payload.username,
-          role: action.payload.role,
+          data: action.payload.user,
           config: {
             headers: {
               'content-type': 'application/json',
-              authorization: `bearer ${action.payload.token}`,
+              authorization: `bearer ${action.payload.access_token}`,
             },
           },
         },

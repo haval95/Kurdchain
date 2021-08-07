@@ -6,13 +6,14 @@ import {
   CloseLoginModal,
   OpenRegisterModal,
 } from '../../Redux/Modals/ModalActions'
+import LoginModalFunction from './ModalFunctions/LoginModalFunctions.js'
 
 export default function LoginModal() {
   const dispatch = useDispatch()
   const { t } = useTranslation()
 
   const state = useSelector(state => state.modals.loginModalState)
-
+  const { formState, handleChange, Login } = LoginModalFunction()
   return (
     <SweetAlert
       custom
@@ -24,7 +25,7 @@ export default function LoginModal() {
       onCancel={() => dispatch(CloseLoginModal())}
       closeBtnStyle={{ padding: '10px' }}
     >
-      <form className="  px-8 pt-6 pb-8 mb-4 bg-transparent">
+      <form className="  px-8 pt-6 pb-8 mb-4 bg-transparent" onSubmit={Login}>
         <div className="mb-4">
           <label
             className="block text-Secondary text-sm font-bold text-start-important mb-2"
@@ -36,8 +37,10 @@ export default function LoginModal() {
           <input
             className="shadow appearance-none  rounded w-full py-2 px-3 text-Secondary  bg-LightGray focus:outline-none focus:shadow-outline"
             id="phone"
-            name="phone"
+            name="phone_number"
             type="text"
+            value={formState.phone_number}
+            onChange={handleChange}
             placeholder={t('07721234567')}
           />
         </div>
@@ -54,7 +57,9 @@ export default function LoginModal() {
               className="shadow appearance-none  rounded w-full py-2 px-3 text-Secondary mb-3 bg-LightGray  focus:outline-none focus:shadow-outline"
               id="password"
               name="password"
+              value={formState.password}
               type="password"
+              onChange={handleChange}
               placeholder="**********"
             />
           </div>
@@ -69,7 +74,7 @@ export default function LoginModal() {
         <div className="mb-6 grid gap-3">
           <button
             className="shadow px-10 bg-Primary hover:bg-PrimaryHover transition-all ease-in-out duration-500 focus:shadow-outline focus:outline-none text-Light font-bold py-2  rounded"
-            type="button"
+            type="submite"
           >
             {t('login')}
           </button>

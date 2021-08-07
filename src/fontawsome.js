@@ -14,9 +14,11 @@ import {
   faBinoculars,
   faTrashAlt,
   faCalendarAlt,
+  faSpinner,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
+  faSpinner,
   fab,
   faCalendarAlt,
   faTrashAlt,

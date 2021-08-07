@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Logo from '../../Assets/Images/logo.svg'
 import * as ROUTES from '../../router'
 import i18n from 'i18next'
@@ -11,6 +11,7 @@ import {
   OpenRegisterModal,
   OpenChangePasswordModal,
 } from '../../Redux/Modals/ModalActions'
+import { logOutUser } from '../../Redux/User/userActions'
 
 export default function Navbar() {
   const location = useLocation()
@@ -19,7 +20,8 @@ export default function Navbar() {
   const [langDropDown, setLangDropDown] = useState(false)
   const [navCollapse, setnavCollapse] = useState(false)
   const { t } = useTranslation()
-  const user = { isLoggedIn: true, user: { photo: null } }
+  const user = useSelector(state => state.user)
+  console.log(user.user.config)
   const handleLanguageChange = lang => {
     setLangDropDown(false)
     i18n.changeLanguage(lang)
@@ -29,12 +31,10 @@ export default function Navbar() {
   }, [location])
 
   const signOut = () => {
-    //     dispatch(LogOut())
-    //     firebase.auth().signOut()
+    dispatch(logOutUser(user.user.config))
+
     setprofileDropDown(false)
-    //     dispatch(CloseModal())
-    //     dispatch(CloseSettingModal())
-    //localStorage.removeItem('loggedInUser')
+
     return <Redirect to="/" />
   }
 
@@ -209,7 +209,7 @@ export default function Navbar() {
             <div className="absolute inset-y-0 right-0 flex items-center  md:static md:inset-auto md:ml-6 md:pr-0">
               <div className=" relative">
                 <div>
-                  {user.isLoggedIn ? (
+                  {user.isAuthenticated ? (
                     <button
                       onClick={() => setprofileDropDown(!profileDropDown)}
                       type="button"
@@ -224,7 +224,7 @@ export default function Navbar() {
                         className="h-8 w-8 rounded-full grid justify-center items-center   "
                         alt=""
                       >
-                        {user.isLoggedIn ? (
+                        {user.isAuthenticated ? (
                           <FontAwesomeIcon
                             icon="user"
                             size="lg"

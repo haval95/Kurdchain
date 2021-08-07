@@ -33,7 +33,7 @@ export const loginUser = data => {
     dispatch(request())
     dispatch(loading())
     axios
-      .post(`https://kurdchain.000webhostapp.com/api/login`, data, {
+      .post(`https://kurdchain.dastey2.com/api/login`, data, {
         headers: {
           'content-type': 'application/json',
         },
@@ -42,7 +42,6 @@ export const loginUser = data => {
         dispatch(login(response.data))
         localStorage.setItem('LoggedInUser', JSON.stringify(response.data))
         dispatch(stopLoaing())
-        console.log(response)
       })
       .catch(error => {
         dispatch(failed(error))
@@ -55,13 +54,8 @@ export const loginUser = data => {
 export const logOutUser = token => {
   return dispatch => {
     dispatch(loading())
-
     localStorage.removeItem('LoggedInUser')
-    axios.post(`https://kurdchain.000webhostapp.com/api/logout`, token, {
-      headers: {
-        'content-type': 'application/json',
-      },
-    })
+    axios.post(`https://kurdchain.dastey2.com/api/logout`, token)
     dispatch(logout())
     dispatch(stopLoaing())
   }
