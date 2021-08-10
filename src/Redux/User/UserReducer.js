@@ -6,12 +6,12 @@ const localStorageData = localData
   ? {
       isLoading: false,
       isAuthenticated: true,
+      errors: [],
       user: {
         data: localData.user,
         config: {
           headers: {
-            'content-type': 'application/json',
-            authorization: `bearer ${localData.access_token}`,
+            Authorization: `Bearer ${localData.access_token}`,
           },
         },
       },
@@ -19,6 +19,7 @@ const localStorageData = localData
   : {
       isLoading: false,
       isAuthenticated: false,
+      errors: [],
       user: {
         data: '',
 
@@ -35,6 +36,7 @@ const initialState = {
   isLoading: localStorageData.isLoading,
   isAuthenticated: localStorageData.isAuthenticated,
   user: localStorageData.user,
+  errors: localStorageData.errors,
 }
 
 const UserReducer = (state = initialState, action) => {
@@ -48,6 +50,7 @@ const UserReducer = (state = initialState, action) => {
       return {
         isAuthenticated: true,
         isLoading: false,
+        errors: [],
         user: {
           data: action.payload.user,
           config: {
@@ -79,8 +82,8 @@ const UserReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        isAuthenticated: false,
-        error: action.payload,
+
+        errors: action.payload,
       }
 
     default:

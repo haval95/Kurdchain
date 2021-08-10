@@ -29,12 +29,16 @@ import ChangePassword from './Containers/Modals/ChangePassword'
 import PaymentModal from './Containers/Modals/PaymentModal'
 import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { FetchLatestNews, FetchNews } from './Redux/News/NewsActions'
+
+import { useDispatch } from 'react-redux'
 
 function App() {
   const { t } = useTranslation()
+  const dispatch = useDispatch()
   const IsLoading = useSelector(state => state.loading)
-
-  console.log(IsLoading)
   const { i18n } = useTranslation()
 
   useEffect(() => {
@@ -43,6 +47,10 @@ function App() {
   const { pathname } = useLocation()
 
   useEffect(() => {
+    dispatch(FetchLatestNews())
+    dispatch(FetchNews())
+  }, [])
+  useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     return null
   }, [pathname])
@@ -50,6 +58,9 @@ function App() {
   return (
     <div className="">
       <Navbar />
+
+      <ToastContainer />
+
       <SweetAlert
         title=""
         show={IsLoading.isLoading}
@@ -57,7 +68,7 @@ function App() {
         closeOnClickOutside
         style={{ backgroundColor: 'transparent', borderRadius: '20px' }}
       >
-        <div className=" p-3 grid justify-center justify-items-center gap-2 text-center">
+        <div className=" p-3 grid justify-center justify-items-center gap-2 text-center z-55">
           <FontAwesomeIcon
             icon="spinner"
             className="text-Light mb-5"
@@ -77,13 +88,10 @@ function App() {
 
       <Switch>
         <Route exact path={ROUTES.HOME_ROUTE} component={Home} />
-
         <PrivateRoute path={ROUTES.PROFILE_ROUTE}>
           <Profile />
         </PrivateRoute>
-
         <Route path={ROUTES.ABOUT_ROUTE} component={About} />
-
         <Route path={ROUTES.CONTACT_ROUTE} component={Contact} />
         <Route path={ROUTES.NEWS_ROUTE} component={News} />
         <Route exact path={ROUTES.NEWS_DETAILS_ROUTE} component={NewsDetail} />
@@ -94,7 +102,6 @@ function App() {
         <Route path={ROUTES.CURRENCIES_ROUTE} component={Currencies} />
         <Route path={ROUTES.INVESTMENT_ROUTE} component={Investment} />
         <Route path={ROUTES.EXCHANGE_ROUTE} component={Exchange} />
-
         <Route component={NotFound} />
       </Switch>
 

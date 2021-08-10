@@ -21,7 +21,7 @@ export default function Navbar() {
   const [navCollapse, setnavCollapse] = useState(false)
   const { t } = useTranslation()
   const user = useSelector(state => state.user)
-  console.log(user.user.config)
+
   const handleLanguageChange = lang => {
     setLangDropDown(false)
     i18n.changeLanguage(lang)
@@ -32,7 +32,6 @@ export default function Navbar() {
 
   const signOut = () => {
     dispatch(logOutUser(user.user.config))
-
     setprofileDropDown(false)
 
     return <Redirect to="/" />

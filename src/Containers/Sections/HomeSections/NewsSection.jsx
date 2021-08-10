@@ -6,8 +6,12 @@ import Paragraph from '../../../Components/Paragraph'
 import ScrollAnimation from 'react-animate-on-scroll'
 import NavigationButton from '../../../Components/NavigationButton'
 import * as ROUTES from '../../../router'
+import { useSelector } from 'react-redux'
+import uuid from 'react-uuid'
+
 export default function NewSection() {
   const { t } = useTranslation()
+  const news = useSelector(state => state.news)
 
   return (
     <div className="grid ">
@@ -25,14 +29,23 @@ export default function NewSection() {
       </div>
 
       <div className="grid gap-10 justify-center grid-cols-1 sm:grid-cols-2  px-4  md:grid-cols-1 lg:grid-cols-2">
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
+        {news.latestNews &&
+          news.latestNews.map(EachNews => {
+            return (
+              <NewsCard
+                id={EachNews.id}
+                title={EachNews.title}
+                image={EachNews.image}
+                description={EachNews.description}
+                writer={EachNews.writer}
+                key={uuid()}
+              />
+            )
+          })}
       </div>
       <div className="grid justify-center mt-16">
         <NavigationButton
-          location={ROUTES.COURSES_ROUTE}
+          location={ROUTES.NEWS_ROUTE}
           text={t('seemore')}
           style="px-10 capitalize "
           animation="swing"

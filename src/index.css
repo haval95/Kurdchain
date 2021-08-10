@@ -52,17 +52,6 @@ img {
 .d-blcok {
   display: block !important;
 }
-.vp-center {
-  display: block !important;
-  display: block !important;
-  display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: start;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: start;
-}
 
 .underline-start.ltr::after {
   content: '';
@@ -98,6 +87,9 @@ img {
 .text-start {
   text-align: start !important;
 }
+.text-end-important {
+  text-align: end !important;
+}
 .text-start-important {
   text-align: start !important;
 }
@@ -132,7 +124,20 @@ img {
 .z-52 {
   z-index: 52;
 }
+.z-55 {
+  z-index: 55;
+}
 
+.line::before,
+.line::after {
+  display: inline-block;
+  content: '';
+  border-top: 1px solid rgb(150, 147, 147);
+  width: 20vw;
+  margin: 0 1rem;
+  text-align: center;
+  transform: translateY(-6px);
+}
 .h-100 {
   height: 100vh;
 }

@@ -14,34 +14,40 @@ export default function NewsCard({
   writer,
 }) {
   const { t } = useTranslation()
-
+  function createMarkup(data) {
+    return { __html: data }
+  }
   return (
-    <ScrollAnimation animateIn={'fadeIn'}>
-      <div className="max-w-xs hover:shadow-none transition-all ease-in-out duration-300 bg-Light rounded-xl shadow-md overflow-hidden md:max-w-2xl  border border-GrayBorder ">
+    <ScrollAnimation animateIn={'pulse'} initiallyVisible>
+      <div className="md:h-60 max-w-xs w-72 sm:w-auto  hover:shadow-none transition-all ease-in-out duration-300 bg-Light rounded-xl shadow-md overflow-hidden md:max-w-2xl  border border-GrayBorder ">
         <div className="md:flex ">
           <div className="md:flex-shrink-0">
             <img
-              className="h-full w-full  object-cover  md:w-60 lg:w-40 xl:w-60 "
-              src={`${image}`}
+              className="md:h-60 w-full  object-cover  md:w-60 lg:w-40 xl:w-60 h-48  border border-GrayBorder"
+              src={`https://kurdchain.dastey2.com/newsImage/${image}`}
               alt={`${title}`}
             />
           </div>
-          <div className="p-3 px-4 grid grid-rows-4 w-full">
-            <div className=" flex flex-row       justify-between  ">
-              <Title
-                text={title}
-                type="subTitle"
-                color="Secondary"
-                underline="nono"
-              />
-
-              <p className="text-Dark font-light">{created_at}</p>
+          <div className=" px-4 grid grid-rows-3 w-full ">
+            <div className="grid    grid-cols-3    turncate overflow-x-hidden items-center ">
+              <span className="col-span-2">
+                <Title
+                  text={title}
+                  style="turncate "
+                  type="subTitle"
+                  color="Secondary"
+                  underline="nono"
+                />
+              </span>
+              <p className="text-Dark font-light justify-self-center">
+                {created_at}
+              </p>
             </div>
 
-            <p className=" text-Dark row-span-2 overflow-y-hidden max-h-24 text-justify">
-              {description}
+            <p className=" text-Dark  overflow-y-hidden overflow-x-hidden max-h-20 text-justify py-1 ">
+              <span dangerouslySetInnerHTML={createMarkup(description)} />
             </p>
-            <div className="flex flex-row justify-between flex-wrap content-center">
+            <div className="flex flex-row justify-between flex-wrap content-center mb-4 ">
               <div className="font-light">{writer}</div>
               <div>
                 <NavigationButton

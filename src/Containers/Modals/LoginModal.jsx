@@ -7,13 +7,44 @@ import {
   OpenRegisterModal,
 } from '../../Redux/Modals/ModalActions'
 import LoginModalFunction from './ModalFunctions/LoginModalFunctions.js'
+import { useForm } from 'react-hook-form'
+import { useEffect } from 'react'
 
 export default function LoginModal() {
   const dispatch = useDispatch()
   const { t } = useTranslation()
-
   const state = useSelector(state => state.modals.loginModalState)
-  const { formState, handleChange, Login } = LoginModalFunction()
+  const errorMessages = useSelector(state => state.user.errors)
+  const { Login } = LoginModalFunction()
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    setError,
+    formState: { errors },
+  } = useForm()
+  useEffect(() => {
+    if (!state) {
+      setValue('phone_number', '')
+      setValue('password', '')
+    }
+  }, [state])
+
+  useEffect(() => {
+    errorMessages &&
+      errorMessages.map(() => {
+        setError('phone_number', {
+          type: 'manual',
+          message: t('phoneOrPwd'),
+        })
+        setError('password', {
+          type: 'manual',
+          message: t('phoneOrPwd'),
+        })
+      })
+  }, [errorMessages])
+
   return (
     <SweetAlert
       custom
@@ -24,25 +55,42 @@ export default function LoginModal() {
       onConfirm={() => dispatch(CloseLoginModal())}
       onCancel={() => dispatch(CloseLoginModal())}
       closeBtnStyle={{ padding: '10px' }}
+      closeOnClickOutside={false}
     >
-      <form className="  px-8 pt-6 pb-8 mb-4 bg-transparent" onSubmit={Login}>
+      <form
+        className="  px-8 pt-6 pb-8 mb-4 bg-transparent"
+        onSubmit={handleSubmit(Login)}
+      >
         <div className="mb-4">
           <label
             className="block text-Secondary text-sm font-bold text-start-important mb-2"
-            htmlFor="phone"
+            htmlFor="phone_number"
           >
             {t('phoneNumber')}
           </label>
 
           <input
-            className="shadow appearance-none  rounded w-full py-2 px-3 text-Secondary  bg-LightGray focus:outline-none focus:shadow-outline"
+            className={`${
+              errors.phone_number
+                ? 'border-Danger focus:border-Danger ring-Danger bg-Danger'
+                : 'border-Primary focus:border-PrimaryHover ring-Primary '
+            } shadow appearance-none  rounded w-full py-2 px-3 text-Secondary  bg-LightGray outline-none  focus:ring-1 border`}
             id="phone"
             name="phone_number"
             type="text"
-            value={formState.phone_number}
-            onChange={handleChange}
-            placeholder={t('07721234567')}
+            placeholder="07721234567"
+            {...register('phone_number', {
+              required: t('required'),
+              pattern: { value: /^[0-9]+$/i, message: t('wrongNumber') },
+              minLength: { value: 11, message: t('max11') },
+              maxLength: { value: 11, message: t('max11') },
+            })}
           />
+          {errors.phone_number && (
+            <div className="text-Danger pt-1 text-end-important">
+              {errors.phone_number.message}
+            </div>
+          )}
         </div>
         <div className="mb-6">
           <label
@@ -54,14 +102,25 @@ export default function LoginModal() {
 
           <div className="mb-6">
             <input
-              className="shadow appearance-none  rounded w-full py-2 px-3 text-Secondary mb-3 bg-LightGray  focus:outline-none focus:shadow-outline"
+              className={`${
+                errors.password
+                  ? 'border-Danger focus:border-Danger ring-Danger bg-Danger'
+                  : 'border-Primary focus:border-PrimaryHover ring-Primary '
+              } shadow appearance-none  rounded w-full py-2 px-3 text-Secondary  bg-LightGray outline-none  focus:ring-1 border`}
               id="password"
               name="password"
-              value={formState.password}
               type="password"
-              onChange={handleChange}
               placeholder="**********"
+              {...register('password', {
+                required: t('required'),
+                minLength: { value: 6, message: t('min6') },
+              })}
             />
+            {errors.password && (
+              <div className="text-Danger pt-1 text-end-important">
+                {errors.password.message}
+              </div>
+            )}
           </div>
         </div>
 
