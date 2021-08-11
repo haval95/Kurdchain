@@ -75,7 +75,7 @@ export default function News() {
               <div className="grid justify-center">
                 <Loader
                   type="ThreeDots"
-                  color="#60d394"
+                  color="#efefef"
                   height={100}
                   width={100}
                   timeout={3000} //3 secs

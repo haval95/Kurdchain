@@ -32,10 +32,7 @@ export const FetchPartners = () => {
     axios
       .get(`https://kurdchain.dastey2.com/api/view/partner`)
       .then(response => {
-        let data = {
-          ...response.data,
-        }
-        dispatch(FetchPartnersSeccess(data))
+        dispatch(FetchPartnersSeccess(response.data.partner))
       })
       .catch(error => {
         dispatch(FetchPartnersFailure(error))

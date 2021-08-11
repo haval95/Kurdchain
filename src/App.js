@@ -32,6 +32,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { FetchLatestNews, FetchNews } from './Redux/News/NewsActions'
+import { FetchPartners } from './Redux/Partners/PartnersActions'
 
 import { useDispatch } from 'react-redux'
 
@@ -49,6 +50,7 @@ function App() {
   useEffect(() => {
     dispatch(FetchLatestNews())
     dispatch(FetchNews())
+    dispatch(FetchPartners())
   }, [])
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })

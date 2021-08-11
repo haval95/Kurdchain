@@ -1,29 +1,29 @@
 import {
-  FETCH_PARTNERS_REQUEST,
-  FETCH_PARTNERS_SECCESS,
-  FETCH_PARTNERS_FAILURE,
+  FETCH_CURRENTNEWS_FAILURE,
+  FETCH_CURRENTNEWS_REQUEST,
+  FETCH_CURRENTNEWS_SECCESS,
 } from './ActionTypes'
 
 const initialState = {
   loading: false,
-  data: [],
-  errors: [],
+  currentNews: {},
+  errors: {},
 }
 
-const PartnersReducer = (state = initialState, action) => {
+const CurrentNewsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_PARTNERS_REQUEST:
+    case FETCH_CURRENTNEWS_REQUEST:
       return {
         ...state,
         loading: true,
       }
-    case FETCH_PARTNERS_SECCESS:
+    case FETCH_CURRENTNEWS_SECCESS:
       return {
         ...state,
         loading: false,
-        data: action.payload,
+        currentNews: action.payload,
       }
-    case FETCH_PARTNERS_FAILURE:
+    case FETCH_CURRENTNEWS_FAILURE:
       return {
         ...state,
         loading: false,
@@ -34,4 +34,4 @@ const PartnersReducer = (state = initialState, action) => {
   }
 }
 
-export default PartnersReducer
+export default CurrentNewsReducer

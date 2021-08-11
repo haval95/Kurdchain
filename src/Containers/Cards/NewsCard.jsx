@@ -4,7 +4,8 @@ import Title from '../../Components/Title'
 import NavigationButton from '../../Components/NavigationButton'
 import { useTranslation } from 'react-i18next'
 import ScrollAnimation from 'react-animate-on-scroll'
-
+import { NewsImage } from '../../Helper/Domain'
+import CreateMarkup from '../../Helper/CreateMarkup'
 export default function NewsCard({
   id,
   title,
@@ -14,9 +15,7 @@ export default function NewsCard({
   writer,
 }) {
   const { t } = useTranslation()
-  function createMarkup(data) {
-    return { __html: data }
-  }
+
   return (
     <ScrollAnimation animateIn={'pulse'} initiallyVisible>
       <div className="md:h-60 max-w-xs w-72 sm:w-auto  hover:shadow-none transition-all ease-in-out duration-300 bg-Light rounded-xl shadow-md overflow-hidden md:max-w-2xl  border border-GrayBorder ">
@@ -24,7 +23,7 @@ export default function NewsCard({
           <div className="md:flex-shrink-0">
             <img
               className="md:h-60 w-full  object-cover  md:w-60 lg:w-40 xl:w-60 h-48  border border-GrayBorder"
-              src={`https://kurdchain.dastey2.com/newsImage/${image}`}
+              src={NewsImage + image}
               alt={`${title}`}
             />
           </div>
@@ -45,7 +44,7 @@ export default function NewsCard({
             </div>
 
             <p className=" text-Dark  overflow-y-hidden overflow-x-hidden max-h-20 text-justify py-1 ">
-              <span dangerouslySetInnerHTML={createMarkup(description)} />
+              <span dangerouslySetInnerHTML={CreateMarkup(description)} />
             </p>
             <div className="flex flex-row justify-between flex-wrap content-center mb-4 ">
               <div className="font-light">{writer}</div>
