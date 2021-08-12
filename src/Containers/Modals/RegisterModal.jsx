@@ -14,7 +14,7 @@ export default function RegisterModal() {
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const state = useSelector(state => state.modals.registerModalState)
-  const errorMessages = useSelector(state => state.user.errors)
+  const errorMessages = useSelector(state => state.user.RegisterErrors)
 
   const {
     register,

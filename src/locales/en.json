@@ -11,6 +11,8 @@
   "confirmPwd": "Confirm Password",
   "oldPwd": "Old Password",
   "newPwd": "New Password",
+  "forgotPwd": "Forgot Password",
+  "forgotPwdMsg": "You can reset your password through your email.",
   "reset": "Reset Password",
   "change": "Change",
   "create": "Create Account",
@@ -94,6 +96,10 @@
   "agree": "I agree with the terms and conditions",
   "shareOn": "share on",
   "end": "End",
+
+  "sendEmail": "Sending Email",
+  "emailSentForgot": "Please, Check your email to reset your password.",
+
   "gold": [
     "Kurdchain’s profit share rate %30",
     "Investors’s profit share rate %70",

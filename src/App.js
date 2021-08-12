@@ -27,6 +27,7 @@ import RegisterModal from './Containers/Modals/RegisterModal'
 import ResetPassword from './Containers/Modals/ResetPassword'
 import ChangePassword from './Containers/Modals/ChangePassword'
 import PaymentModal from './Containers/Modals/PaymentModal'
+import ForgotPasswordModal from './Containers/Modals/ForgotPasswordModal'
 import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ToastContainer } from 'react-toastify'
@@ -91,6 +92,7 @@ function App() {
       <ResetPassword />
       <ChangePassword />
       <PaymentModal />
+      <ForgotPasswordModal />
 
       <Switch>
         <Route exact path={ROUTES.HOME_ROUTE} component={Home} />

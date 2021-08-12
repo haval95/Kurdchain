@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import {
   CloseLoginModal,
   OpenRegisterModal,
+  OpenForgotPasswordModal,
 } from '../../Redux/Modals/ModalActions'
 import LoginModalFunction from './ModalFunctions/LoginModalFunctions.js'
 import { useForm } from 'react-hook-form'
@@ -14,7 +15,7 @@ export default function LoginModal() {
   const dispatch = useDispatch()
   const { t } = useTranslation()
   const state = useSelector(state => state.modals.loginModalState)
-  const errorMessages = useSelector(state => state.user.errors)
+  const errorMessages = useSelector(state => state.user.loginErrors)
   const { Login } = LoginModalFunction()
 
   const {
@@ -44,6 +45,11 @@ export default function LoginModal() {
         })
       })
   }, [errorMessages])
+
+  const ForgotPwd = () => {
+    dispatch(CloseLoginModal())
+    dispatch(OpenForgotPasswordModal())
+  }
 
   return (
     <SweetAlert
@@ -125,7 +131,11 @@ export default function LoginModal() {
         </div>
 
         <div className="mb-6">
-          <button className="text-sm px-2 text-Secondary hover:underline transition-all ease-in-out duration-500">
+          <button
+            type="button"
+            className="text-sm px-2 text-Secondary hover:underline transition-all ease-in-out duration-500"
+            onClick={ForgotPwd}
+          >
             {t('forgot')}
           </button>
         </div>

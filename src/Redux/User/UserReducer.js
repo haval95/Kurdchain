@@ -1,4 +1,11 @@
-import { LOGIN, LOGOUT, REQUEST, REQEUST_FAILED } from './ActionTypes'
+import {
+  LOGIN,
+  LOGOUT,
+  REQUEST,
+  REQEUST_FAILED,
+  REQEUST_REGISTER_FAILED,
+  REQEUST_LOGIN_FAILED,
+} from './ActionTypes'
 
 const localData = JSON.parse(localStorage.getItem('LoggedInUser'))
 
@@ -7,6 +14,8 @@ const localStorageData = localData
       isLoading: false,
       isAuthenticated: true,
       errors: [],
+      loginErrors: [],
+      RegisterErrors: [],
       user: {
         data: localData.user,
         config: {
@@ -20,6 +29,8 @@ const localStorageData = localData
       isLoading: false,
       isAuthenticated: false,
       errors: [],
+      loginErrors: [],
+      RegisterErrors: [],
       user: {
         data: '',
 
@@ -84,6 +95,19 @@ const UserReducer = (state = initialState, action) => {
         isLoading: false,
 
         errors: action.payload,
+      }
+    case REQEUST_LOGIN_FAILED:
+      return {
+        ...state,
+        isLoading: false,
+
+        loginErrors: action.payload,
+      }
+    case REQEUST_REGISTER_FAILED:
+      return {
+        ...state,
+        isLoading: false,
+        RegisterErrors: action.payload,
       }
 
     default:

@@ -25,10 +25,20 @@ export const OpenResetPasswordModal = () => {
     type: MODAL_ACTIONS.OPEN_RESET_PASSWORD_MODAL,
   }
 }
+export const OpenForgotPasswordModal = () => {
+  return {
+    type: MODAL_ACTIONS.OPEN_FORGOT_PASSWORD_MODAL,
+  }
+}
+export const CloseForgotPasswordModal = () => {
+  return {
+    type: MODAL_ACTIONS.CLOSE_FORGOT_PASSWORD_MODAL,
+  }
+}
 
 export const CloseChangePasswordModal = () => {
   return {
-    type: MODAL_ACTIONS.CLOSE_CHANGE_PASSWORD_MODAL,
+    type: MODAL_ACTIONS.CLOSE_FORGOT_PASSWORD_MODAL,
   }
 }
 export const CloseLoginModal = () => {

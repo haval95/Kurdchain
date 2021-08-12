@@ -6,6 +6,7 @@ const initialState = {
   paymentModalState: false,
   registerModalState: false,
   resetPasswordModalState: false,
+  forgotPasswordModalState: false,
 }
 
 const ModalsReducer = (state = initialState, action) => {
@@ -59,6 +60,16 @@ const ModalsReducer = (state = initialState, action) => {
       return {
         ...state,
         resetPasswordModalState: false,
+      }
+    case MODAL_ACTIONS.OPEN_FORGOT_PASSWORD_MODAL:
+      return {
+        ...state,
+        forgotPasswordModalState: true,
+      }
+    case MODAL_ACTIONS.CLOSE_FORGOT_PASSWORD_MODAL:
+      return {
+        ...state,
+        forgotPasswordModalState: false,
       }
 
     default:

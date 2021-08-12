@@ -1,7 +1,18 @@
 import axios from 'axios'
 import { loading, stopLoaing } from '../Loading/LoadingAction'
-import { CloseRegisterModal, CloseLoginModal } from '../Modals/ModalActions'
-import { LOGIN, LOGOUT, REQUEST, REQEUST_FAILED } from './ActionTypes'
+import {
+  CloseRegisterModal,
+  CloseLoginModal,
+  CloseForgotPasswordModal,
+} from '../Modals/ModalActions'
+import {
+  LOGIN,
+  LOGOUT,
+  REQUEST,
+  REQEUST_FAILED,
+  REQEUST_LOGIN_FAILED,
+  REQEUST_REGISTER_FAILED,
+} from './ActionTypes'
 
 import i18n from 'i18next'
 import { toast } from 'react-toastify'
@@ -28,6 +39,19 @@ export const request = () => {
 export const failed = error => {
   return {
     type: REQEUST_FAILED,
+    payload: error,
+  }
+}
+
+export const failedLogin = error => {
+  return {
+    type: REQEUST_LOGIN_FAILED,
+    payload: error,
+  }
+}
+export const failedRegister = error => {
+  return {
+    type: REQEUST_REGISTER_FAILED,
     payload: error,
   }
 }
@@ -157,6 +181,53 @@ export const logOutUser = token => {
         toast.error(i18n.t('logoutFailed'), {
           position: ' top-center',
           autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      })
+  }
+}
+export const ForgotPassword = email => {
+  return dispatch => {
+    toast(i18n.t('sendEmail'), {
+      position: 'top-center',
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    })
+    dispatch(loading())
+    dispatch(CloseForgotPasswordModal())
+
+    axios
+      .post(`https://kurdchain.dastey2.com/api/forgetpassword`, email, {
+        headers: {
+          'content-type': 'application/json',
+        },
+      })
+      .then(() => {
+        dispatch(stopLoaing())
+        toast.success(i18n.t('emailSentForgot'), {
+          position: 'top-center',
+          autoClose: false,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      })
+      .catch(error => {
+        dispatch(failed(error))
+        dispatch(stopLoaing())
+        toast.error(i18n.t('try'), {
+          position: 'top-center',
+          autoClose: 4000,
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
