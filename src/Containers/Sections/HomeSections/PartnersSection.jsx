@@ -10,7 +10,7 @@ import { partnerImage } from '../../../Helper/Domain'
 export default function PartnersSection() {
   const { t } = useTranslation()
   const partners = useSelector(state => state.partners)
-  console.log(partners)
+
   return (
     <div className="grid">
       <div className="justify-self-center mb-10 text-center grid gap-4">

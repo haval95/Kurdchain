@@ -6,9 +6,11 @@ import Title from '../Components/Title'
 import img from '../Assets/Images/newsbg.png'
 import { useTranslation } from 'react-i18next'
 import Button from '../Components/Button'
-
+import { useSelector } from 'react-redux'
 export default function Exchange() {
   const { t } = useTranslation()
+  const state = useSelector(state => state.exchange)
+
   return (
     <>
       <ImageJumbotron title={t('navbar.exchange')} detail={''} image={img} />
@@ -29,7 +31,17 @@ export default function Exchange() {
               color="Secondary"
             />
             <p className="px-4"> {t('todayPrice')}</p>
-            <p className="px-4"> 100 USDT = $ 98 = 144,000 IQD</p>
+            <p className="px-4">
+              20 USDT = ${' '}
+              {state.data && state.data.buy_dollar
+                ? ' ' + state.data.buy_dollar
+                : ' '}{' '}
+              =
+              {state.data && state.data.buy_iqd
+                ? ' ' + state.data.buy_iqd
+                : ' '}
+              IQD
+            </p>
             <div className="m-4">
               <Button text={t('makeDeal')} style="mt-4 " color="Secondary" />
             </div>
@@ -44,7 +56,17 @@ export default function Exchange() {
               color="Secondary"
             />
             <p className="px-4"> {t('todayPrice')}</p>
-            <p className="px-4"> 100 USDT = $ 98 = 144,000 IQD</p>
+            <p className="px-4 block  ">
+              100 USDT = $
+              {state.data && state.data.sell_dollar
+                ? ' ' + state.data.sell_dollar
+                : ' '}
+              =
+              {state.data && state.data.sell_iqd
+                ? ' ' + state.data.sell_iqd
+                : ' '}
+              IQD
+            </p>
             <div className="m-4">
               <Button text={t('makeDeal')} style="mt-4 " color="Secondary" />
             </div>
