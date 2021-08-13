@@ -38,7 +38,7 @@ export const CloseForgotPasswordModal = () => {
 
 export const CloseChangePasswordModal = () => {
   return {
-    type: MODAL_ACTIONS.CLOSE_FORGOT_PASSWORD_MODAL,
+    type: MODAL_ACTIONS.CLOSE_CHANGE_PASSWORD_MODAL,
   }
 }
 export const CloseLoginModal = () => {

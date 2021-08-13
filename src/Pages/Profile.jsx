@@ -1,5 +1,5 @@
 import React from 'react'
-//import { useSelector, useDispatch } from 'react-redux'
+//import { useSelector } from 'react-redux'
 import uuid from 'react-uuid'
 import { useTranslation } from 'react-i18next'
 
@@ -10,7 +10,7 @@ import logo from '../Assets/Images/logo.svg'
 //import { FetchProducts } from '../../redux'
 export default function Profile() {
   const { t } = useTranslation()
-  // const user = useSelector(state => state.authentication)
+  //const user = useSelector(state => state.user)
   // const products = useSelector(state => state.products)
   // const dispatch = useDispatch()
 

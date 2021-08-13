@@ -1,11 +1,10 @@
 import React from 'react'
-//import { useTranslation } from 'react-i18next'
+
 import logo from '../../../Assets/Images/logo.svg'
-
+import { useSelector } from 'react-redux'
 export default function TopProfile() {
-  // const user = useSelector(state => state.authentication)
+  const user = useSelector(state => state.user)
 
-  // const { t } = useTranslation()
   return (
     <div className="  bg-profile  justify-items-stretch  h-72   grid  ">
       <div className="bg-SecondaryOpacity pt-10 h-72 grid  text-center items-center">
@@ -18,10 +17,10 @@ export default function TopProfile() {
         </div>
 
         <div className="bg-Light capitalize font-bold text-xl w-full max-w-xs justify-self-center rounded-xl my-1">
-          Name
+          {user.user.data.username ? user.user.data.username : null}
         </div>
         <div className="bg-Light capitalize font-bold text-xl w-full max-w-xs justify-self-center rounded-xl mb-2">
-          564564687
+          {user.user.data.phone_number ? user.user.data.phone_number : null}
         </div>
       </div>
     </div>

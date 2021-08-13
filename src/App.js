@@ -66,7 +66,7 @@ function App() {
     <div className="">
       <Navbar />
 
-      <ToastContainer />
+      <ToastContainer rtl={i18n.dir() === 'rtl'} />
 
       <SweetAlert
         title=""

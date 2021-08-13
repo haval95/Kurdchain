@@ -4,6 +4,7 @@ import {
   CloseRegisterModal,
   CloseLoginModal,
   CloseForgotPasswordModal,
+  CloseChangePasswordModal,
 } from '../Modals/ModalActions'
 import {
   LOGIN,
@@ -12,6 +13,7 @@ import {
   REQEUST_FAILED,
   REQEUST_LOGIN_FAILED,
   REQEUST_REGISTER_FAILED,
+  REQEUST_CHANGE_PASSWORD_FAILED,
 } from './ActionTypes'
 
 import i18n from 'i18next'
@@ -55,6 +57,12 @@ export const failedRegister = error => {
     payload: error,
   }
 }
+export const faildChangePwd = error => {
+  return {
+    type: REQEUST_CHANGE_PASSWORD_FAILED,
+    payload: error,
+  }
+}
 
 export const loginUser = data => {
   return dispatch => {
@@ -89,10 +97,65 @@ export const loginUser = data => {
 
         ErrorMessages.push({
           type: 'both',
-          message: 'Phone number or password are incorrect',
+          message: i18n.t('phoneOrPwd'),
         })
 
-        dispatch(failed(ErrorMessages))
+        dispatch(failedLogin(ErrorMessages))
+      })
+  }
+}
+export const changePassword = (data, token) => {
+  return dispatch => {
+    dispatch(request())
+
+    toast(i18n.t('checking'), {
+      position: 'top-center',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    })
+    dispatch(loading())
+
+    axios
+      .post(`https://kurdchain.dastey2.com/api/change/password`, data, token)
+      .then(() => {
+        dispatch(CloseChangePasswordModal())
+        dispatch(stopLoaing())
+
+        toast(i18n.t('changePwdSuccess'), {
+          position: 'top-center',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      })
+      .catch(errors => {
+        dispatch(stopLoaing())
+        toast.error(i18n.t('try'), {
+          position: 'top-center',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+        let ErrorMessages = []
+
+        dispatch(stopLoaing())
+        if (errors.response.data.message == 'old password is incorrect') {
+          ErrorMessages.push({
+            type: 'old_password',
+            message: i18n.t('oldPwdWrong'),
+          })
+        }
+        dispatch(faildChangePwd(ErrorMessages))
       })
   }
 }
@@ -140,17 +203,17 @@ export const registerUser = data => {
           if (errors.email)
             ErrorMessages.push({
               type: 'email',
-              message: 'Email is already taken',
+              message: i18n.t('emailTaken'),
             })
 
           if (errors.phone_number)
             ErrorMessages.push({
               type: 'phone_number',
-              message: 'Phone number is already taken',
+              message: i18n.t('phoneNumberTaken'),
             })
         }
 
-        dispatch(failed(ErrorMessages))
+        dispatch(failedRegister(ErrorMessages))
       })
   }
 }

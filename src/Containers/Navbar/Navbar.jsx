@@ -22,6 +22,7 @@ export default function Navbar() {
   const { t } = useTranslation()
   const user = useSelector(state => state.user)
 
+  console.log()
   const handleLanguageChange = lang => {
     setLangDropDown(false)
     i18n.changeLanguage(lang)
@@ -266,7 +267,7 @@ export default function Navbar() {
                     to={ROUTES.PROFILE_ROUTE}
                     className="m-auto text-center block focus:outline-none px-4 py-2 text-sm text-gray-700 hover:bg-Primary hover:text-Light w-full "
                   >
-                    Profle
+                    {user.user.data ? user.user.data.username : null}
                   </Link>
                   <button
                     type="button"

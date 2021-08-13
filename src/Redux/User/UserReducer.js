@@ -5,6 +5,7 @@ import {
   REQEUST_FAILED,
   REQEUST_REGISTER_FAILED,
   REQEUST_LOGIN_FAILED,
+  REQEUST_CHANGE_PASSWORD_FAILED,
 } from './ActionTypes'
 
 const localData = JSON.parse(localStorage.getItem('LoggedInUser'))
@@ -16,6 +17,7 @@ const localStorageData = localData
       errors: [],
       loginErrors: [],
       RegisterErrors: [],
+      ChangePasswordError: [],
       user: {
         data: localData.user,
         config: {
@@ -31,6 +33,7 @@ const localStorageData = localData
       errors: [],
       loginErrors: [],
       RegisterErrors: [],
+      ChangePasswordError: [],
       user: {
         data: '',
 
@@ -48,6 +51,9 @@ const initialState = {
   isAuthenticated: localStorageData.isAuthenticated,
   user: localStorageData.user,
   errors: localStorageData.errors,
+  loginErrors: [],
+  RegisterErrors: [],
+  ChangePasswordError: [],
 }
 
 const UserReducer = (state = initialState, action) => {
@@ -59,6 +65,7 @@ const UserReducer = (state = initialState, action) => {
       }
     case LOGIN:
       return {
+        ...state,
         isAuthenticated: true,
         isLoading: false,
         errors: [],
@@ -108,6 +115,12 @@ const UserReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         RegisterErrors: action.payload,
+      }
+    case REQEUST_CHANGE_PASSWORD_FAILED:
+      return {
+        ...state,
+        isLoading: false,
+        ChangePasswordError: action.payload,
       }
 
     default:

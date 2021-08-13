@@ -118,7 +118,7 @@ export default function Currencies() {
           />
         </div>
 
-        <div className=" px-7 mb-10 grid grid-cols-1 md:grid-cols-2   justify-center  gap-10">
+        <div className=" px-7 mb-10 grid grid-cols-1 md:grid-cols-2   justify-center  gap-10 ltr">
           {generateCards()}
         </div>
       </div>

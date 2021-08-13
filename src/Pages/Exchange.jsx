@@ -43,7 +43,11 @@ export default function Exchange() {
               IQD
             </p>
             <div className="m-4">
-              <Button text={t('makeDeal')} style="mt-4 " color="Secondary" />
+              <Button
+                text={t('makeDeal')}
+                style="mt-4 px-3"
+                color="Secondary"
+              />
             </div>
           </div>
 
@@ -68,7 +72,11 @@ export default function Exchange() {
               IQD
             </p>
             <div className="m-4">
-              <Button text={t('makeDeal')} style="mt-4 " color="Secondary" />
+              <Button
+                text={t('makeDeal')}
+                style="mt-4 px-3"
+                color="Secondary"
+              />
             </div>
           </div>
         </div>
