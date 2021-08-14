@@ -10,7 +10,7 @@ export default function Button({
 }) {
   return (
     <button
-      className={`bg-${color} ${font} hover:bg-${color}Hover text-${textcolor} ${style} w-full py-1 uppercase shadow-lg hover:shadow-none  rounded-md transition duration-500 ease-in-out`}
+      className={`bg-${color} ${font} hover:bg-${color}Hover text-${textcolor} ${style} w-full py-1 uppercase shadow-md hover:shadow-none  rounded-md transition duration-500 ease-in-out`}
       onClick={clickAction}
     >
       {text}

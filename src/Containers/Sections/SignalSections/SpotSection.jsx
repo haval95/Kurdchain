@@ -30,9 +30,21 @@ export default function SpotSection() {
               return (
                 <SiganlCard
                   key={uuid()}
-                  name={eachSignal.title}
+                  name={
+                    t('currentLanguage') == 'kurdish'
+                      ? eachSignal.title_he
+                      : t('currentLanguage') == 'arabic'
+                      ? eachSignal.title_ar
+                      : eachSignal.title_en
+                  }
                   image={signalImage + eachSignal.image}
-                  description={eachSignal.description}
+                  description={
+                    t('currentLanguage') == 'kurdish'
+                      ? eachSignal.description_he
+                      : t('currentLanguage') == 'arabic'
+                      ? eachSignal.description_ar
+                      : eachSignal.description_en
+                  }
                 />
               )
             })
