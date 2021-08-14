@@ -27,7 +27,7 @@ export default function CourseCard({
         <img
           src={image}
           alt="item card"
-          className="rounded-t-3xl border-none  object-cover  h-44 w-full"
+          className="rounded-t-3xl border-none  object-cover  h-40 w-full"
         />
       </div>
 
@@ -50,15 +50,15 @@ export default function CourseCard({
         />
 
         <div className=" text-Secondary grid grid-flow-col  items-center p-1 justify-start gap-3">
-          <FontAwesomeIcon icon="clock" className="text-sm" />
-          <Paragraph text={time + duration} style=" inline " />
+          <FontAwesomeIcon icon="clock" className="text-sm text-Primary" />
+          <Paragraph text={time + duration} style=" inline" />
         </div>
 
         <div className="text-xs    absolute inset-x-0 bottom-0  w-full ">
           <NavigationButton
             location={`/course/${id}`}
             text={t('detail')}
-            style="w-full mt-2 rounded-b-xl rounded-t-none py-2  "
+            style="w-full mt-2 rounded-b-xl rounded-t-none py-2 uppercase "
             colors="bg-Primary text-Light hover:bg-PrimaryHover   "
           />
         </div>

@@ -52,7 +52,7 @@ export default function Contact() {
       <ImageJumbotron title={t('navbar.contact')} detail="" image={img} />
       <div className="bg-Light grid  md:px-16 lg:px-24 py-16">
         <div className="  mb-10 px-8 text-start grid gap-6">
-          <div className="grid grid-cols-1 md:grid-cols-5 text-justify gap-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-5  gap-8 ">
             <div className="flex flex-col space-y-8 col-span-2 text-start">
               <Title
                 text={t('footer.getInTouch')}
@@ -60,6 +60,7 @@ export default function Contact() {
                 style="text-start mb-6"
                 animation="bounceIn"
               />
+
               <div className=" text-start-importan font-medium   pb-1 flex items-center  ">
                 <FontAwesomeIcon
                   size="2x"
@@ -141,7 +142,7 @@ export default function Contact() {
                   <Title
                     text={t('talk')}
                     underline="center"
-                    style="text-start mb-4"
+                    style="text-center"
                     animation="bounceIn"
                     type="subTitle"
                   />
@@ -177,10 +178,7 @@ export default function Contact() {
                     ></input>
 
                     <div className="mb-5">
-                      <label
-                        htmlFor={t('name')}
-                        className="text-sm text-gray-600 dark:text-gray-400"
-                      >
+                      <label htmlFor={t('name')} className="text-sm ">
                         {t('name')}
                       </label>
                       <input

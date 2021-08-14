@@ -1,7 +1,7 @@
 import './App.css'
 import './fontawsome'
 import { useEffect } from 'react'
-import { Switch, Route, useLocation } from 'react-router-dom'
+import { Switch, Route, useLocation, useHistory } from 'react-router-dom'
 import * as ROUTES from './router'
 import Home from './Pages/Home'
 import About from './Pages/About'
@@ -36,7 +36,7 @@ import { FetchLatestNews, FetchNews } from './Redux/News/NewsActions'
 import { FetchPartners } from './Redux/Partners/PartnersActions'
 import { FetchSignals } from './Redux/Signals/SignalsActions'
 import { FetchEchange } from './Redux/Exchange/ExchangeActions'
-
+import { LanguageChanged } from './Redux'
 import { useDispatch } from 'react-redux'
 
 function App() {
@@ -47,16 +47,23 @@ function App() {
 
   useEffect(() => {
     document.dir = i18n.dir()
+    dispatch(LanguageChanged())
   }, [i18n, i18n.language])
   const { pathname } = useLocation()
+  const history = useHistory()
 
   useEffect(() => {
-    dispatch(FetchLatestNews())
-    dispatch(FetchNews())
     dispatch(FetchPartners())
     dispatch(FetchSignals())
     dispatch(FetchEchange())
   }, [])
+  useEffect(() => {
+    if (pathname.includes('newsDetail')) {
+      history.push('/news')
+    }
+    dispatch(FetchLatestNews(t('currentLanguage')))
+    dispatch(FetchNews(1, t('currentLanguage')))
+  }, [t('currentLanguage')])
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     return null

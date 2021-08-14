@@ -5,9 +5,12 @@ import NavigationButton from '../../../Components/NavigationButton'
 import Button from '../../../Components/Button'
 import Title from '../../../Components/Title'
 import * as ROUTES from '../../../router'
+import { useDispatch } from 'react-redux'
 import ScrollAnimation from 'react-animate-on-scroll'
+import { OpenLoginModal } from '../../../Redux/Modals/ModalActions'
 
 export default function Header() {
+  const dispatch = useDispatch()
   const { t } = useTranslation()
 
   return (
@@ -31,7 +34,7 @@ export default function Header() {
             <div className="col-span-2 justify-self-center sm:justify-self-stretch sm:col-span-1 md:col-span-2 lg:col-span-1 ">
               <ScrollAnimation animateIn="fadeIn">
                 <Button
-                  clickAction
+                  clickAction={() => dispatch(OpenLoginModal())}
                   style="rounded-xl md:px-6   px-3 sm:px-0  "
                   text={t('getStarted')}
                   font="text-md sm:text-sm md:text-xl"

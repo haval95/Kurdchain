@@ -12,10 +12,13 @@ import { useDispatch } from 'react-redux'
 import { FetchNews } from '../Redux/News/NewsActions'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import ContentLoader from 'react-content-loader'
+
 export default function News() {
   const { t } = useTranslation()
+
   const data = useSelector(state => state.news)
   const dispatch = useDispatch()
+
   return (
     <>
       <ImageJumbotron
@@ -68,7 +71,9 @@ export default function News() {
         )}
         <InfiniteScroll
           dataLength={data.news.length}
-          next={() => dispatch(FetchNews(Number(data.current) + 1))}
+          next={() =>
+            dispatch(FetchNews(Number(data.current) + 1, t('currentLanguage')))
+          }
           hasMore={data.current ? data.current != data.last : true}
           loader={
             data.news.length ? (

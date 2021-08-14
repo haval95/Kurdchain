@@ -8,13 +8,16 @@ import ar from './locales/ar.json'
 const resources = {
   en: {
     translation: en,
+    language_name: 'english',
   },
 
   he: {
     translation: he,
+    language_name: 'kurdish',
   },
   ar: {
     translation: ar,
+    language_name: 'arabic',
   },
 }
 

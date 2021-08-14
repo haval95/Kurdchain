@@ -32,10 +32,10 @@ export default function NewsCard({
               <span className="col-span-2">
                 <Title
                   text={title}
-                  style="turncate "
+                  style="turncate"
                   type="subTitle"
                   color="Secondary"
-                  underline="nono"
+                  underline="none"
                 />
               </span>
               <p className="text-Dark font-light justify-self-center">

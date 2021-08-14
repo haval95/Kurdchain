@@ -37,7 +37,7 @@ export default function NewsDetail() {
   const news = {
     shareUrl: window.location.href,
   }
-  console.log(news.shareUrl)
+
   useEffect(() => {
     dispatch(FetchCurrentNews(id))
   }, [])

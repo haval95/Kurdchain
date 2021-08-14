@@ -5,6 +5,7 @@ import {
   FETCH_LATESTNEWS_FAILURE,
   FETCH_LATESTNEWS_REQUEST,
   FETCH_LATESTNEWS_SECCESS,
+  LANGUAGE_CHANGED,
 } from './ActionTypes'
 
 const initialState = {
@@ -56,6 +57,16 @@ const NewsReducer = (state = initialState, action) => {
         ...state,
         latestNewsLoading: false,
         latestNewsError: action.payload,
+      }
+    case LANGUAGE_CHANGED:
+      return {
+        ...state,
+        latestNews: [],
+        news: [],
+        last: null,
+        current: null,
+        latestNewsLoading: true,
+        loading: true,
       }
     default:
       return state

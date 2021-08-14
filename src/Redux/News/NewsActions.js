@@ -8,6 +8,7 @@ import {
   FETCH_CURRENTNEWS_FAILURE,
   FETCH_CURRENTNEWS_REQUEST,
   FETCH_CURRENTNEWS_SECCESS,
+  LANGUAGE_CHANGED,
 } from './ActionTypes'
 import axios from 'axios'
 
@@ -69,13 +70,18 @@ export const FetchNewsFailure = error => {
     payload: error,
   }
 }
+export const LanguageChanged = () => {
+  return {
+    type: LANGUAGE_CHANGED,
+  }
+}
 
-export const FetchNews = (page = 1) => {
+export const FetchNews = (page = 1, language = 'english') => {
   return dispatch => {
     dispatch(FetchNewsRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/news/english?page=${page}`)
+      .get(`https://kurdchain.dastey2.com/api/news/${language}?page=${page}`)
       .then(response => {
         let data = {
           news: response.data.news.data,
@@ -91,12 +97,12 @@ export const FetchNews = (page = 1) => {
   }
 }
 
-export const FetchLatestNews = () => {
+export const FetchLatestNews = (language = 'english') => {
   return dispatch => {
     dispatch(FetchLatesetNewsRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/news/latest/english`)
+      .get(`https://kurdchain.dastey2.com/api/news/latest/${language}`)
       .then(response => {
         let data = response.data.news
         dispatch(FetchLatesetNewsSeccess(data))
