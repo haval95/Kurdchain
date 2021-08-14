@@ -5,12 +5,15 @@ import { PropTypes } from 'prop-types'
 import Paragraph from '../../Components/Paragraph'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useTranslation } from 'react-i18next'
+import { courseImage } from '../../Helper/Domain'
+
 export default function CourseCard({
   id,
   name,
   image,
   price,
   date,
+  language,
   description,
   instructor,
   duration,
@@ -19,13 +22,13 @@ export default function CourseCard({
   const { t } = useTranslation()
 
   return (
-    <div className="w-72 h-96   cursor-pointer   rounded-3xl hover:-translate-y-2 focus:outline-none relative bg-Light shadow-xl hover:shadow-none hover:bg-light transform  transition duration-500 ease-in-out">
+    <div className="w-72 h-96 border-r border-l border-GrayBorder  cursor-pointer   rounded-3xl hover:-translate-y-2 focus:outline-none relative bg-Light shadow-xl hover:shadow-none hover:bg-light transform  transition duration-500 ease-in-out">
       <div className="relative">
         <div className="bg-PrimaryHover text-Light px-5 py-1 text-right absolute bottom-3 rounded-l-xl  right-0">
-          {`$${new Intl.NumberFormat().format(price)}`}
+          {`IQD ${new Intl.NumberFormat().format(price)}`}
         </div>
         <img
-          src={image}
+          src={courseImage + image}
           alt="item card"
           className="rounded-t-3xl border-none  object-cover  h-40 w-full"
         />
@@ -49,9 +52,15 @@ export default function CourseCard({
           colors="text-Gray"
         />
 
-        <div className=" text-Secondary grid grid-flow-col  items-center p-1 justify-start gap-3">
-          <FontAwesomeIcon icon="clock" className="text-sm text-Primary" />
-          <Paragraph text={time + duration} style=" inline" />
+        <div className=" text-Secondary grid grid-flow-col  items-center p-1 justify-between gap-3">
+          <span className="items-center grid grid-flow-col gap-1">
+            <FontAwesomeIcon icon="clock" className="text-sm text-Primary" />
+
+            <Paragraph text={time} style=" inline" />
+
+            <Paragraph text={duration} style=" inline" />
+          </span>
+          <Paragraph text={language} style=" inline" />
         </div>
 
         <div className="text-xs    absolute inset-x-0 bottom-0  w-full ">
@@ -77,6 +86,7 @@ CourseCard.propTypes = {
   instructor: PropTypes.string,
   duration: PropTypes.string,
   time: PropTypes.string,
+  language: PropTypes.string,
 }
 
 CourseCard.defaultProps = {
@@ -85,6 +95,7 @@ CourseCard.defaultProps = {
   image:
     'https://analyticsinsight.b-cdn.net/wp-content/uploads/2020/01/online-course-main-800x549.png',
   price: 0,
+  language: 'language',
   date: '14/1/2021',
   description:
     'Enim voluptate nulla minim id nostrud non mollit incididunt et proident quis. Do consectetur culpa excepteur commodo laboris voluptate laborum fugiat Lorem aliquip veniam consectetur. Aute sunt voluptate ea quis aliquip nisi sint veniam dolore ullamco qui qui eu quis. Lorem sint cupidatat veniam do in. Mollit excepteur ipsum eu minim consectetur officia aliquip do consequat Lorem Lorem ea irure voluptate. Enim deserunt ullamco minim cupidatat incididunt occaecat qui excepteur ullamco officia.',

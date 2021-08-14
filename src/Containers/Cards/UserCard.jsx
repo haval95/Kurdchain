@@ -8,7 +8,7 @@ import ScrollAnimation from 'react-animate-on-scroll'
 export default function UserCard({ name, position, linkedin, image }) {
   return (
     <ScrollAnimation animateIn={'fadeIn'}>
-      <div className="bg-white px-6 py-8 rounded-lg shadow-lg text-center">
+      <div className="bg-white px-6 py-8 rounded-lg shadow-lg text-center border border-GrayBorder">
         <div className="mb-3">
           <img
             className=" mx-auto rounded-full border border-Primary w-52 h-52 object-cover"

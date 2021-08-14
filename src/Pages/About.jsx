@@ -22,7 +22,7 @@ export default function About() {
             <p> {t('aboutSlogan')}</p>
             <img
               src={logo}
-              className="w-2/4 justify-center justify-self-center "
+              className="w-2/4 justify-center justify-self-center pt-4 shadow-inner mt-5 sm:mt-0  sm p-4"
             />
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function About() {
             animation="bounceIn"
           />
           <div>
-            <div className="grid justify-center sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid justify-center sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-5">
               <UserCard
                 name="Ranj Abdulrahman"
                 position="Chief Executive Officer (CEO)"

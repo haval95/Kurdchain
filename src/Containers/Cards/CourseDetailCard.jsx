@@ -21,7 +21,7 @@ export default function CourseDetailCard({
   return (
     <div className="bg-LightGray shadow p-5 rounded-xl    ">
       <Title
-        text="Specifications"
+        text={t('specification')}
         type="subTitle"
         underline="none"
         style="text-center"
@@ -54,7 +54,7 @@ export default function CourseDetailCard({
         <div className="w-28 justify-self-center  items-center">
           <Button
             clickAction={() => dispatch(OpenPaymentModal(id))}
-            text="button"
+            text={t('buy')}
             style="my-4 "
           />
         </div>

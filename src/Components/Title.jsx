@@ -15,7 +15,7 @@ export default function Title({
   return (
     <ScrollAnimation animateIn={animation} initiallyVisible>
       <h1
-        className={`text-${color} ${type} uppercase truncate ${
+        className={`text-${color} ${type} uppercase  ${
           underline !== 'none' ? 'underline-center relative inline-block' : ''
         }   ${i18n.dir()} py-1  font-semibold ${style}`}
       >

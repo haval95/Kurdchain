@@ -39,7 +39,10 @@ export default function ApiSection() {
             style="text-lg  "
             textalign="text-justify"
           />
-          <a href="#" className=" text-xl  text-Secondary underline">
+          <a
+            href="#"
+            className=" text-xl text-start block text-Secondary underline"
+          >
             read more
           </a>
         </div>

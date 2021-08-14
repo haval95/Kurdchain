@@ -81,12 +81,17 @@
   "filterBy": "Filter",
   "type": "Type",
   "instructor": "instructor",
+  "duration": "duration",
+  "level": "level",
   "price": "price",
   "over": "over",
   "all": "all",
   "apply": "apply filter",
   "exchangeMoney": "Exchange Money",
   "buyUSDT": "buy USDT",
+  "buy": "buy",
+  "decription": "description",
+  "specification": "description",
   "sellUSDT": "Sell USDT",
   "todayPrice": "Price of Today",
   "makeDeal": "Make the Deal",
@@ -179,11 +184,6 @@
     "exchange": "Exchange",
     "currencies": "Currencies",
     "copy": " © Copyright - All Rights Reserved"
-  },
-  "proudctDetail": {
-    "price": "Price",
-    "description": "Description",
-    "callTheOwner": "Call The Owner"
   },
 
   "additem": {

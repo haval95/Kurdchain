@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux'
 import { FetchNews } from '../Redux/News/NewsActions'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import ContentLoader from 'react-content-loader'
+import PortraitLoader from '../Components/Loaders/PortraitLoader'
 
 export default function News() {
   const { t } = useTranslation()
@@ -34,8 +35,15 @@ export default function News() {
           animation="bounceIn"
         />
         {data.news.length ? null : (
-          <div className="grid -mt-20 gap-10 items-end grid-cols-1 sm:grid-cols-2  px-4  md:grid-cols-1 lg:grid-cols-2  ">
+          <div className="grid lg:-mt-20 gap-10 items-end grid-cols-1 sm:grid-cols-2  px-4  md:grid-cols-1 lg:grid-cols-2  ">
+            <div className="-ml-6 md:hidden ">
+              <PortraitLoader />
+            </div>
+            <div className="-ml-6 hidden sm:block md:hidden ">
+              <PortraitLoader />
+            </div>
             <ContentLoader
+              className="hidden md:block"
               speed={2}
               width={600}
               height={400}

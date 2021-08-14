@@ -7,6 +7,8 @@ export default function ImageJumbotron({ image, title, detail }) {
     <div
       style={{
         backgroundImage: `url(${image})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: ' cover',
       }}
     >
       <div className="bg-SecondaryOpacity py-9  grid justify-center items-center h-full   content-center text-center">

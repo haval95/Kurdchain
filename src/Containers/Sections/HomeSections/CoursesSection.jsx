@@ -5,9 +5,15 @@ import { useTranslation } from 'react-i18next'
 import Paragraph from '../../../Components/Paragraph'
 import ScrollAnimation from 'react-animate-on-scroll'
 import NavigationButton from '../../../Components/NavigationButton'
+import { useSelector } from 'react-redux'
 import * as ROUTES from '../../../router'
+import uuid from 'react-uuid'
+import PortraitLoader from '../../../Components/Loaders/PortraitLoader'
+
 export default function CoursesSection() {
   const { t } = useTranslation()
+  const coursesData = useSelector(state => state.courses)
+  console.log(coursesData)
 
   return (
     <div className="grid ">
@@ -25,10 +31,50 @@ export default function CoursesSection() {
       </div>
 
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-center mb-16">
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
+        {coursesData.latestCourses.length ? (
+          coursesData.latestCourses.map(course => {
+            return (
+              <CourseCard
+                key={uuid()}
+                id={course.id}
+                name={
+                  t('currentLanguage') == 'kurdish'
+                    ? course.name_he
+                    : t('currentLanguage') == 'arabic'
+                    ? course.name_ar
+                    : course.name_en
+                }
+                image={course.image}
+                price={course.price}
+                date={course.created_at}
+                description={
+                  t('currentLanguage') == 'kurdish'
+                    ? course.description_he
+                    : t('currentLanguage') == 'arabic'
+                    ? course.description_ar
+                    : course.description_en
+                }
+                instructor={course.instructor.name}
+                duration={
+                  t('currentLanguage') == 'kurdish'
+                    ? course.duration.name_he
+                    : t('currentLanguage') == 'arabic'
+                    ? course.duration.name_ar
+                    : course.duration.name_en
+                }
+                time={course.time}
+                language={course.language.name}
+              />
+            )
+          })
+        ) : (
+          <>
+            <PortraitLoader />
+            <PortraitLoader />
+            <PortraitLoader />
+            <PortraitLoader />
+          </>
+        )}
       </div>
       <div className="grid justify-center">
         <NavigationButton

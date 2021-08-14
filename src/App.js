@@ -36,6 +36,11 @@ import { FetchLatestNews, FetchNews } from './Redux/News/NewsActions'
 import { FetchPartners } from './Redux/Partners/PartnersActions'
 import { FetchSignals } from './Redux/Signals/SignalsActions'
 import { FetchEchange } from './Redux/Exchange/ExchangeActions'
+import {
+  FetchCourses,
+  FetchLatestCourses,
+} from './Redux/Courses/CoursesActions'
+
 import { LanguageChanged } from './Redux'
 import { useDispatch } from 'react-redux'
 
@@ -56,16 +61,18 @@ function App() {
     dispatch(FetchPartners())
     dispatch(FetchSignals())
     dispatch(FetchEchange())
+    dispatch(FetchCourses())
+    dispatch(FetchLatestCourses())
   }, [])
   useEffect(() => {
+    dispatch(FetchLatestNews(t('currentLanguage')))
+    dispatch(FetchNews(1, t('currentLanguage')))
     if (pathname.includes('newsDetail')) {
       history.push('/news')
     }
-    dispatch(FetchLatestNews(t('currentLanguage')))
-    dispatch(FetchNews(1, t('currentLanguage')))
   }, [t('currentLanguage')])
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, left: 0 })
     return null
   }, [pathname])
 

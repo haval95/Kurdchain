@@ -56,7 +56,7 @@ export default function NewsDetail() {
             className="hidden"
             speed={3}
             width={'100%'}
-            height={400}
+            height={'100vh'}
             viewBox="0 0 800 200"
             backgroundColor="#f3f3f3"
             foregroundColor="#ecebeb"

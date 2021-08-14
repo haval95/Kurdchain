@@ -146,7 +146,7 @@ export default function Contact() {
                     animation="bounceIn"
                     type="subTitle"
                   />
-                  <p className="text-lg">{t('fillinContactForm')}</p>
+                  <p className="text-Gray my-3">{t('fillinContactForm')}</p>
                 </div>
 
                 {!isSubmitSuccessful && (

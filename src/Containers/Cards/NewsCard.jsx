@@ -28,11 +28,11 @@ export default function NewsCard({
             />
           </div>
           <div className=" px-4 grid grid-rows-3 w-full ">
-            <div className="grid    grid-cols-3    turncate overflow-x-hidden items-center ">
+            <div className="grid    grid-cols-3     overflow-x-hidden items-center ">
               <span className="col-span-2">
                 <Title
                   text={title}
-                  style="turncate"
+                  style="truncate"
                   type="subTitle"
                   color="Secondary"
                   underline="none"

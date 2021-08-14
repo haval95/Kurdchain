@@ -7,6 +7,7 @@ import PartnersReducer from './Partners/PartnersReducer'
 import CurrentNewsReducer from './News/CurrentNewsReducer'
 import SignalsReducer from './Signals/SignalsReducer'
 import ExchangeReducer from './Exchange/ExchangeReducer'
+import CoursesReducer from './Courses/CoursesReducer'
 const RootReducer = combineReducers({
   user: UserReducer,
   loading: LoadingReducer,
@@ -16,6 +17,7 @@ const RootReducer = combineReducers({
   currentNews: CurrentNewsReducer,
   signals: SignalsReducer,
   exchange: ExchangeReducer,
+  courses: CoursesReducer,
 })
 
 export default RootReducer
