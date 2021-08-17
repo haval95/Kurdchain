@@ -20,10 +20,12 @@ export default function Course() {
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    const currentCourse = coursesData.data.find(course => course.id == id)
+    const currentCourse = coursesData.filteredData.find(
+      course => course.id == id
+    )
     if (currentCourse) {
       setData(currentCourse)
-    } else if (coursesData.data.length !== 0 && !currentCourse) {
+    } else if (coursesData.filteredData.length !== 0 && !currentCourse) {
       history.push('/NotFound')
     }
   }, [coursesData.data, id])
@@ -116,7 +118,13 @@ export default function Course() {
                   ? data.language.name_ar
                   : data.language.name_en
               }
-              instructor={data.name}
+              instructor={
+                t('currentLanguage') == 'kurdish'
+                  ? data.instructor.name_he
+                  : t('currentLanguage') == 'arabic'
+                  ? data.instructor.name_ar
+                  : data.instructor.name_en
+              }
               price={data.price}
               type={
                 t('currentLanguage') == 'kurdish'

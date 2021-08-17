@@ -35,13 +35,15 @@ export default function CourseCard({
       </div>
 
       <div className="py-1  px-4 grid">
-        <Title
-          text={name}
-          underline="none"
-          type="subTitle"
-          color="Secondary"
-          style="text-start  truncate"
-        />
+        <div className=" w-full overflow-x-hidden">
+          <Title
+            text={name}
+            underline="none"
+            type="subTitle"
+            color="Secondary"
+            style="text-start truncate   "
+          />
+        </div>
         <div className="grid grid-cols-2 ">
           <Paragraph text={instructor} colors="text-Secondary" />
           <Paragraph text={date.slice(0, 10)} style="font-light mb-1 " />

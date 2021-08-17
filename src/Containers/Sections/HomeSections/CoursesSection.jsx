@@ -13,7 +13,6 @@ import PortraitLoader from '../../../Components/Loaders/PortraitLoader'
 export default function CoursesSection() {
   const { t } = useTranslation()
   const coursesData = useSelector(state => state.courses)
-  console.log(coursesData)
 
   return (
     <div className="grid ">
@@ -31,8 +30,8 @@ export default function CoursesSection() {
       </div>
 
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-center mb-16">
-        {coursesData.latestCourses.length ? (
-          coursesData.latestCourses.map(course => {
+        {coursesData.data.length ? (
+          coursesData.data.slice(0, 4).map(course => {
             return (
               <CourseCard
                 key={uuid()}
@@ -44,6 +43,13 @@ export default function CoursesSection() {
                     ? course.name_ar
                     : course.name_en
                 }
+                language={
+                  t('currentLanguage') == 'kurdish'
+                    ? course.language.name_he
+                    : t('currentLanguage') == 'arabic'
+                    ? course.language.name_ar
+                    : course.language.name_en
+                }
                 image={course.image}
                 price={course.price}
                 date={course.created_at}
@@ -54,7 +60,13 @@ export default function CoursesSection() {
                     ? course.description_ar
                     : course.description_en
                 }
-                instructor={course.instructor.name}
+                instructor={
+                  t('currentLanguage') == 'kurdish'
+                    ? course.instructor.name_he
+                    : t('currentLanguage') == 'arabic'
+                    ? course.instructor.name_ar
+                    : course.instructor.name_en
+                }
                 duration={
                   t('currentLanguage') == 'kurdish'
                     ? course.duration.name_he
@@ -63,7 +75,6 @@ export default function CoursesSection() {
                     : course.duration.name_en
                 }
                 time={course.time}
-                language={course.language.name}
               />
             )
           })

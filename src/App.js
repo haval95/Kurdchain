@@ -36,13 +36,12 @@ import { FetchLatestNews, FetchNews } from './Redux/News/NewsActions'
 import { FetchPartners } from './Redux/Partners/PartnersActions'
 import { FetchSignals } from './Redux/Signals/SignalsActions'
 import { FetchEchange } from './Redux/Exchange/ExchangeActions'
-import {
-  FetchCourses,
-  FetchLatestCourses,
-} from './Redux/Courses/CoursesActions'
+import { FetchFilters } from './Redux/Filters/FiltersActions'
+import { FetchCourses } from './Redux/Courses/CoursesActions'
 
 import { LanguageChanged } from './Redux'
 import { useDispatch } from 'react-redux'
+import FilterError from './Containers/Modals/FilterError'
 
 function App() {
   const { t } = useTranslation()
@@ -62,7 +61,8 @@ function App() {
     dispatch(FetchSignals())
     dispatch(FetchEchange())
     dispatch(FetchCourses())
-    dispatch(FetchLatestCourses())
+
+    dispatch(FetchFilters())
   }, [])
   useEffect(() => {
     dispatch(FetchLatestNews(t('currentLanguage')))
@@ -107,6 +107,7 @@ function App() {
       <ChangePassword />
       <PaymentModal />
       <ForgotPasswordModal />
+      <FilterError />
 
       <Switch>
         <Route exact path={ROUTES.HOME_ROUTE} component={Home} />

@@ -2,18 +2,22 @@ import {
   FETCH_COURSES_REQUEST,
   FETCH_COURSES_SECCESS,
   FETCH_COURSES_FAILURE,
-  FETCH_LATEST_COURSES_FAILURE,
-  FETCH_LATEST_COURSES_SECCESS,
-  FETCH_LATEST_COURSES_REQUEST,
+  FILTER_DATA,
+  FILTER_ERROR,
+  REMOVE_FILTER_ERROR,
+  OPEN_FILTER_OPTIONS_MOBILE,
+  CLOSE_FILTER_OPTIONS_MOBILE,
 } from './ActionTypes'
 
 const initialState = {
-  latestCoursesLoading: false,
   loading: false,
   data: [],
-  latestCourses: [],
+
   errors: [],
-  latestCoursesError: [],
+
+  filteredData: [],
+  filterError: false,
+  filterOptions: false,
 }
 
 const CoursesReducer = (state = initialState, action) => {
@@ -28,6 +32,7 @@ const CoursesReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         data: action.payload,
+        filteredData: action.payload,
       }
     case FETCH_COURSES_FAILURE:
       return {
@@ -35,23 +40,38 @@ const CoursesReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       }
-    case FETCH_LATEST_COURSES_REQUEST:
+
+    case FILTER_DATA:
       return {
         ...state,
-        latestCoursesLoading: true,
+        filteredData: action.payload,
+        filterError: false,
       }
-    case FETCH_LATEST_COURSES_SECCESS:
+    case FILTER_ERROR:
       return {
         ...state,
-        latestCoursesLoading: false,
-        latestCourses: action.payload,
+
+        filterError: true,
       }
-    case FETCH_LATEST_COURSES_FAILURE:
+    case REMOVE_FILTER_ERROR:
       return {
         ...state,
-        latestCoursesLoading: false,
-        latestCoursesError: action.payload,
+
+        filterError: false,
       }
+    case OPEN_FILTER_OPTIONS_MOBILE:
+      return {
+        ...state,
+
+        filterOptions: true,
+      }
+    case CLOSE_FILTER_OPTIONS_MOBILE:
+      return {
+        ...state,
+
+        filterOptions: false,
+      }
+
     default:
       return state
   }

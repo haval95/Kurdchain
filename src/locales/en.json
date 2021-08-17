@@ -86,6 +86,8 @@
   "price": "price",
   "over": "over",
   "all": "all",
+  "error": "Error",
+  "notFoundFilter": "Sorry, no match was found, please change your filtration",
   "apply": "apply filter",
   "exchangeMoney": "Exchange Money",
   "buyUSDT": "buy USDT",

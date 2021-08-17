@@ -2,12 +2,40 @@ import {
   FETCH_COURSES_REQUEST,
   FETCH_COURSES_SECCESS,
   FETCH_COURSES_FAILURE,
-  FETCH_LATEST_COURSES_FAILURE,
-  FETCH_LATEST_COURSES_REQUEST,
-  FETCH_LATEST_COURSES_SECCESS,
+  FILTER_DATA,
+  FILTER_ERROR,
+  REMOVE_FILTER_ERROR,
+  CLOSE_FILTER_OPTIONS_MOBILE,
+  OPEN_FILTER_OPTIONS_MOBILE,
 } from './ActionTypes'
 import axios from 'axios'
 
+export const FilteringData = data => {
+  return {
+    type: FILTER_DATA,
+    payload: data,
+  }
+}
+export const FilterError = () => {
+  return {
+    type: FILTER_ERROR,
+  }
+}
+export const openFilterOptions = () => {
+  return {
+    type: OPEN_FILTER_OPTIONS_MOBILE,
+  }
+}
+export const closeFilterOptions = () => {
+  return {
+    type: CLOSE_FILTER_OPTIONS_MOBILE,
+  }
+}
+export const RemoveFilterError = () => {
+  return {
+    type: REMOVE_FILTER_ERROR,
+  }
+}
 export const FetchCoursesRequest = () => {
   return {
     type: FETCH_COURSES_REQUEST,
@@ -27,51 +55,18 @@ export const FetchCoursesFailure = error => {
     payload: error,
   }
 }
-export const FetchLatestCoursesRequest = () => {
-  return {
-    type: FETCH_LATEST_COURSES_REQUEST,
-  }
-}
-
-export const FetchLatestCoursesSeccess = data => {
-  return {
-    type: FETCH_LATEST_COURSES_SECCESS,
-    payload: data,
-  }
-}
-
-export const FetchLatestCoursesFailure = error => {
-  return {
-    type: FETCH_LATEST_COURSES_FAILURE,
-    payload: error,
-  }
-}
 
 export const FetchCourses = () => {
   return dispatch => {
     dispatch(FetchCoursesRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/view/course`)
+      .get(`https://kurdchain.dastey2.com/api/courses`)
       .then(response => {
         dispatch(FetchCoursesSeccess(response.data.courses))
       })
       .catch(error => {
         dispatch(FetchCoursesFailure(error))
-      })
-  }
-}
-export const FetchLatestCourses = () => {
-  return dispatch => {
-    dispatch(FetchLatestCoursesRequest())
-
-    axios
-      .get(`https://kurdchain.dastey2.com/api/view/course`)
-      .then(response => {
-        dispatch(FetchLatestCoursesSeccess(response.data.courses))
-      })
-      .catch(error => {
-        dispatch(FetchLatestCoursesFailure(error))
       })
   }
 }
