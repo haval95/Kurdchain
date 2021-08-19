@@ -9,11 +9,13 @@ export default function NavigationButton({
   colors,
   fontWeight,
   animation,
+  clickAction,
 }) {
   return (
     <ScrollAnimation animateIn={animation} initiallyVisible>
       <Link to={location}>
         <button
+          onClick={clickAction}
           className={` py-1   rounded-xl w-full ${colors} text-center shadow hover:shadow-none font-${fontWeight} transition duration-500 ease-in-out ${style}`}
         >
           {text}
@@ -30,6 +32,7 @@ NavigationButton.propTypes = {
   colors: PropTypes.string,
   fontWeight: PropTypes.string,
   animation: PropTypes.string,
+  clickAction: PropTypes.func,
 }
 
 NavigationButton.defaultProps = {
@@ -40,4 +43,5 @@ NavigationButton.defaultProps = {
   style: '',
   fontWeight: 'semibold ',
   animation: 'null',
+  clickAction: () => [],
 }

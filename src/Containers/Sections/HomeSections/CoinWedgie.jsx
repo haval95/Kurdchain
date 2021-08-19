@@ -2,7 +2,10 @@ import React from 'react'
 
 import logo from '../../../Assets/Images/logo.svg'
 import Ticker from 'react-ticker'
+import ImportScript from '../../../Hooks/ImportScript'
+
 export default function CoinWedgie() {
+  ImportScript('https://files.coinmarketcap.com/static/widget/currency.js')
   return (
     <div className="relative ltr">
       <hr className="text-PrimaryLight "></hr>

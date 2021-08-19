@@ -15,6 +15,7 @@ export default function ResetPassword() {
       showConfirm={false}
       onConfirm={() => setshow(false)}
       onCancel={() => setshow(false)}
+      closeBtnStyle={{ padding: '10px' }}
     >
       <form className="  px-8 pt-6 mb-4 bg-transparent">
         <p className="mb-4 ">{t('resetSlogan')}</p>
@@ -31,7 +32,7 @@ export default function ResetPassword() {
             id="phone"
             name="phone"
             type="text"
-            placeholder={t('07721234567')}
+            placeholder="07721234567"
           />
         </div>
         <div className="my-6">
@@ -47,7 +48,7 @@ export default function ResetPassword() {
             id="email"
             name="email"
             type="email"
-            placeholder={t('you@example.com')}
+            placeholder="you@example.com"
           />
         </div>
 

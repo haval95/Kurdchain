@@ -36,22 +36,10 @@ export default function About() {
           />
           <div>
             <div className="grid justify-center sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-5">
-              <UserCard
-                name="Ranj Abdulrahman"
-                position="Chief Executive Officer (CEO)"
-              />
-              <UserCard
-                name="Danial Abdulrahman"
-                position="Chairman & Hedge Fund Manager"
-              />
-              <UserCard
-                name="Mustafa Abdulkhaliq "
-                position="Chief Financial Officer (CFO)"
-              />
-              <UserCard
-                name="Aryan Abdulwahab "
-                position="Chief Technology Officer (CTO)"
-              />
+              <UserCard name={t('ranj')} position={t('ranjPosition')} />
+              <UserCard name={t('danial')} position={t('danialPosition')} />
+              <UserCard name={t('mustafa')} position={t('mustafaPosition')} />
+              <UserCard name={t('aryan')} position={t('aryanPosition')} />
             </div>
           </div>
         </div>

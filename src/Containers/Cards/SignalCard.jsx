@@ -5,8 +5,11 @@ import { PropTypes } from 'prop-types'
 import Paragraph from '../../Components/Paragraph'
 import { useTranslation } from 'react-i18next'
 import img from '../../Assets/Images/signalService.svg'
+import { useDispatch } from 'react-redux'
+import { OpenSubscribeModal } from '../../Redux/Modals/ModalActions'
 export default function CourseCard({ name, image, color, description }) {
   const { t } = useTranslation()
+  const dispatch = useDispatch()
 
   return (
     <div className="w-72 h-96 bg-white z-0 cursor-pointer border border-GrayBorder rounded-3xl    focus:outline-none relative bg-Light shadow-xl  transform  transition duration-500 ease-in-out">
@@ -30,7 +33,12 @@ export default function CourseCard({ name, image, color, description }) {
         />
 
         <div className="text-xs flex justify-between     ">
-          <Button text={t('subscribe')} color={color} style="font-light" />
+          <Button
+            text={t('subscribe')}
+            color={color}
+            style="font-light"
+            clickAction={() => dispatch(OpenSubscribeModal())}
+          />
         </div>
       </div>
     </div>

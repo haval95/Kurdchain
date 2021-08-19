@@ -16,7 +16,12 @@ export default function UserCard({ name, position, linkedin, image }) {
             alt=""
           />
         </div>
-        <Title text={name} underline="none" type="subTitle" />
+        <Title
+          text={name}
+          underline="none"
+          type="subTitle"
+          style="capitalize"
+        />
         <span className="text-blue-500 block mb-5">{position}</span>
 
         <a

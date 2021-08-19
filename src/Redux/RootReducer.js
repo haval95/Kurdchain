@@ -9,6 +9,7 @@ import SignalsReducer from './Signals/SignalsReducer'
 import ExchangeReducer from './Exchange/ExchangeReducer'
 import CoursesReducer from './Courses/CoursesReducer'
 import FiltersReducer from './Filters/FiltersReducer'
+import UserCoursesReducer from './UserCourses/UserCoursesReducer'
 const RootReducer = combineReducers({
   user: UserReducer,
   loading: LoadingReducer,
@@ -20,6 +21,7 @@ const RootReducer = combineReducers({
   exchange: ExchangeReducer,
   courses: CoursesReducer,
   Filters: FiltersReducer,
+  userCourses: UserCoursesReducer,
 })
 
 export default RootReducer

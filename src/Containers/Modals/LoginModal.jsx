@@ -55,7 +55,7 @@ export default function LoginModal() {
     <SweetAlert
       custom
       showCloseButton
-      title={<h1 className="text-Primary">{t('login')}</h1>}
+      title={<span className="text-Primary text-2xl">{t('login')}</span>}
       show={state}
       showConfirm={false}
       onConfirm={() => dispatch(CloseLoginModal())}

@@ -19,6 +19,7 @@ export default function PaymentModal() {
       showConfirm={false}
       onConfirm={() => dispatch(ClosePaymentModal())}
       onCancel={() => dispatch(ClosePaymentModal())}
+      closeBtnStyle={{ padding: '10px' }}
     >
       <form className="  px-8 pt-6 mb-4 bg-transparent">
         <h1 className="text-xl text-Secondary font-medium mb-6">

@@ -64,21 +64,15 @@ export default function Contact() {
               <div className=" text-start-importan font-medium   pb-1 flex items-center  ">
                 <FontAwesomeIcon
                   size="2x"
-                  className="text-Secondary"
+                  className="text-Secondary mx-3"
                   icon="phone-alt"
                 />
                 <div className="flex flex-col">
                   <a
-                    href="tel:+9647701234567"
+                    href="tel:+9647701659393"
                     className="text-start-importan px-2 hover:text-PrimaryHover"
                   >
-                    009647701234567
-                  </a>
-                  <a
-                    href="tel:+9647701234567"
-                    className="text-start-importan px-2 hover:text-PrimaryHover"
-                  >
-                    009647701234567
+                    009647701659393
                   </a>
                 </div>
               </div>
@@ -86,53 +80,67 @@ export default function Contact() {
               <div className=" text-start-importan font-medium   pb-1 flex items-center ">
                 <FontAwesomeIcon
                   size="2x"
-                  className="text-Secondary   "
+                  className="text-Secondary mx-3  "
                   icon="envelope"
                 />
-                <a
-                  href="mailto:someone@yoursite.com"
-                  className="text-start-importan px-2 hover:text-PrimaryHover"
-                >
-                  example@example.com
-                </a>
+                <div className="grid">
+                  <a
+                    href="mailto:contact@kurdchain.trade"
+                    className="text-start-importan px-2 hover:text-PrimaryHover"
+                  >
+                    contact@kurdchain.trade
+                  </a>
+                  <a
+                    href="mailto:info@kurdchain.trade"
+                    className="text-start-importan px-2 hover:text-PrimaryHover"
+                  >
+                    info@kurdchain.trade
+                  </a>
+                </div>
               </div>
 
               <div className=" text-start-importan font-medium   pb-1  flex items-center">
                 <FontAwesomeIcon
                   size="2x"
-                  className="text-Secondary "
+                  className="text-Secondary mx-3 "
                   icon="map-marked-alt"
                 />
                 <span className="text-center px-2 hover:text-PrimaryHover">
-                  the location will come here
+                  {t('location')}
                 </span>
               </div>
               <div className="grid  grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 justify-center items-center text-center  gap-4 content-center ">
                 <a
-                  href="#"
+                  href="https://t.me/kurdchain77"
                   className=" text-2xl p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray    text-Secondary "
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
+                  <FontAwesomeIcon icon={['fab', 'telegram-plane']} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/Kurdchain-106322331282682/"
+                  target="_blank"
                   className=" text-2xl py-2  p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray   text-Secondary"
+                  rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={['fab', 'facebook-f']} />
                 </a>
                 <a
-                  href="#"
+                  href="https://youtube.com/channel/UC4ruTgsY3QLkF-mpO5U_nkg"
+                  target="_blank"
                   className=" text-2xl py-2   p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray  text-Secondary"
+                  rel="noreferrer"
                 >
-                  <FontAwesomeIcon icon={['fab', 'twitter']} />
+                  <FontAwesomeIcon icon={['fab', 'youtube']} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/kurd_chain/"
+                  target="_blank"
                   className=" text-2xl py-2   p-3 shadow-lg transition ease-in-out duration-500  rounded-full hover:shadow-none  border-2 border-LightGray  text-Secondary"
+                  rel="noreferrer"
                 >
-                  <FontAwesomeIcon icon={['fab', 'telegram-plane']} />
+                  <FontAwesomeIcon icon={['fab', 'instagram']} />
                 </a>
               </div>
             </div>

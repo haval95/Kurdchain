@@ -28,6 +28,8 @@ import ResetPassword from './Containers/Modals/ResetPassword'
 import ChangePassword from './Containers/Modals/ChangePassword'
 import PaymentModal from './Containers/Modals/PaymentModal'
 import ForgotPasswordModal from './Containers/Modals/ForgotPasswordModal'
+import FilterError from './Containers/Modals/FilterError'
+import SubscriptionModal from './Containers/Modals/SubscriptionModal'
 import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ToastContainer } from 'react-toastify'
@@ -41,13 +43,17 @@ import { FetchCourses } from './Redux/Courses/CoursesActions'
 
 import { LanguageChanged } from './Redux'
 import { useDispatch } from 'react-redux'
-import FilterError from './Containers/Modals/FilterError'
+
+import PlayCourse from './Pages/PlayCourse'
+import { FetchUserCourses } from './Redux/UserCourses/UserCoursesActions'
+import CourseRequested from './Containers/Modals/CourseRequestedModal'
 
 function App() {
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const IsLoading = useSelector(state => state.loading)
   const { i18n } = useTranslation()
+  const user = useSelector(state => state.user)
 
   useEffect(() => {
     document.dir = i18n.dir()
@@ -55,7 +61,11 @@ function App() {
   }, [i18n, i18n.language])
   const { pathname } = useLocation()
   const history = useHistory()
-
+  useEffect(() => {
+    if (user.isAuthenticated) {
+      dispatch(FetchUserCourses(user.user.config))
+    }
+  }, [user])
   useEffect(() => {
     dispatch(FetchPartners())
     dispatch(FetchSignals())
@@ -86,6 +96,7 @@ function App() {
         title=""
         show={IsLoading.isLoading}
         showConfirm={false}
+        onConfirm={() => {}}
         closeOnClickOutside
         style={{ backgroundColor: 'transparent', borderRadius: '20px' }}
       >
@@ -107,12 +118,17 @@ function App() {
       <ChangePassword />
       <PaymentModal />
       <ForgotPasswordModal />
+      <SubscriptionModal />
       <FilterError />
+      <CourseRequested />
 
       <Switch>
         <Route exact path={ROUTES.HOME_ROUTE} component={Home} />
         <PrivateRoute path={ROUTES.PROFILE_ROUTE}>
           <Profile />
+        </PrivateRoute>
+        <PrivateRoute path={ROUTES.PLAY_ROUTE}>
+          <PlayCourse />
         </PrivateRoute>
         <Route path={ROUTES.ABOUT_ROUTE} component={About} />
         <Route path={ROUTES.CONTACT_ROUTE} component={Contact} />
@@ -125,6 +141,7 @@ function App() {
         <Route path={ROUTES.CURRENCIES_ROUTE} component={Currencies} />
         <Route path={ROUTES.INVESTMENT_ROUTE} component={Investment} />
         <Route path={ROUTES.EXCHANGE_ROUTE} component={Exchange} />
+
         <Route component={NotFound} />
       </Switch>
 

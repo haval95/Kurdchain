@@ -40,14 +40,14 @@ export default function Courses() {
           <FilterSection state={coursesData.filterOptions} />
         </div>
 
-        <div className="grid  gap-5 lg:gap-10 py-16 col-span-12 lg:col-span-9  ">
-          <div className="  justify-self-center text-start ">
+        <div className="grid  gap-5 lg:gap-10 py-16 col-span-12 lg:col-span-9   ">
+          <div className="  justify-self-center  text-start ">
             <Title
               text={t('navbar.courses')}
               style="mb-14 "
               animation="bounceIn"
             />
-            <div className=" grid gap-8 grid-cols-1 sm:gap-5 md:gap-8 sm:grid-cols-2 xl:grid-cols-3 justify-center  mb-16">
+            <div className=" grid gap-8 grid-cols-1 sm:gap-5 md:gap-8 sm:grid-cols-2 xl:grid-cols-3 justify-center 2xl:grid-cols-4  mb-16">
               {coursesData.filteredData.length ? (
                 coursesData.filteredData.map(course => {
                   return (

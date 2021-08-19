@@ -95,25 +95,31 @@ export default function Footer() {
           <FontAwesomeIcon className="text-Secondary" icon="phone-alt" />
           <div className=" text-start font-medium   pb-1  ">
             <a
-              href="tel:+9647701234567"
+              href="tel:+9647701659393"
               className="text-start px-2 hover:text-PrimaryHover"
             >
-              009647701234567
+              009647701659393
             </a>
           </div>
-          <FontAwesomeIcon className="text-Secondary   " icon="envelope" />
-          <div className=" text-start font-medium   pb-1  ">
+          <FontAwesomeIcon className="text-Secondary mt-5" icon="envelope" />
+          <div className="text-start font-medium grid mb-5">
             <a
-              href="mailto:someone@yoursite.com"
+              href="mailto:contact@kurdchain.trade"
+              className="text-start px-2 hover:text-PrimaryHover "
+            >
+              <div className="text-center"> contact@kurdchain.trade</div>
+            </a>
+            <a
+              href="mailto:info@kurdchain.trade"
               className="text-start px-2 hover:text-PrimaryHover"
             >
-              example@example.com
+              <div className="text-center">info@kurdchain.trade</div>
             </a>
           </div>
           <FontAwesomeIcon className="text-Secondary" icon="map-marked-alt" />
           <div className=" text-center font-medium   pb-1  ">
             <span className="text-center px-2 hover:text-PrimaryHover">
-              the location will come here
+              {t('location')}
             </span>
           </div>
         </div>

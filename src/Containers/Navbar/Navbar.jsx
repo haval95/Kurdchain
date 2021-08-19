@@ -22,7 +22,6 @@ export default function Navbar() {
   const { t } = useTranslation()
   const user = useSelector(state => state.user)
 
-  console.log()
   const handleLanguageChange = lang => {
     setLangDropDown(false)
     i18n.changeLanguage(lang)
@@ -59,27 +58,42 @@ export default function Navbar() {
         <div className="bg-LightGray flex flex-row justify-between ltr  items-center px-5 ">
           <div className=" text-Secondary  flex space-x-2 items-center">
             <FontAwesomeIcon icon="phone-alt" />
-            <a href="tel:+9647701234567" className="text-start">
-              +9647701234567
+            <a href="tel:+9647701659393" className="text-start">
+              +964-770-165-9393
             </a>
           </div>
           <div className="flex  space-x-4">
             <a
-              href="#"
-              className=" text-2xl py-2    text-Secondary "
+              href="https://t.me/kurdchain77"
               target="_blank"
+              className=" text-2xl py-2    text-Secondary "
               rel="noreferrer"
             >
-              <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
+              <FontAwesomeIcon icon={['fab', 'telegram-plane']} />
             </a>
-            <a href="#" className=" text-2xl py-2    text-Secondary">
+            <a
+              href="https://www.facebook.com/Kurdchain-106322331282682/"
+              target="_blank"
+              className=" text-2xl py-2    text-Secondary"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon icon={['fab', 'facebook-f']} />
             </a>
-            <a href="#" className=" text-2xl py-2    text-Secondary">
-              <FontAwesomeIcon icon={['fab', 'twitter']} />
+            <a
+              href="https://www.instagram.com/kurd_chain/"
+              target="_blank"
+              className=" text-2xl py-2    text-Secondary"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={['fab', 'instagram']} />
             </a>
-            <a href="#" className=" text-2xl py-2    text-Secondary">
-              <FontAwesomeIcon icon={['fab', 'telegram-plane']} />
+            <a
+              href="https://youtube.com/channel/UC4ruTgsY3QLkF-mpO5U_nkg"
+              target="_blank"
+              className=" text-2xl py-2    text-Secondary"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={['fab', 'youtube']} />
             </a>
           </div>
         </div>

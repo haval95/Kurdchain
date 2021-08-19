@@ -1,7 +1,7 @@
 import React from 'react'
 import ContentLoader from 'react-content-loader'
 
-export default function PortraitLoaderLtr() {
+export default function LandscapeLoaderCourseLtr() {
   return (
     <ContentLoader
       className=" shadow-xl rounded-2xl"

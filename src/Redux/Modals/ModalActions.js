@@ -30,6 +30,16 @@ export const OpenForgotPasswordModal = () => {
     type: MODAL_ACTIONS.OPEN_FORGOT_PASSWORD_MODAL,
   }
 }
+export const OpenSubscribeModal = () => {
+  return {
+    type: MODAL_ACTIONS.OPEN_SUBSCRIBE_MODAL,
+  }
+}
+export const OpenCourseRequestedModal = () => {
+  return {
+    type: MODAL_ACTIONS.OPEN_COURSE_REQUESTED_MODAL,
+  }
+}
 export const CloseForgotPasswordModal = () => {
   return {
     type: MODAL_ACTIONS.CLOSE_FORGOT_PASSWORD_MODAL,
@@ -59,5 +69,16 @@ export const CloseRegisterModal = () => {
 export const CloseResetPasswordModal = () => {
   return {
     type: MODAL_ACTIONS.CLOSE_RESET_PASSWORD_MODAL,
+  }
+}
+
+export const CloseSubscribeModal = () => {
+  return {
+    type: MODAL_ACTIONS.CLOSE_SUBSCRIBE_MODAL,
+  }
+}
+export const CloseCourseRequestedModal = () => {
+  return {
+    type: MODAL_ACTIONS.CLOSE_COURSE_REQUESTED_MODAL,
   }
 }

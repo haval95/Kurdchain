@@ -7,6 +7,8 @@ const initialState = {
   registerModalState: false,
   resetPasswordModalState: false,
   forgotPasswordModalState: false,
+  subscribtionModalState: false,
+  courseRequestedModalState: false,
 }
 
 const ModalsReducer = (state = initialState, action) => {
@@ -70,6 +72,26 @@ const ModalsReducer = (state = initialState, action) => {
       return {
         ...state,
         forgotPasswordModalState: false,
+      }
+    case MODAL_ACTIONS.OPEN_SUBSCRIBE_MODAL:
+      return {
+        ...state,
+        subscribtionModalState: true,
+      }
+    case MODAL_ACTIONS.CLOSE_SUBSCRIBE_MODAL:
+      return {
+        ...state,
+        subscribtionModalState: false,
+      }
+    case MODAL_ACTIONS.OPEN_COURSE_REQUESTED_MODAL:
+      return {
+        ...state,
+        courseRequestedModalState: true,
+      }
+    case MODAL_ACTIONS.CLOSE_COURSE_REQUESTED_MODAL:
+      return {
+        ...state,
+        courseRequestedModalState: false,
       }
 
     default:

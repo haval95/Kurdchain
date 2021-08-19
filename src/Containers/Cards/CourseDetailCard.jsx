@@ -4,8 +4,11 @@ import { useTranslation } from 'react-i18next'
 
 import Title from '../../Components/Title'
 import Button from '../../Components/Button'
-import { OpenPaymentModal } from '../../Redux/Modals/ModalActions'
-import { useDispatch } from 'react-redux'
+import {
+  OpenPaymentModal,
+  OpenCourseRequestedModal,
+} from '../../Redux/Modals/ModalActions'
+import { useDispatch, useSelector } from 'react-redux'
 export default function CourseDetailCard({
   duration,
   level,
@@ -17,6 +20,41 @@ export default function CourseDetailCard({
 }) {
   const { t } = useTranslation()
   const dispatch = useDispatch()
+  const userCourses = useSelector(state => state.userCourses)
+
+  const getButton = () => {
+    if (userCourses.loading === false) {
+      if (Object.keys(userCourses.data).length > 0) {
+        if (
+          userCourses.data.bought.filter(course => {
+            return course.course_id === id
+          }).length
+        ) {
+          return ''
+        } else if (
+          userCourses.data.request.filter(course => {
+            return course.course_id === id
+          }).length
+        ) {
+          return (
+            <Button
+              clickAction={() => dispatch(OpenCourseRequestedModal())}
+              text={t('requested')}
+              style="my-4 "
+              color={'Secondary'}
+            />
+          )
+        }
+      }
+      return (
+        <Button
+          clickAction={() => dispatch(OpenPaymentModal(id))}
+          text={t('buy')}
+          style="my-4 "
+        />
+      )
+    }
+  }
 
   return (
     <div className="bg-LightGray shadow p-5 rounded-xl    ">
@@ -52,11 +90,7 @@ export default function CourseDetailCard({
       </div>
       <div className=" my-2 grid">
         <div className="w-28 justify-self-center  items-center">
-          <Button
-            clickAction={() => dispatch(OpenPaymentModal(id))}
-            text={t('buy')}
-            style="my-4 "
-          />
+          {userCourses.loading === true ? 'loading' : getButton()}
         </div>
       </div>
     </div>

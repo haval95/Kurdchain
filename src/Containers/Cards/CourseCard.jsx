@@ -6,6 +6,7 @@ import Paragraph from '../../Components/Paragraph'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useTranslation } from 'react-i18next'
 import { courseImage } from '../../Helper/Domain'
+import { useSelector } from 'react-redux'
 
 export default function CourseCard({
   id,
@@ -20,7 +21,36 @@ export default function CourseCard({
   time,
 }) {
   const { t } = useTranslation()
+  const userCourses = useSelector(state => state.userCourses)
+  const getButton = () => {
+    if (userCourses.loading === false) {
+      let IsCourseBought = []
 
+      if (Object.keys(userCourses.data).length > 0) {
+        IsCourseBought = userCourses.data.bought.filter(course => {
+          return course.course_id === id
+        })
+      }
+      if (IsCourseBought.length) {
+        return (
+          <NavigationButton
+            location={`/play/${id}`}
+            text={t('watch')}
+            style="w-full mt-2 rounded-b-xl rounded-t-none py-2 uppercase "
+            colors="bg-Secondary text-Light hover:bg-SecondaryHover   "
+          />
+        )
+      }
+      return (
+        <NavigationButton
+          location={`/course/${id}`}
+          text={t('detail')}
+          style="w-full mt-2 rounded-b-xl rounded-t-none py-2 uppercase "
+          colors="bg-Primary text-Light hover:bg-PrimaryHover   "
+        />
+      )
+    }
+  }
   return (
     <div className="w-72 h-96 border-r border-l border-GrayBorder  cursor-pointer   rounded-3xl hover:-translate-y-2 focus:outline-none relative bg-Light shadow-xl hover:shadow-none hover:bg-light transform  transition duration-500 ease-in-out">
       <div className="relative">
@@ -41,7 +71,7 @@ export default function CourseCard({
             underline="none"
             type="subTitle"
             color="Secondary"
-            style="text-start truncate   "
+            style="text-start truncate"
           />
         </div>
         <div className="grid grid-cols-2 ">
@@ -66,12 +96,7 @@ export default function CourseCard({
         </div>
 
         <div className="text-xs    absolute inset-x-0 bottom-0  w-full ">
-          <NavigationButton
-            location={`/course/${id}`}
-            text={t('detail')}
-            style="w-full mt-2 rounded-b-xl rounded-t-none py-2 uppercase "
-            colors="bg-Primary text-Light hover:bg-PrimaryHover   "
-          />
+          {userCourses.Loading === true ? 'loading' : getButton()}
         </div>
       </div>
     </div>
@@ -79,15 +104,15 @@ export default function CourseCard({
 }
 
 CourseCard.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   name: PropTypes.string,
   image: PropTypes.string,
-  price: PropTypes.Number,
+  price: PropTypes.number,
   date: PropTypes.string,
   description: PropTypes.string,
   instructor: PropTypes.string,
   duration: PropTypes.string,
-  time: PropTypes.string,
+  time: PropTypes.number,
   language: PropTypes.string,
 }
 
