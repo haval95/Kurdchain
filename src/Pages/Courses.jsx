@@ -12,11 +12,13 @@ import { openFilterOptions } from '../Redux'
 import uuid from 'react-uuid'
 
 import PortraitLoader from '../Components/Loaders/PortraitLoader'
+import NavigationButton from '../Components/NavigationButton'
 export default function Courses() {
   const { t } = useTranslation()
   const dispatch = useDispatch()
 
   const coursesData = useSelector(state => state.courses)
+  const user = useSelector(state => state.user)
 
   return (
     <>
@@ -42,11 +44,20 @@ export default function Courses() {
 
         <div className="grid  gap-5 lg:gap-10 py-16 col-span-12 lg:col-span-9   ">
           <div className="  justify-self-center  text-start ">
-            <Title
-              text={t('navbar.courses')}
-              style="mb-14 "
-              animation="bounceIn"
-            />
+            <div className="grid grid-flow-col justify-between">
+              <Title
+                text={t('navbar.courses')}
+                style="mb-14 "
+                animation="bounceIn"
+              />
+              {user && user.isAuthenticated ? (
+                <NavigationButton
+                  text={t('profile.myItems')}
+                  location="/profile"
+                  style="px-6 text-xl"
+                />
+              ) : null}
+            </div>
             <div className=" grid gap-8 grid-cols-1 sm:gap-5 md:gap-8 sm:grid-cols-2 xl:grid-cols-3 justify-center 2xl:grid-cols-4  mb-16">
               {coursesData.filteredData.length ? (
                 coursesData.filteredData.map(course => {

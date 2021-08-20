@@ -83,7 +83,7 @@ export default function ApiSection() {
           title="Platinum"
         />
       </div>
-      <div className="grid justify-center  text-center">
+      <div className=" ">
         <Form />
       </div>
     </>

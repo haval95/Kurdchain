@@ -19,7 +19,7 @@ export default function FilterError() {
       showConfirm={false}
       onConfirm={() => dispatch(RemoveFilterError())}
       onCancel={() => dispatch(RemoveFilterError())}
-      closeBtnStyle={{ padding: '10px' }}
+      closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
       closeOnClickOutside={false}
     >
       <div className="py-4 text-2xl"> {t('notFoundFilter')}</div>

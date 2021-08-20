@@ -9,7 +9,7 @@ import FilterFunctions from './FilterFunctions'
 
 export default function FilterSection({ state }) {
   const { t } = useTranslation()
-  const { filterData, handleChange, type, language, instructor } =
+  const { filterData, handleChange, type, language, instructor, priceChecked } =
     FilterFunctions()
 
   const filters = useSelector(state => state.Filters)
@@ -109,6 +109,20 @@ export default function FilterSection({ state }) {
                 <input
                   type="radio"
                   name="price"
+                  id="0"
+                  checked={priceChecked.includes('0')}
+                  onChange={handleChange}
+                  className="  form-checkbox mx-2 border  border-Secondary bg-Secondary text-pink-600 h-4 w-4"
+                />
+                <span className="ml-2 capitalize">{t('all')} </span>
+              </label>
+              <label className="block items-center">
+                <input
+                  type="radio"
+                  name="price"
+                  id="1"
+                  checked={priceChecked.includes('1')}
+                  onChange={handleChange}
                   className="  form-checkbox mx-2 border  border-Secondary bg-Secondary  h-4 w-4"
                 />
                 <span className="ml-2">$1 - $100</span>
@@ -118,6 +132,9 @@ export default function FilterSection({ state }) {
                 <input
                   type="radio"
                   name="price"
+                  id="2"
+                  checked={priceChecked.includes('2')}
+                  onChange={handleChange}
                   className="  form-checkbox mx-2 border  border-Secondary bg-Secondary  h-4 w-4"
                 />
                 <span className="ml-2">$100 - $500</span>
@@ -127,6 +144,9 @@ export default function FilterSection({ state }) {
                 <input
                   type="radio"
                   name="price"
+                  id="3"
+                  checked={priceChecked.includes('3')}
+                  onChange={handleChange}
                   className="  form-checkbox mx-2 border  border-Secondary bg-Secondary text-pink-600 h-4 w-4"
                 />
                 <span className="ml-2">$500 - $1000</span>
@@ -136,18 +156,12 @@ export default function FilterSection({ state }) {
                 <input
                   type="radio"
                   name="price"
+                  id="4"
+                  checked={priceChecked.includes('4')}
+                  onChange={handleChange}
                   className="  form-checkbox mx-2 border  border-Secondary bg-Secondary text-pink-600 h-4 w-4"
                 />
                 <span className="ml-2 capitalize">{t('over')} $1000</span>
-              </label>
-
-              <label className="block items-center">
-                <input
-                  type="radio"
-                  name="price"
-                  className="  form-checkbox mx-2 border  border-Secondary bg-Secondary text-pink-600 h-4 w-4"
-                />
-                <span className="ml-2 capitalize">{t('all')} </span>
               </label>
             </div>
             <hr className="w-full mt-5  text-GrayBorder"></hr>

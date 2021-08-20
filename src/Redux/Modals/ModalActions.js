@@ -5,14 +5,16 @@ export const OpenChangePasswordModal = () => {
     type: MODAL_ACTIONS.OPEN_CHANGE_PASSWORD_MODAL,
   }
 }
-export const OpenLoginModal = () => {
+export const OpenLoginModal = (includeRequiredMessge = false) => {
   return {
     type: MODAL_ACTIONS.OPEN_LOGIN_MODAL,
+    payload: includeRequiredMessge,
   }
 }
-export const OpenPaymentModal = () => {
+export const OpenPaymentModal = id => {
   return {
     type: MODAL_ACTIONS.OPEN_PAYMENT_MODAL,
+    payload: id,
   }
 }
 export const OpenRegisterModal = () => {

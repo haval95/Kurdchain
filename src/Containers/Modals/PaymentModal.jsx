@@ -1,30 +1,30 @@
 import React from 'react'
 import SweetAlert from 'react-bootstrap-sweetalert'
 import { ClosePaymentModal } from '../../Redux/Modals/ModalActions'
+import { buyCourse } from '../../Redux/UserCourses/UserCoursesActions'
 import { useSelector, useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import NavigationButton from '../../Components/NavigationButton'
+import Button from '../../Components/Button'
 
 export default function PaymentModal() {
   const { t } = useTranslation()
   const dispatch = useDispatch()
-  const state = useSelector(state => state.modals.paymentModalState)
+  const state = useSelector(state => state.modals)
+  const user = useSelector(state => state.user)
 
   return (
     <SweetAlert
       custom
       showCloseButton
       title={<h1 className="text-Primary">{t('payment')}</h1>}
-      show={state}
+      show={state.paymentModalState}
       showConfirm={false}
       onConfirm={() => dispatch(ClosePaymentModal())}
       onCancel={() => dispatch(ClosePaymentModal())}
-      closeBtnStyle={{ padding: '10px' }}
+      closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
     >
       <form className="  px-8 pt-6 mb-4 bg-transparent">
-        <h1 className="text-xl text-Secondary font-medium mb-6">
-          {t('paymentSlogan')}
-        </h1>
+        <h1 className="text-xl text-Dark  ">{t('paymentSlogan')}</h1>
 
         <div className="grid grid-cols-2 items-center">
           <img
@@ -34,10 +34,19 @@ export default function PaymentModal() {
           <p>some text</p>
         </div>
 
-        <p className="mb-6">{t('contactUsForProblem')}</p>
-        <div className="mb-6 grid gap-3">
-          <NavigationButton text={t('navbar.contact')} />
-        </div>
+        {state && state.paymentForCourseId && user.isAuthenticated ? (
+          <>
+            <p className="text-xl my-2  text-Primary">{t('buyCourse')} </p>
+            <Button
+              text={t('sendRquestBtn')}
+              font="bold"
+              clickAction={() =>
+                dispatch(buyCourse(state.paymentForCourseId, user.user.config))
+              }
+              style="justify-self-center"
+            />
+          </>
+        ) : null}
       </form>
     </SweetAlert>
   )

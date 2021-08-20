@@ -11,12 +11,14 @@ import { useParams, useHistory } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { courseImage } from '../Helper/Domain'
+import ImportScript from '../Hooks/ImportScript'
 export default function Course() {
   const { t } = useTranslation()
   const { id } = useParams()
   const history = useHistory()
   const coursesData = useSelector(state => state.courses)
 
+  ImportScript('https://player.vimeo.com/api/player.js')
   const [data, setData] = useState(null)
 
   useEffect(() => {
@@ -51,7 +53,7 @@ export default function Course() {
       />
       {data ? (
         <div className=" bg-Light grid grid-cols-12  lg:px-16 md:px-16 sm:px-4 py-16 gap-5 ">
-          <div className="col-span-12 md:col-span-8 lg:col-span-9 grid gap-0 sm:gap-3 lg:gap-6 items-center  text-start px-10 md:px-0">
+          <div className="col-span-12 md:col-span-8 lg:col-span-9 grid gap-0 sm:gap-3 lg:gap-6 items-center  text-start sm:px-10 md:px-0">
             <Title
               text={
                 t('currentLanguage') == 'kurdish'
@@ -64,16 +66,32 @@ export default function Course() {
               style="text-start"
               animation="bounceIn"
             />
+            <p className="text-xl text-Secondary font-bold">
+              {t('lesonExample')}
+            </p>
 
-            <div className="  ">
-              <iframe
-                src="https://player.vimeo.com/video/76979871?embedparameter=value"
-                className="w-full "
-                height="300"
-                width="350"
-                frameBorder="3"
-                allowFullScreen
-              ></iframe>
+            <div className=" w-full px-0 lg:w-10/12 justify-self-center sm:justify-self-start  ">
+              <div
+                className="bg-GrayBorder  border-GrayBorder border-4 p-2 shadow-md "
+                style={{
+                  padding: '56.25% 0 0 0',
+                  position: 'relative',
+                }}
+              >
+                <iframe
+                  src={data.demo_video}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  style={{
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                    height: '100%',
+                  }}
+                  title="btcoin1"
+                ></iframe>
+              </div>
             </div>
             <Title
               text={t('decription')}

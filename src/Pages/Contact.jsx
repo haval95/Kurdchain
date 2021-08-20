@@ -19,7 +19,11 @@ export default function Contact() {
   const [isSuccess, setIsSuccess] = React.useState(false)
   const [Message, setMessage] = React.useState('')
 
-  const userName = useWatch({ control, name: 'name', defaultValue: 'Someone' })
+  const userName = useWatch({
+    control,
+    name: 'name',
+    defaultValue: ' KURDCAHIN ',
+  })
 
   const onSubmit = async (data, e) => {
     await fetch('https://api.web3forms.com/submit', {
@@ -169,7 +173,7 @@ export default function Contact() {
                     />
                     <input
                       type="hidden"
-                      value={`${userName} sent a message from Kurdchain`}
+                      value={`CONTACT FORM ${userName} `}
                       {...register('subject')}
                     />
                     <input

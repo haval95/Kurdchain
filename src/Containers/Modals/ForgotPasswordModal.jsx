@@ -28,7 +28,7 @@ export default function LoginModal() {
       showConfirm={false}
       onConfirm={() => dispatch(CloseForgotPasswordModal())}
       onCancel={() => dispatch(CloseForgotPasswordModal())}
-      closeBtnStyle={{ padding: '10px' }}
+      closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
       closeOnClickOutside={false}
     >
       <form

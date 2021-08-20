@@ -14,7 +14,7 @@ import { useEffect } from 'react'
 export default function LoginModal() {
   const dispatch = useDispatch()
   const { t } = useTranslation()
-  const state = useSelector(state => state.modals.loginModalState)
+  const state = useSelector(state => state.modals)
   const errorMessages = useSelector(state => state.user.loginErrors)
   const { Login } = LoginModalFunction()
 
@@ -26,11 +26,11 @@ export default function LoginModal() {
     formState: { errors },
   } = useForm()
   useEffect(() => {
-    if (!state) {
+    if (!state.loginModalState) {
       setValue('phone_number', '')
       setValue('password', '')
     }
-  }, [state])
+  }, [state.loginModalState])
 
   useEffect(() => {
     errorMessages &&
@@ -56,13 +56,20 @@ export default function LoginModal() {
       custom
       showCloseButton
       title={<span className="text-Primary text-2xl">{t('login')}</span>}
-      show={state}
+      show={state.loginModalState}
       showConfirm={false}
       onConfirm={() => dispatch(CloseLoginModal())}
       onCancel={() => dispatch(CloseLoginModal())}
-      closeBtnStyle={{ padding: '10px' }}
+      closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
       closeOnClickOutside={false}
     >
+      <p
+        className={`${
+          state.loginModaMsgState ? 'block' : 'hidden'
+        } text-Warning`}
+      >
+        {t('requiredLogin')}
+      </p>
       <form
         className="  px-8 pt-6 pb-8 mb-4 bg-transparent"
         onSubmit={handleSubmit(Login)}

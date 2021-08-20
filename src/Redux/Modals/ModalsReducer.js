@@ -1,9 +1,11 @@
 import * as MODAL_ACTIONS from './ActionTypes'
 
 const initialState = {
+  loginModaMsgState: false,
   loginModalState: false,
   changePasswordModalState: false,
   paymentModalState: false,
+  paymentForCourseId: null,
   registerModalState: false,
   resetPasswordModalState: false,
   forgotPasswordModalState: false,
@@ -17,6 +19,7 @@ const ModalsReducer = (state = initialState, action) => {
       return {
         ...state,
         loginModalState: true,
+        loginModaMsgState: action.payload,
       }
     case MODAL_ACTIONS.OPEN_CHANGE_PASSWORD_MODAL:
       return {
@@ -27,6 +30,7 @@ const ModalsReducer = (state = initialState, action) => {
       return {
         ...state,
         paymentModalState: true,
+        paymentForCourseId: action.payload,
       }
     case MODAL_ACTIONS.OPEN_REGISTER_MODAL:
       return {
@@ -42,6 +46,7 @@ const ModalsReducer = (state = initialState, action) => {
       return {
         ...state,
         loginModalState: false,
+        loginModaMsgState: false,
       }
     case MODAL_ACTIONS.CLOSE_CHANGE_PASSWORD_MODAL:
       return {
@@ -52,6 +57,7 @@ const ModalsReducer = (state = initialState, action) => {
       return {
         ...state,
         paymentModalState: false,
+        paymentForCourseId: null,
       }
     case MODAL_ACTIONS.CLOSE_REGISTER_MODAL:
       return {

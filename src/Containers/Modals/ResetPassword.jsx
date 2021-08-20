@@ -15,7 +15,7 @@ export default function ResetPassword() {
       showConfirm={false}
       onConfirm={() => setshow(false)}
       onCancel={() => setshow(false)}
-      closeBtnStyle={{ padding: '10px' }}
+      closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
     >
       <form className="  px-8 pt-6 mb-4 bg-transparent">
         <p className="mb-4 ">{t('resetSlogan')}</p>

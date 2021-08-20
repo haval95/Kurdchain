@@ -55,7 +55,7 @@ export default function RegisterModal() {
       showConfirm={false}
       onConfirm={() => dispatch(CloseRegisterModal())}
       onCancel={() => dispatch(CloseRegisterModal())}
-      closeBtnStyle={{ padding: '10px' }}
+      closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
       closeOnClickOutside={false}
     >
       <form

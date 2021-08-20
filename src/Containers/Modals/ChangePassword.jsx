@@ -50,7 +50,7 @@ export default function ChangePassword() {
       showConfirm={false}
       onConfirm={() => dispatch(CloseChangePasswordModal())}
       onCancel={() => dispatch(CloseChangePasswordModal())}
-      closeBtnStyle={{ padding: '10px' }}
+      closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
       closeOnClickOutside={false}
     >
       <form

@@ -227,7 +227,7 @@ export default function Navbar() {
                     <button
                       onClick={() => setprofileDropDown(!profileDropDown)}
                       type="button"
-                      className=" flex text-sm rounded-full mx-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-Primary"
+                      className=" flex sm:mx-3  text-sm rounded-full border border-Primary px-2 text-Primary focus:outline-none focus:ring-1  focus:ring-Primary"
                       id="user-menu"
                       aria-expanded="false"
                       aria-haspopup="true"
@@ -235,15 +235,20 @@ export default function Navbar() {
                       <span className="sr-only">Open user menu</span>
 
                       <div
-                        className="h-8 w-8 rounded-full grid justify-center items-center   "
+                        className="h-8  sm:w-full rounded-full grid justify-center items-center grid-flow-col gap-3 px-2 "
                         alt=""
                       >
                         {user.isAuthenticated ? (
-                          <FontAwesomeIcon
-                            icon="user"
-                            size="lg"
-                            className="text-Primary "
-                          />
+                          <>
+                            <span className="w-16 overflow-x-hidden truncate">
+                              {user.user.data.username.split(' ')[0]}
+                            </span>
+                            <FontAwesomeIcon
+                              icon="user"
+                              size="lg"
+                              className=""
+                            />
+                          </>
                         ) : (
                           ''
                         )}
@@ -272,7 +277,7 @@ export default function Navbar() {
                 <div
                   className={`${
                     profileDropDown ? ' show' : ' hidden'
-                  } origin-center right-0 transform md:translate-x-1/4   bg-Light absolute rounded-lg py-2 click-text  mt-2 w-32  border border-GrayBorder items-center   shadow-lg focus:outline-none`}
+                  } origin-right right-6 transform md:translate-x-1/4   bg-Light absolute rounded-lg py-2 click-text  mt-2 w-32  border border-GrayBorder items-center   shadow-lg focus:outline-none`}
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="user-menu"

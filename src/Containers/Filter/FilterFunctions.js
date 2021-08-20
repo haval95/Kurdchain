@@ -8,10 +8,32 @@ const FilterFunctions = () => {
   const data = useSelector(state => state.courses)
 
   const [type, setType] = useState([])
+  const [price, setPrice] = useState([])
+  const [priceChecked, setPriceChecked] = useState(['0'])
   const [language, setLanguage] = useState([])
   const [instructor, setInstructor] = useState([])
 
   const handleChange = e => {
+    setPriceChecked([e.target.id])
+    if (e.target.name === 'price') {
+      switch (e.target.id) {
+        case '0':
+          setPrice([])
+          break
+        case '1':
+          setPrice([1, 100])
+          break
+        case '2':
+          setPrice([100, 500])
+          break
+        case '3':
+          setPrice([500, 1000])
+          break
+        case '4':
+          setPrice([1000])
+          break
+      }
+    }
     if (e.target.name === 'type') {
       if (e.target.checked) {
         setType([...type, e.target.id])
@@ -43,6 +65,16 @@ const FilterFunctions = () => {
       filteredCourses = data.data
     }
 
+    if (price.length > 1) {
+      filteredCourses = filteredCourses.filter(course => {
+        return course.price >= price[0] && course.price <= price[1]
+      })
+    } else if (price.length) {
+      filteredCourses = filteredCourses.filter(course => {
+        return course.price >= price[0]
+      })
+    }
+
     if (language.length) {
       filteredCourses = filteredCourses.filter(course => {
         return language.includes(course.language.name_en)
@@ -67,7 +99,7 @@ const FilterFunctions = () => {
 
   return {
     filterData,
-
+    priceChecked,
     handleChange,
     type,
     language,

@@ -12,24 +12,23 @@ export default function CourseRequested() {
 
   return (
     <SweetAlert
-      info
+      warning
       showCloseButton
-      title={<h1 className="text-Secondary">{t('requested')}</h1>}
+      title={<h1 className="text-Warning">{t('requested')}</h1>}
       show={state}
       showConfirm={false}
       onConfirm={() => dispatch(CloseCourseRequestedModal())}
       onCancel={() => dispatch(CloseCourseRequestedModal())}
-      closeBtnStyle={{ padding: '10px' }}
+      closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
     >
       <div className="p-2">
-        <h1 className="text-xl text-Secondary font-medium mb-6">
-          {t('requestedMsg')}
-        </h1>
+        <h1 className="text-xl text-Dark  mb-6">{t('requestedMsg')}</h1>
         <p className="py-2 mb-3">{t('contactUsForProblem')}</p>
         <div className="mb-6 grid gap-3">
           <NavigationButton
             text={t('navbar.contact')}
             location={'/contact'}
+            colors="bg-Warning text-Light uppercase py-1 hover:bg-WarningHover   shadow-md"
             clickAction={() => dispatch(CloseCourseRequestedModal())}
           />
         </div>

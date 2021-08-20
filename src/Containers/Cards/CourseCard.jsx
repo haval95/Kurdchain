@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useTranslation } from 'react-i18next'
 import { courseImage } from '../../Helper/Domain'
 import { useSelector } from 'react-redux'
-
+import Loader from 'react-loader-spinner'
 export default function CourseCard({
   id,
   name,
@@ -24,22 +24,34 @@ export default function CourseCard({
   const userCourses = useSelector(state => state.userCourses)
   const getButton = () => {
     if (userCourses.loading === false) {
-      let IsCourseBought = []
-
       if (Object.keys(userCourses.data).length > 0) {
-        IsCourseBought = userCourses.data.bought.filter(course => {
-          return course.course_id === id
-        })
-      }
-      if (IsCourseBought.length) {
-        return (
-          <NavigationButton
-            location={`/play/${id}`}
-            text={t('watch')}
-            style="w-full mt-2 rounded-b-xl rounded-t-none py-2 uppercase "
-            colors="bg-Secondary text-Light hover:bg-SecondaryHover   "
-          />
-        )
+        if (
+          userCourses.data.bought.filter(course => {
+            return course.course_id === id
+          }).length
+        ) {
+          return (
+            <NavigationButton
+              location={`/play/${id}`}
+              text={t('watch')}
+              style="w-full mt-2 rounded-b-xl rounded-t-none py-2 uppercase "
+              colors="bg-Secondary text-Light hover:bg-SecondaryHover   "
+            />
+          )
+        } else if (
+          userCourses.data.request.filter(course => {
+            return course.course_id === id
+          }).length
+        ) {
+          return (
+            <NavigationButton
+              location={`/course/${id}`}
+              text={t('requested')}
+              style="w-full mt-2 rounded-b-xl rounded-t-none py-2 uppercase "
+              colors="bg-Warning text-Light hover:bg-WarningHover   "
+            />
+          )
+        }
       }
       return (
         <NavigationButton
@@ -55,7 +67,7 @@ export default function CourseCard({
     <div className="w-72 h-96 border-r border-l border-GrayBorder  cursor-pointer   rounded-3xl hover:-translate-y-2 focus:outline-none relative bg-Light shadow-xl hover:shadow-none hover:bg-light transform  transition duration-500 ease-in-out">
       <div className="relative">
         <div className="bg-PrimaryHover text-Light px-5 py-1 text-right absolute bottom-3 rounded-l-xl  right-0">
-          {`IQD ${new Intl.NumberFormat().format(price)}`}
+          {`USD ${new Intl.NumberFormat().format(price)}`}
         </div>
         <img
           src={courseImage + image}
@@ -80,23 +92,42 @@ export default function CourseCard({
         </div>
         <Paragraph
           text={description}
-          style="h-20 overflow-y-hidden turncate text-justify"
+          style="h-16 overflow-y-hidden turncate text-justify mb-5"
           colors="text-Gray"
         />
 
         <div className=" text-Secondary grid grid-flow-col  items-center p-1 justify-between gap-3">
           <span className="items-center grid grid-flow-col gap-1">
-            <FontAwesomeIcon icon="clock" className="text-sm text-Primary" />
+            <FontAwesomeIcon
+              icon="stopwatch"
+              className="text-sm text-Primary"
+            />
 
             <Paragraph text={time} style=" inline" />
 
             <Paragraph text={duration} style=" inline" />
           </span>
-          <Paragraph text={language} style=" inline" />
+          <span className="items-center grid grid-flow-col gap-2">
+            <FontAwesomeIcon
+              icon="language"
+              className="text-xl text-Primary "
+            />
+            <Paragraph text={language} style=" inline " />
+          </span>
         </div>
 
         <div className="text-xs    absolute inset-x-0 bottom-0  w-full ">
-          {userCourses.Loading === true ? 'loading' : getButton()}
+          {userCourses.Loading === true ? (
+            <Loader
+              type="ThreeDots"
+              color="#efefef"
+              height={100}
+              width={100}
+              timeout={3000} //3 secs
+            />
+          ) : (
+            getButton()
+          )}
         </div>
       </div>
     </div>

@@ -15,10 +15,16 @@ import {
   faTrashAlt,
   faCalendarAlt,
   faSpinner,
+  faLanguage,
+  faStopwatch,
+  faCaretDown,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
+  faCaretDown,
   faSpinner,
+  faStopwatch,
+  faLanguage,
   fab,
   faCalendarAlt,
   faTrashAlt,

@@ -1,14 +1,16 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import { useTranslation } from 'react-i18next'
-
+import Loader from 'react-loader-spinner'
 import Title from '../../Components/Title'
 import Button from '../../Components/Button'
 import {
   OpenPaymentModal,
   OpenCourseRequestedModal,
+  OpenLoginModal,
 } from '../../Redux/Modals/ModalActions'
 import { useDispatch, useSelector } from 'react-redux'
+import { useLocation, useHistory } from 'react-router-dom'
 export default function CourseDetailCard({
   duration,
   level,
@@ -20,7 +22,10 @@ export default function CourseDetailCard({
 }) {
   const { t } = useTranslation()
   const dispatch = useDispatch()
+  const { pathname } = useLocation()
+  const history = useHistory()
   const userCourses = useSelector(state => state.userCourses)
+  const user = useSelector(state => state.user)
 
   const getButton = () => {
     if (userCourses.loading === false) {
@@ -30,6 +35,9 @@ export default function CourseDetailCard({
             return course.course_id === id
           }).length
         ) {
+          if (!pathname.includes('play')) {
+            history.push(`/play/${id}`)
+          }
           return ''
         } else if (
           userCourses.data.request.filter(course => {
@@ -40,19 +48,29 @@ export default function CourseDetailCard({
             <Button
               clickAction={() => dispatch(OpenCourseRequestedModal())}
               text={t('requested')}
-              style="my-4 "
-              color={'Secondary'}
+              style="my-4 px-3"
+              color={'Warning'}
             />
           )
         }
       }
-      return (
-        <Button
-          clickAction={() => dispatch(OpenPaymentModal(id))}
-          text={t('buy')}
-          style="my-4 "
-        />
-      )
+      if (user.isAuthenticated) {
+        return (
+          <Button
+            clickAction={() => dispatch(OpenPaymentModal(id))}
+            text={t('buy')}
+            style="my-4 "
+          />
+        )
+      } else {
+        return (
+          <Button
+            clickAction={() => dispatch(OpenLoginModal(true))}
+            text={t('buy')}
+            style="my-4 "
+          />
+        )
+      }
     }
   }
 
@@ -82,15 +100,25 @@ export default function CourseDetailCard({
       </div>
       <hr className="text-GrayBorder my-2"></hr>
       <div className="grid grid-cols-2 items-center justify-items-center text-start-important">
-        <p>{t('price')}</p> <p>{price}</p>
+        <p>{t('price')}</p> <p>USD {price}</p>
       </div>
       <hr className="text-GrayBorder my-2"></hr>
       <div className="grid grid-cols-2 items-center justify-items-center text-start-important">
         <p>{t('type')}</p> <p>{type}</p>
       </div>
       <div className=" my-2 grid">
-        <div className="w-28 justify-self-center  items-center">
-          {userCourses.loading === true ? 'loading' : getButton()}
+        <div className=" justify-self-center  items-center">
+          {userCourses.loading === true ? (
+            <Loader
+              type="ThreeDots"
+              color="#efefef"
+              height={100}
+              width={100}
+              timeout={3000} //3 secs
+            />
+          ) : (
+            getButton()
+          )}
         </div>
       </div>
     </div>

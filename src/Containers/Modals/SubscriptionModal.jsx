@@ -19,7 +19,7 @@ export default function SubscriptionModal() {
       showConfirm={false}
       onConfirm={() => dispatch(CloseSubscribeModal())}
       onCancel={() => dispatch(CloseSubscribeModal())}
-      closeBtnStyle={{ padding: '10px' }}
+      closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
     >
       <form className="  px-8 pt-6 mb-4 bg-transparent">
         <h1 className="text-xl text-Secondary font-medium mb-6">
