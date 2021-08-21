@@ -57,7 +57,7 @@ export default function Form() {
               text={t('subscribeForm')}
               underline="center"
               color="Secondary"
-              style="text-center mb-6"
+              style="text-center mb-6 capitalize"
               animation="bounceIn"
               type="subTitle"
             />

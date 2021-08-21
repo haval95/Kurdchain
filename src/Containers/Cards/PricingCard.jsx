@@ -1,7 +1,7 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Button from '../../Components/Button'
+//import Button from '../../Components/Button'
 import { OpenSubscribeModal } from '../../Redux/Modals/ModalActions'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
@@ -45,12 +45,12 @@ export default function PricingCard({ style, price, services, title, dark }) {
         </ul>
       </div>
       <div className="w-full">
-        <Button
-          clickAction={() => dispatch(OpenSubscribeModal())}
-          text={t('subscribe')}
-          color={'PrimaryLight'}
-          style="font-light"
-        />
+        <button
+          onClick={() => dispatch(OpenSubscribeModal())}
+          className="bg-PrimaryLight font-light  px-3 hover:bg-PrimaryLightHover text-Light w-full py-1 uppercase shadow-md hover:shadow-none  rounded-md transition duration-500 ease-in-out"
+        >
+          {t('subscribe')}
+        </button>
       </div>
     </div>
   )

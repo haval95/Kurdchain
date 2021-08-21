@@ -23,7 +23,7 @@ export default function ContactJumbotron({ image }) {
 
         <NavigationButton
           location={ROUTES.CONTACT_ROUTE}
-          text="Contact"
+          text={t('footer.getInTouch')}
           colors="bg-SecondaryLight text-Secondary hover:bg-Light hover:shadow-none shadow-lg px-6 "
           style="text-xl uppercase  "
           fontWeight="normal"
