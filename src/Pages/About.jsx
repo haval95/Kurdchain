@@ -19,7 +19,7 @@ export default function About() {
             animation="bounceIn"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 text-justify items-center ">
-            <p> {t('aboutSlogan')}</p>
+            <p className="text-lg"> {t('aboutSlogan')}</p>
             <img
               src={logo}
               className="w-2/4 justify-center justify-self-center pt-4 shadow-inner mt-5 sm:mt-0  sm p-4"

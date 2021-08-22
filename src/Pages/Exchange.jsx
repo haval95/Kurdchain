@@ -2,14 +2,16 @@ import React from 'react'
 
 import ImageJumbotron from '../Components/ImageJumbotron'
 import Title from '../Components/Title'
-
+import { OpenMakeDealModal } from '../Redux/Modals/ModalActions'
 import img from '../Assets/Images/newsbg.png'
 import { useTranslation } from 'react-i18next'
 import Button from '../Components/Button'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+
 export default function Exchange() {
   const { t } = useTranslation()
   const state = useSelector(state => state.exchange)
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -44,6 +46,9 @@ export default function Exchange() {
             </p>
             <div className="m-4">
               <Button
+                clickAction={() => {
+                  dispatch(OpenMakeDealModal())
+                }}
                 text={t('makeDeal')}
                 style="mt-4 px-3"
                 color="Secondary"
@@ -76,6 +81,9 @@ export default function Exchange() {
                 text={t('makeDeal')}
                 style="mt-4 px-3"
                 color="Secondary"
+                clickAction={() => {
+                  dispatch(OpenMakeDealModal())
+                }}
               />
             </div>
           </div>

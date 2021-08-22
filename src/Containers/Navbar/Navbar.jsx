@@ -277,7 +277,7 @@ export default function Navbar() {
                 <div
                   className={`${
                     profileDropDown ? ' show' : ' hidden'
-                  } origin-right right-6 transform md:translate-x-1/4   bg-Light absolute rounded-lg py-2 click-text  mt-2 w-32  border border-GrayBorder items-center   shadow-lg focus:outline-none`}
+                  } origin-right right-0     bg-Light absolute rounded-lg py-2 click-text  mt-2 w-40  border border-GrayBorder items-center   shadow-lg focus:outline-none`}
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="user-menu"
@@ -286,7 +286,7 @@ export default function Navbar() {
                     to={ROUTES.PROFILE_ROUTE}
                     className="m-auto text-center block focus:outline-none px-4 py-2 text-sm text-gray-700 hover:bg-Primary hover:text-Light w-full "
                   >
-                    {user.user.data ? user.user.data.username : null}
+                    {user.isAuthenticated ? t('profile.myItems') : null}
                   </Link>
                   <button
                     type="button"

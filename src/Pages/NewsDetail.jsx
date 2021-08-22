@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import {
   EmailShareButton,
   FacebookShareButton,
-  FacebookMessengerShareButton,
   LinkedinShareButton,
   TelegramShareButton,
   TwitterShareButton,
@@ -13,7 +12,6 @@ import {
 import {
   EmailIcon,
   FacebookIcon,
-  FacebookMessengerIcon,
   LinkedinIcon,
   TelegramIcon,
   TwitterIcon,
@@ -102,7 +100,10 @@ export default function NewsDetail() {
 
           <div className="px-3">
             <div className="grid grid-flow-col gap-20 justify-start my-6 px-2 ">
-              <p>{currentNews.currentNews.news.writer}</p>
+              <p>
+                {t('by') + '  '}
+                {currentNews.currentNews.news.writer}
+              </p>
               <p>{currentNews.currentNews.news.date_of_the_news}</p>
             </div>
 
@@ -112,56 +113,54 @@ export default function NewsDetail() {
                 <div className="m-1 order-2">
                   <FacebookShareButton
                     url={news.shareUrl}
-                    quote={news.title}
+                    quote={currentNews.currentNews.news.title}
+                    hashtag="kurdchain"
                     className="m-1"
                   >
                     <FacebookIcon size={50} round />
                   </FacebookShareButton>
-                  <FacebookMessengerShareButton
-                    url={news.shareUrl}
-                    quote={news.title}
-                    className="m-1"
-                  >
-                    <FacebookMessengerIcon size={50} round />
-                  </FacebookMessengerShareButton>
+
                   <EmailShareButton
+                    subject={currentNews.currentNews.news.title}
                     url={news.shareUrl}
-                    quote={news.title}
+                    body={
+                      currentNews.currentNews.news.title +
+                      ' here is the link to the news: '
+                    }
                     className="m-1"
                   >
                     <EmailIcon size={50} round />
                   </EmailShareButton>
                   <LinkedinShareButton
+                    title={currentNews.currentNews.news.title}
                     url={news.shareUrl}
-                    quote={news.title}
+                    source={news.shareUrl}
                     className="m-1"
                   >
                     <LinkedinIcon size={50} round />
                   </LinkedinShareButton>
                   <TelegramShareButton
+                    title={currentNews.currentNews.news.title}
                     url={news.shareUrl}
-                    quote={news.title}
                     className="m-1"
                   >
                     <TelegramIcon size={50} round />
                   </TelegramShareButton>
                   <TwitterShareButton
                     url={news.shareUrl}
-                    quote={news.title}
+                    via={'kurchain'}
+                    title={currentNews.currentNews.news.title}
+                    hashtags={['kurchain', 'news', 'crypto']}
                     className="m-1"
                   >
                     <TwitterIcon size={50} round />
                   </TwitterShareButton>
-                  <ViberShareButton
-                    url={news.shareUrl}
-                    quote={news.title}
-                    className="m-1"
-                  >
+                  <ViberShareButton url={news.shareUrl} className="m-1">
                     <ViberIcon size={50} round />
                   </ViberShareButton>
                   <WhatsappShareButton
                     url={news.shareUrl}
-                    quote={news.title}
+                    title={currentNews.currentNews.news.title}
                     className="m-1"
                   >
                     <WhatsappIcon size={50} round />

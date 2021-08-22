@@ -92,6 +92,7 @@
   "contactusnow": "Talk to us today and see how we can help you!",
   "location": "Iraq, Kurdistan",
   "watch": "watch",
+
   "requested": "requested",
   "requestedMsg": "Your request has already been submitted for this course, please wait until our customer service will contact you.",
   "binance": "Binance",
@@ -240,5 +241,7 @@
   "notFound": {
     "oops": " OOPS! Page Not Found...",
     "explain": "The Page You are Looking For does not Exist, It might have been Moved or deleted."
-  }
+  },
+
+  "by": "Writer: "
 }

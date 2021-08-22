@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <>
       <div className=" bg-Light  bg-header h-96 sm:h-full items-center justify-center  grid  grid-cols-1 sm:grid-cols-11 ">
-        <div className=" text-start w-full px-10  sm:w-3/4 my-10 sm:my-0 mb-1 sm:py-8   pb-3 bg-opacity-80  sm:bg-none justify-self-center content-center self-start sm:self-center sm:col-span-6    ">
+        <div className="bg-Light rounded-md  bg-opacity-70 text-start w-full px-10  sm:w-3/4 my-10 sm:my-0 mb-1 sm:py-8   pb-3  sm:bg-none justify-self-center content-center self-center sm:self-center sm:col-span-6    ">
           <ScrollAnimation animateIn="bounceIn">
             <Title
               text={t('website')}
@@ -26,13 +26,14 @@ export default function Header() {
               style="uppercase my-1  hidden sm:block font-black text-center  text-center  sm:text-4xl "
             />
           </ScrollAnimation>
-          <div className="sm:hidden mb-2 bg-Light rounded-md px-5 bg-opacity-70 grid justify-center justify-self-center">
+          <div className="sm:hidden mb-2  rounded-md px-5 bg-opacity-70 grid justify-center justify-self-center">
             <ScrollAnimation animateIn="bounceIn">
               <Title
                 text={t('welcome')}
                 type="subTitle"
                 underline="none"
-                style="uppercase my-1   font-black text-center  text-center  sm:text-4xl sm:hidden "
+                animation="none"
+                style="uppercase my-1   font-black text-center  text-center  sm:text-4xl sm:hidden"
               />
             </ScrollAnimation>
           </div>

@@ -1,7 +1,7 @@
 import './App.css'
 import './fontawsome'
 import { useEffect } from 'react'
-import { Switch, Route, useLocation, useHistory } from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
 import * as ROUTES from './router'
 import Home from './Pages/Home'
 import About from './Pages/About'
@@ -46,7 +46,8 @@ import { useDispatch } from 'react-redux'
 
 import PlayCourse from './Pages/PlayCourse'
 import { FetchUserCourses } from './Redux/UserCourses/UserCoursesActions'
-import CourseRequested from './Containers/Modals/CourseRequestedModal'
+import CourseRequestedModal from './Containers/Modals/CourseRequestedModal'
+import MakeDealModal from './Containers/Modals/MakeDealModal'
 
 function App() {
   const { t } = useTranslation()
@@ -60,7 +61,7 @@ function App() {
     dispatch(LanguageChanged())
   }, [i18n, i18n.language])
   const { pathname } = useLocation()
-  const history = useHistory()
+
   useEffect(() => {
     if (user.isAuthenticated) {
       dispatch(FetchUserCourses(user.user.config))
@@ -77,9 +78,6 @@ function App() {
   useEffect(() => {
     dispatch(FetchLatestNews(t('currentLanguage')))
     dispatch(FetchNews(1, t('currentLanguage')))
-    if (pathname.includes('newsDetail')) {
-      history.push('/news')
-    }
   }, [t('currentLanguage')])
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 })
@@ -120,7 +118,8 @@ function App() {
       <ForgotPasswordModal />
       <SubscriptionModal />
       <FilterError />
-      <CourseRequested />
+      <CourseRequestedModal />
+      <MakeDealModal />
 
       <Switch>
         <Route exact path={ROUTES.HOME_ROUTE} component={Home} />

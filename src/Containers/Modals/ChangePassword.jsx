@@ -78,7 +78,7 @@ export default function ChangePassword() {
               placeholder="**********"
               {...register('old_password', {
                 required: t('required'),
-                minLength: { value: 6, message: t('min6') },
+                minLength: { value: 8, message: t('min6') },
               })}
             />
             {errors.old_password && (
@@ -109,7 +109,7 @@ export default function ChangePassword() {
               placeholder="**********"
               {...register('password', {
                 required: t('required'),
-                minLength: { value: 6, message: t('min6') },
+                minLength: { value: 8, message: t('min6') },
               })}
             />
             {errors.password && (
@@ -140,7 +140,7 @@ export default function ChangePassword() {
               placeholder="**********"
               {...register('password_confirmation', {
                 required: t('required'),
-                minLength: { value: 6, message: t('min6') },
+                minLength: { value: 8, message: t('min6') },
                 validate: value => value === password || t('dontmatch'),
               })}
             />

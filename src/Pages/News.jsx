@@ -111,7 +111,7 @@ export default function News() {
                     title={EachNews.title}
                     image={EachNews.image}
                     description={EachNews.description}
-                    writer={EachNews.writer}
+                    writer={t('by') + ' ' + EachNews.writer}
                     key={uuid()}
                   />
                 )

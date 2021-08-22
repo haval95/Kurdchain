@@ -42,6 +42,11 @@ export const OpenCourseRequestedModal = () => {
     type: MODAL_ACTIONS.OPEN_COURSE_REQUESTED_MODAL,
   }
 }
+export const OpenMakeDealModal = () => {
+  return {
+    type: MODAL_ACTIONS.OPEN_MAKE_DEAL_MODAL,
+  }
+}
 export const CloseForgotPasswordModal = () => {
   return {
     type: MODAL_ACTIONS.CLOSE_FORGOT_PASSWORD_MODAL,
@@ -82,5 +87,10 @@ export const CloseSubscribeModal = () => {
 export const CloseCourseRequestedModal = () => {
   return {
     type: MODAL_ACTIONS.CLOSE_COURSE_REQUESTED_MODAL,
+  }
+}
+export const CloseMakeDealModal = () => {
+  return {
+    type: MODAL_ACTIONS.CLOSE_MAKE_DEAL_MODAL,
   }
 }

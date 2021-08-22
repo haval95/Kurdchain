@@ -52,7 +52,7 @@ export default function FutureSection() {
           ) : (
             <img
               src={comingSoon}
-              className="justify-self-center text-center max-w-sm col-span-full grayscale hover:grayscale-0 filter  transition-all ease-in-out duration-500 "
+              className="justify-self-center text-center w-52  col-span-full grayscale hover:grayscale-0 filter  transition-all ease-in-out duration-500 "
             />
           )
         ) : (

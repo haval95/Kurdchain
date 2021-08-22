@@ -64,7 +64,7 @@ export default function CourseCard({
     }
   }
   return (
-    <div className="w-72 h-96 border-r border-l border-GrayBorder  cursor-pointer   rounded-3xl hover:-translate-y-2 focus:outline-none relative bg-Light shadow-xl hover:shadow-none hover:bg-light transform  transition duration-500 ease-in-out">
+    <div className="w-80 sm:w-80 h-96 border-r border-l border-GrayBorder  cursor-pointer   rounded-3xl hover:-translate-y-2 focus:outline-none relative bg-Light shadow-xl hover:shadow-none hover:bg-light transform  transition duration-500 ease-in-out">
       <div className="relative">
         <div className="bg-PrimaryHover text-Light px-5 py-1 text-right absolute bottom-3 rounded-l-xl  right-0">
           {`USD ${new Intl.NumberFormat().format(price)}`}
@@ -92,8 +92,9 @@ export default function CourseCard({
         </div>
         <Paragraph
           text={description}
-          style="h-16 overflow-y-hidden turncate text-justify mb-5"
-          colors="text-Gray"
+          style="h-16 overflow-y-hidden turncate   mb-5"
+          colors="text-Dark"
+          textalign="text-justify"
         />
 
         <div className=" text-Secondary grid grid-flow-col  items-center p-1 justify-between gap-3">

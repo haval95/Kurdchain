@@ -18,7 +18,7 @@ export default function Home() {
       <div className="bg-LightGray grid justify-center md:px-24 py-16  ">
         <NewsSection />
       </div>
-      <div className="bg-Light grid justify-center md:px-24 py-16  ">
+      <div className="bg-Light grid   py-16   ">
         <PartnersSection />
       </div>
       <div className="bg-LightGray grid justify-center md:px-24 py-16  ">

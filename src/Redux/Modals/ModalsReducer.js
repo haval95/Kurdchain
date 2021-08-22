@@ -11,6 +11,7 @@ const initialState = {
   forgotPasswordModalState: false,
   subscribtionModalState: false,
   courseRequestedModalState: false,
+  makeDealModalstate: false,
 }
 
 const ModalsReducer = (state = initialState, action) => {
@@ -98,6 +99,16 @@ const ModalsReducer = (state = initialState, action) => {
       return {
         ...state,
         courseRequestedModalState: false,
+      }
+    case MODAL_ACTIONS.OPEN_MAKE_DEAL_MODAL:
+      return {
+        ...state,
+        makeDealModalstate: true,
+      }
+    case MODAL_ACTIONS.CLOSE_MAKE_DEAL_MODAL:
+      return {
+        ...state,
+        makeDealModalstate: false,
       }
 
     default:

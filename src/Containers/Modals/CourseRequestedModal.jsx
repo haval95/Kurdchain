@@ -5,17 +5,19 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import NavigationButton from '../../Components/NavigationButton'
 
-export default function CourseRequested() {
+export default function CourseRequestedModal() {
   const { t } = useTranslation()
   const dispatch = useDispatch()
-  const state = useSelector(state => state.modals.courseRequestedModalState)
+  const CourseRequestedState = useSelector(
+    state => state.modals.courseRequestedModalState
+  )
 
   return (
     <SweetAlert
       warning
       showCloseButton
       title={<h1 className="text-Warning">{t('requested')}</h1>}
-      show={state}
+      show={CourseRequestedState}
       showConfirm={false}
       onConfirm={() => dispatch(CloseCourseRequestedModal())}
       onCancel={() => dispatch(CloseCourseRequestedModal())}

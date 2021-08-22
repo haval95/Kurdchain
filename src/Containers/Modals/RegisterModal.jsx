@@ -173,7 +173,7 @@ export default function RegisterModal() {
               placeholder="**********"
               {...register('password', {
                 required: t('required'),
-                minLength: { value: 6, message: t('min6') },
+                minLength: { value: 8, message: t('min6') },
               })}
             />
             {errors.password && (

@@ -8,12 +8,15 @@ export default function Form() {
   const {
     register,
     handleSubmit,
+    watch,
     reset,
     control,
     formState: { errors, isSubmitSuccessful, isSubmitting },
   } = useForm({
     mode: 'onTouched',
   })
+
+  console.log(watch())
   const [isSuccess, setIsSuccess] = React.useState(false)
   const [Message, setMessage] = React.useState('')
 
@@ -159,7 +162,7 @@ export default function Form() {
                     required: t('required'),
                   })}
                 >
-                  <option vlaue="Binance">{t('Binance')}</option>
+                  <option vlaue="Binance">{t('binance')}</option>
                   <option value="OKEX">{t('OKEX')}</option>
                 </select>
                 {errors.exchange && (
