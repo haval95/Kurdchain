@@ -67,7 +67,7 @@ export default function CourseCard({
     <div className="w-80 sm:w-80 h-96 border-r border-l border-GrayBorder  cursor-pointer   rounded-3xl hover:-translate-y-2 focus:outline-none relative bg-Light shadow-xl hover:shadow-none hover:bg-light transform  transition duration-500 ease-in-out">
       <div className="relative">
         <div className="bg-PrimaryHover text-Light px-5 py-1 text-right absolute bottom-3 rounded-l-xl  right-0">
-          {`USD ${new Intl.NumberFormat().format(price)}`}
+          {`$ ${new Intl.NumberFormat().format(price)}`}
         </div>
         <img
           src={courseImage + image}
@@ -106,7 +106,7 @@ export default function CourseCard({
 
             <Paragraph text={time} style=" inline" />
 
-            <Paragraph text={duration} style=" inline" />
+            <Paragraph text={duration + '(s)'} style=" inline" />
           </span>
           <span className="items-center grid grid-flow-col gap-2">
             <FontAwesomeIcon

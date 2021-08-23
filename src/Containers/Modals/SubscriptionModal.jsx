@@ -14,7 +14,7 @@ export default function SubscriptionModal() {
     <SweetAlert
       custom
       showCloseButton
-      title={<h1 className="text-Primary">{t('subscribe')}</h1>}
+      title={<h1 className="text-Primary capitalize">{t('subscribe')}</h1>}
       show={state}
       showConfirm={false}
       onConfirm={() => dispatch(CloseSubscribeModal())}
@@ -22,7 +22,7 @@ export default function SubscriptionModal() {
       closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
     >
       <form className="  px-8 pt-6 mb-4 bg-transparent">
-        <h1 className="text-xl text-Secondary font-medium mb-6">
+        <h1 className="text-xl text-Dark font-medium mb-6">
           {t('subscribeMsg')}
         </h1>
 

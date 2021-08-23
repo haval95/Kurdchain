@@ -4,7 +4,6 @@ import { ClosePaymentModal } from '../../Redux/Modals/ModalActions'
 import { buyCourse } from '../../Redux/UserCourses/UserCoursesActions'
 import { useSelector, useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import Button from '../../Components/Button'
 
 export default function PaymentModal() {
   const { t } = useTranslation()
@@ -37,14 +36,14 @@ export default function PaymentModal() {
         {state && state.paymentForCourseId && user.isAuthenticated ? (
           <>
             <p className="text-xl my-2  text-Primary">{t('buyCourse')} </p>
-            <Button
-              text={t('sendRquestBtn')}
-              font="bold"
-              clickAction={() =>
+            <button
+              className="font-bold justify-self-center bg-Primary px-3 hover:bg-PrimaryHover text-Light  w-full py-1 uppercase shadow-md hover:shadow-none  rounded-md transition duration-500 ease-in-out"
+              onClick={() =>
                 dispatch(buyCourse(state.paymentForCourseId, user.user.config))
               }
-              style="justify-self-center"
-            />
+            >
+              {t('sendRquestBtn')}
+            </button>
           </>
         ) : null}
       </form>

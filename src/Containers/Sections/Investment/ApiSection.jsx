@@ -2,6 +2,9 @@ import React from 'react'
 import Title from '../../../Components/Title'
 import Paragraph from '../../../Components/Paragraph'
 import PricingCard from '../../Cards/PricingCard'
+import termsApiEn from '../../../Assets/TermsPdf/TermsApiEnglish.pdf'
+import termsApiAr from '../../../Assets/TermsPdf/TermsApiArabic.pdf'
+import termsApiKu from '../../../Assets/TermsPdf/TermsApiKurdish.pdf'
 
 import { useTranslation } from 'react-i18next'
 import Form from './Form'
@@ -41,7 +44,14 @@ export default function ApiSection() {
             textalign="text-justify"
           />
           <a
-            href="#"
+            href={
+              t('currentLanguage') == 'kurdish'
+                ? termsApiKu
+                : t('currentLanguage') == 'arabic'
+                ? termsApiAr
+                : termsApiEn
+            }
+            target="blank"
             className=" text-xl text-start block text-Secondary underline"
           >
             read more

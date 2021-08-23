@@ -2,7 +2,9 @@ import React from 'react'
 import Title from '../../../Components/Title'
 import Paragraph from '../../../Components/Paragraph'
 import PricingCard from '../../Cards/PricingCard'
-
+import termsContractEn from '../../../Assets/TermsPdf/TermsContractEnglish.pdf'
+import termsContractAr from '../../../Assets/TermsPdf/TermsContractArabic.pdf'
+import termsContractKu from '../../../Assets/TermsPdf/TermsContractKurdish.pdf'
 import { useTranslation } from 'react-i18next'
 
 export default function ApiSection() {
@@ -40,8 +42,16 @@ export default function ApiSection() {
             textalign="text-justify"
           />
           <a
-            href="#"
+            href={
+              t('currentLanguage') == 'kurdish'
+                ? termsContractKu
+                : t('currentLanguage') == 'arabic'
+                ? termsContractAr
+                : termsContractEn
+            }
+            target="_blank"
             className=" text-xl text-start block text-Secondary underline"
+            rel="noreferrer"
           >
             read more
           </a>
