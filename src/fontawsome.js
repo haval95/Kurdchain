@@ -18,9 +18,11 @@ import {
   faLanguage,
   faStopwatch,
   faCaretDown,
+  faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
+  faExclamationCircle,
   faCaretDown,
   faSpinner,
   faStopwatch,

@@ -38,24 +38,27 @@ export default function ApiSection() {
             color="Secondary"
             animation="fadeIn"
           />
-          <Paragraph
-            text="Lorem ipsum dolor sit amet,onsectetur adipiscing elit.Lorem adipiscing  onsectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur m ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur "
-            style="text-lg  "
-            textalign="text-justify"
-          />
-          <a
-            href={
-              t('currentLanguage') == 'kurdish'
-                ? termsApiKu
-                : t('currentLanguage') == 'arabic'
-                ? termsApiAr
-                : termsApiEn
-            }
-            target="blank"
-            className=" text-xl text-start block text-Secondary underline"
-          >
-            read more
-          </a>
+          <div>
+            <Paragraph
+              text={t('termsDetail')}
+              style="text-xl inline "
+              textalign="text-justify"
+            />
+
+            <a
+              href={
+                t('currentLanguage') == 'kurdish'
+                  ? termsApiKu
+                  : t('currentLanguage') == 'arabic'
+                  ? termsApiAr
+                  : termsApiEn
+              }
+              target="blank"
+              className=" text-xl text-start  text-Secondary underline inline capitalize"
+            >
+              ...{t('readMore')}
+            </a>
+          </div>
         </div>
         <div className="flex flex-col ">
           <Title

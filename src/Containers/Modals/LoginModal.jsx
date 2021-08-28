@@ -10,6 +10,7 @@ import {
 import LoginModalFunction from './ModalFunctions/LoginModalFunctions.js'
 import { useForm } from 'react-hook-form'
 import { useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function LoginModal() {
   const dispatch = useDispatch()
@@ -66,8 +67,9 @@ export default function LoginModal() {
       <p
         className={`${
           state.loginModaMsgState ? 'block' : 'hidden'
-        } text-Warning`}
+        } text-Light bg-Warning justify-self-center py-2 capitalize`}
       >
+        <FontAwesomeIcon icon="exclamation-circle" className="mx-4 text-xl" />
         {t('requiredLogin')}
       </p>
       <form

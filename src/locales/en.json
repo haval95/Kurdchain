@@ -159,7 +159,7 @@
   "requiredBox": "To participate, you must agree to the terms and conditions",
   "wrongNumber": "Only numbers are allowed",
   "max11": "please enter 11 digits",
-  "min6": "Password should be at least 6 characters long .",
+  "min6": "Password should be at least 8 characters long .",
   "dontmatch": "The password does not match. ",
   "phoneOrPwd": "Phone number or password is wrong.",
   "phoneNumberTaken": "Phone number is already taken.",
@@ -206,6 +206,8 @@
 
   "howItWorks": "How it works",
   "terms": "Terms and Conditions",
+  "termsDetail": "KurdChain fund management focuses on the methods and principles of developing investor’s capital in the cryptocurrency market. The main goal of this system is to focus on investors who aim to grow their capital financially and increase their incomes. KurdChain Fund Investment manages investor capital through two completely different systems; the API system and the contract system. These two systems are working on the long-term protection of investor's capital and focus on continuous profit and growth, as well as a reason for investors to reach or approach financial freedom",
+  "readMore": "Read More",
 
   "toast": {
     "successAdd": " is successfully added",
