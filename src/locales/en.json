@@ -6,71 +6,74 @@
   "ku-text": "ku",
   "ku": "he",
   "home": {
-    "slogan": "Think and trade like a champion",
-    "courseSlogan": "Learn today, Be rich tomorrow"
+    "slogan": "Think and Trade like a Champion",
+    "courseSlogan": "Learn Today, Be Rich Tomorrow"
   },
   "navbar": {
-    "home": "home",
-    "courses": "courses",
-    "news": "news",
-    "investment": "investment",
-    "signal": "signal",
-    "contact": "contact",
-    "exchange": "exchange",
-    "about": "about",
-    "login": "login",
-    "signup": "signup",
-    "logout": "logout"
+    "home": "Home",
+    "courses": "Courses",
+    "news": "News",
+    "investment": "Investment",
+    "signal": "Signal",
+    "contact": "Contact",
+    "exchange": "Exchange",
+    "about": "About",
+    "login": "Login",
+    "signup": "Signup",
+    "logout": "Logout"
   },
-  "news": "Latest News",
-  "newsSlogan": "Latest headlines of the market",
+  "news": "LATEST NEWS",
+  "newsSlogan": "Latest Headlines of The Market",
   "filterBy": "Filter",
   "type": "Type",
-  "instructor": "instructor",
-  "price": "price",
+  "instructor": "Instructor",
+  "price": "Price",
   "newsPageSlogan": "Headlines by Kurdchain brings you the latest cryptocurrency news, coin projects, blockchain news, stock market, and generally the financial market.",
-  "api": "Capital Management - API",
-  "apiSlogan": "Application Programming Interface (API) is a software intermediary that allows two applications to connect with each other",
+  "api": "CAPITAL MANAGEMENT - API",
+  "apiSlogan": "Application Programming Interface (API) is a software intermediary that allows two applications to connect with each other.",
   "gold": [
-    "Kurdchain’s profit share rate %30",
-    "Investors’s profit share rate %70",
-    "Investor’s risk rate %20",
-    "One-Time Subscription fee $500"
+    "Kurdchain’s Profit Share Rate %30",
+    "Investors’s Profit Share Rate %70",
+    "Investor’s Risk Rate %20",
+    "One-Time Subscription Fee $500"
   ],
   "silver": [
-    "Kurdchain’s profit share rate %30",
-    "Investors’s profit share rate %70",
-    "Investor’s risk rate %20",
-    "One-Time Subscription fee $250"
+    "Kurdchain’s Profit Share Rate %30",
+    "Investors’s Profit Share Rate %70",
+    "Investor’s Risk Rate %20",
+    "One-Time Subscription Fee $250"
   ],
 
   "platinum": [
-    "Kurdchain’s profit share rate %30",
-    "Investors’s profit share rate %70",
-    "Investor’s risk rate %20",
-    "One-Time Subscription fee $1000"
+    "Kurdchain’s Profit Share Rate %30",
+    "Investors’s Profit Share Rate %70",
+    "Investor’s Risk Rate %20",
+    "One-Time Subscription Fee $1000"
   ],
 
   "contractGold": [
-    "Kurdchain’s profit share rate %30",
-    "Investors’s profit share rate %70",
-    "Investor’s risk rate %20",
-    "One-Time Subscription fee $50"
+    "Kurdchain’s Profit Share Rate Unspecified",
+    "Investor’s Profit Share Rate (5% - 8%)",
+    "Investor’s Risk Rate %20",
+    "One-Time Subscription Fee $50",
+    "Exchange Fee (Cash to USDT)"
   ],
   "contractSilver": [
-    "Kurdchain’s profit share rate %30",
-    "Investors’s profit share rate %70",
-    "Investor’s risk rate %20",
-    "One-Time Subscription fee $50"
+    "Kurdchain’s Profit Share Rate Unspecified",
+    "Investor’s Profit Share Rate (5% - 8%)",
+    "Investor’s Risk Rate %20",
+    "One-Time Subscription Fee $50",
+    "Exchange Fee (Cash to USDT)"
   ],
 
   "contractPlatinum": [
-    "Kurdchain’s profit share rate %30",
-    "Investors’s profit share rate %70",
-    "Investor’s risk rate %20",
-    "One-Time Subscription fee $50"
+    "Kurdchain’s Profit Share Rate Unspecified",
+    "Investor’s Profit Share Rate (5% - 8%)",
+    "Investor’s Risk Rate %20",
+    "One-Time Subscription Fee $50",
+    "Exchange Fee (Cash to USDT)"
   ],
-  "contract": "Capital Management - Contract",
+  "contract": "CAPITAL MANAGEMENT = CONTRACK",
   "contractSlogan": "Contract is a document that states and explains a formal agreement between two different parties to deal with each other.",
   "signalSlogan": "Best Cryptocurrency Trading Signals",
   "spot": "spot",
@@ -92,13 +95,12 @@
   "contactusnow": "Talk to us today and see how we can help you!",
   "location": "Iraq, Kurdistan",
   "watch": "watch",
-
   "requested": "requested",
   "requestedMsg": "Your request has already been submitted for this course, please wait until our customer service will contact you.",
   "binance": "Binance",
   "OKEX": "OKEX",
   "requiredLogin": "To be able to do this operation, you must first login.",
-  "lesonExample": "Lesson Example",
+  "lesonExample": "Intro",
   "expires": "expires in ",
   "day": "Day(s)",
 
@@ -119,9 +121,9 @@
   "forgot": "Forgot Password?",
   "resetSlogan": "Please enter the following information to recover your password.",
   "payment": "Payment",
-  "paymentSlogan": "You can make your payment in the following  ways",
+  "paymentSlogan": "You can make your payment with",
   "contactUsForProblem": "If you have difficulties, you can contact us.",
-  "website": "kurdchain",
+  "website": "Kurdchain",
   "welcome": "Welcome to Kurdchain",
   "register": "Register",
   "login": "Log In",
@@ -141,7 +143,7 @@
   "subscribe": "subscribe",
   "subscribeForm": "Subscribtion Form",
 
-  "team": "our team",
+  "team": "OUR TEAM",
   "talk": "Let's talk",
   "fillinContactForm": "Fill up the form below to send us a message.",
   "name": "Name",
@@ -153,13 +155,13 @@
   "emailError": "Enter your email",
   "wrongEmailError": "Please enter a vaild email",
   "nameError": "Full name is required",
-  "required": "This Field  is Required",
-  "requiredBox": "To participate, you must agree to the terms",
+  "required": "This field  is required",
+  "requiredBox": "To participate, you must agree to the terms and conditions",
   "wrongNumber": "Only numbers are allowed",
   "max11": "please enter 11 digits",
   "min6": "Password should be at least 6 characters long .",
-  "dontmatch": "The passwords do not match. ",
-  "phoneOrPwd": "Phone number of password are wrong.",
+  "dontmatch": "The password does not match. ",
+  "phoneOrPwd": "Phone number or password is wrong.",
   "phoneNumberTaken": "Phone number is already taken.",
   "emailTaken": "Email is already taken.",
   "checking": "Checking Credentials",
@@ -173,28 +175,28 @@
   "back": "go back",
   "sendFail": " Oops, Something went wrong!",
   "sendRequest": "Your Request is sent.",
-  "duration": "duration",
-  "level": "level",
+  "duration": "Duration",
+  "level": "Level",
   "buyCourse": "To buy this course, send a request!",
   "sendRquestBtn": "Send Request",
 
-  "over": "over",
+  "over": "Over",
   "all": "all",
   "error": "Error",
   "notFoundFilter": "Sorry, no match was found, please change your filtration",
   "apply": "apply filter",
-  "exchangeMoney": "Exchange Money",
+  "exchangeMoney": "EXCHANGE MONEY",
   "buy": "buy",
-  "decription": "description",
-  "specification": "description",
+  "decription": "DESCRIPTION",
+  "specification": "DESCRIPTION",
 
-  "makeDeal": "Make the Deal",
+  "makeDeal": "MAKE THE DEAL",
   "key": "Key",
-  "subscribeMsg": "To subscribe to this service please contact us",
+  "subscribeMsg": "To subscribe to this service, please contact us",
   "secret": "secret",
-  "apikeyTitle": "api key",
+  "apikeyTitle": "API Key",
 
-  "typeOfTrade": "Type Of Trade",
+  "typeOfTrade": "Type of Trade",
   "agree": "I agree with the terms and conditions",
   "shareOn": "share on",
   "end": "End",
@@ -203,7 +205,7 @@
   "emailSentForgot": "Please, Check your email to reset your password.",
 
   "howItWorks": "How it works",
-  "terms": "terms and conditions",
+  "terms": "Terms and Conditions",
 
   "toast": {
     "successAdd": " is successfully added",
@@ -211,12 +213,12 @@
   },
 
   "footer": {
-    "company": "Company",
-    "feature": "Feature",
-    "getInTouch": "Get In Touch",
+    "company": "COMPANY",
+    "feature": "FEATURE",
+    "getInTouch": "GET IN TOUCH",
     "about": "About Us",
     "contact": "Contact Us",
-    "home": "home",
+    "home": "Home",
     "courses": "Courses",
     "news": "News",
     "investment": "Investment",
@@ -240,8 +242,7 @@
 
   "notFound": {
     "oops": " OOPS! Page Not Found...",
-    "explain": "The Page You are Looking For does not Exist, It might have been Moved or deleted."
+    "explain": "The Page you are looking for does not exist, it might have been moved or deleted."
   },
-
   "by": "Writer: "
 }
