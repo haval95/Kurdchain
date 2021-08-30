@@ -23,26 +23,30 @@ export default function Exchange() {
           underline="start"
           animation="bounceIn"
         />
-        <div className=" grid justify-center md:grid-cols-2 r gap-16">
-          <div className="max-w-xs bg-LightGray">
+        <div className=" grid  md:grid-cols-2 r gap-16">
+          <div className=" bg-LightGray w-96 md:w-72 lg:w-96 justify-self-center">
             <Title
               text={t('buyUSDT')}
-              style="sm:capitalize  px-3 bg-Light shadow-md py-1 rounded mb-5"
+              style="sm:capitalize  px-3 bg-Light shadow-md py-1 rounded mb-5 text-center"
               underline="none"
               type="subTitle"
               color="Secondary"
             />
-            <p className="px-4"> {t('todayPrice')}</p>
-            <p className="px-4">
-              100 USDT = ${' '}
-              {state.data && state.data.buy_dollar
-                ? ' ' + state.data.buy_dollar
-                : ' '}{' '}
-              =
-              {state.data && state.data.buy_iqd
-                ? ' ' + state.data.buy_iqd
-                : ' '}
-              IQD
+            <p className="px-4 text-center"> {t('todayPrice')}</p>
+            <p className="px-4 pt-2 ltr text-center grid grid-flow-col">
+              <span> 100 USDT </span>
+              <span>=</span>
+              {state.data && state.data.buy_dollar ? (
+                <span>${state.data.buy_dollar}</span>
+              ) : (
+                ' '
+              )}
+              <span>=</span>
+              {state.data && state.data.buy_iqd ? (
+                <span>{state.data.buy_iqd} IQD</span>
+              ) : (
+                ' '
+              )}
             </p>
             <div className="m-4">
               <Button
@@ -56,25 +60,28 @@ export default function Exchange() {
             </div>
           </div>
 
-          <div className="max-w-xs bg-LightGray">
+          <div className=" bg-LightGray w-96 md:w-72 lg:w-96 justify-self-center">
             <Title
               text={t('sellUSDT')}
-              style="sm:capitalize  px-3 bg-Light shadow-md  py-1 rounded mb-5"
+              style="sm:capitalize  px-3 bg-Light shadow-md  py-1 rounded mb-5 text-center"
               underline="none"
               type="subTitle"
               color="Secondary"
             />
-            <p className="px-4"> {t('todayPrice')}</p>
-            <p className="px-4 block  ">
-              100 USDT = $
-              {state.data && state.data.sell_dollar
-                ? ' ' + state.data.sell_dollar
-                : ' '}
-              =
-              {state.data && state.data.sell_iqd
-                ? ' ' + state.data.sell_iqd
-                : ' '}
-              IQD
+            <p className="px-4 text-center"> {t('todayPrice')}</p>
+            <p className="px-4  pt-2 ltr text-center grid grid-flow-col ">
+              <span>100 USDT</span> <span>=</span>
+              {state.data && state.data.sell_dollar ? (
+                <span> ${state.data.sell_dollar}</span>
+              ) : (
+                ' '
+              )}
+              <span>=</span>
+              {state.data && state.data.sell_iqd ? (
+                <span>{state.data.sell_iqd} IQD</span>
+              ) : (
+                ' '
+              )}
             </p>
             <div className="m-4">
               <Button

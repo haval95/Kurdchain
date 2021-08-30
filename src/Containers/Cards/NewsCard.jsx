@@ -17,7 +17,7 @@ export default function NewsCard({
   const { t } = useTranslation()
 
   return (
-    <div className="md:h-60 max-w-xs w-72 sm:w-auto  hover:shadow-none transition-all ease-in-out duration-300 bg-Light rounded-xl shadow-md overflow-hidden md:max-w-2xl  border border-GrayBorder ">
+    <div className="md:h-60  max-w-xs w-80 sm:w-auto  hover:shadow-none transition-all ease-in-out duration-300 bg-Light rounded-xl shadow-md overflow-hidden md:max-w-2xl  border border-GrayBorder ">
       <div className="md:flex ">
         <div className="md:flex-shrink-0">
           <img
