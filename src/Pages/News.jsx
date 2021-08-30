@@ -27,10 +27,10 @@ export default function News() {
         detail={t('newsPageSlogan')}
         image={img}
       />
-      <div className=" bg-Light grid px-10  md:px-24 py-16 text-start">
+      <div className=" bg-Light grid   md:px-24 py-16 text-start">
         <Title
           text={t('navbar.news')}
-          style=" mb-14 text-center"
+          style=" mb-14 text-center px-10"
           underline="start"
           animation="bounceIn"
         />
