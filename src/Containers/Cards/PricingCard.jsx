@@ -14,7 +14,7 @@ export default function PricingCard({ style, price, services, title, dark }) {
     <div
       className={`${
         dark ? 'text-Light bg-Secondary' : 'text-Dark bg-Light'
-      } ${style}   border-GrayBorder border   px-3  py-8 md:py-10 mb-3 md:my-6 rounded-lg shadow-lg lg:w-9/12 `}
+      } ${style}   border-GrayBorder border w-80  px-3  py-8 md:py-10 mb-3 md:my-6 rounded-lg shadow-lg lg:w-9/12 `}
     >
       <div className="w-full flex-grow">
         <h2 className="text-center font-bold capitalize text-2xl mb-4">

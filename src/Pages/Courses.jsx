@@ -101,7 +101,7 @@ export default function Courses() {
                           ? course.duration.name_he
                           : t('currentLanguage') == 'arabic'
                           ? course.duration.name_ar
-                          : course.duration.name_en
+                          : course.duration.name_en + '(s)'
                       }
                       time={course.time}
                     />

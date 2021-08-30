@@ -66,7 +66,7 @@ export default function Course() {
               style="text-start"
               animation="bounceIn"
             />
-            <p className="text-xl text-Secondary font-bold">
+            <p className="text-xl text-Secondary font-bold my-3">
               {t('lesonExample')}
             </p>
 
@@ -97,12 +97,12 @@ export default function Course() {
               text={t('decription')}
               underline="none"
               type="subTitle"
-              style="text-start"
+              style="text-start my-3"
               color="Secondary"
               animation="bounceIn"
             />
 
-            <p>
+            <p className="">
               {t('currentLanguage') == 'kurdish'
                 ? data.description_he
                 : t('currentLanguage') == 'arabic'

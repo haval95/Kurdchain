@@ -73,7 +73,7 @@
     "One-Time Subscription Fee $50",
     "Exchange Fee (Cash to USDT)"
   ],
-  "contract": "CAPITAL MANAGEMENT = CONTRACK",
+  "contract": "CAPITAL MANAGEMENT - CONTRACT",
   "contractSlogan": "Contract is a document that states and explains a formal agreement between two different parties to deal with each other.",
   "signalSlogan": "Best Cryptocurrency Trading Signals",
   "spot": "spot",
@@ -244,7 +244,7 @@
 
   "notFound": {
     "oops": " OOPS! Page Not Found...",
-    "explain": "The Page you are looking for does not exist, it might have been moved or deleted."
+    "explain": "The Page you are looking for is not found, it might have been moved or deleted."
   },
   "by": "Writer: "
 }

@@ -103,6 +103,7 @@ export default function ApiSection() {
           services={t('silver', { returnObjects: true })}
           title="Silver"
         />
+
         <PricingCard
           price=" $25,000 - $100,000"
           services={t('gold', { returnObjects: true })}

@@ -106,7 +106,7 @@ export default function CourseCard({
 
             <Paragraph text={time} style=" inline" />
 
-            <Paragraph text={duration + '(s)'} style=" inline" />
+            <Paragraph text={duration} style=" inline" />
           </span>
           <span className="items-center grid grid-flow-col gap-2">
             <FontAwesomeIcon

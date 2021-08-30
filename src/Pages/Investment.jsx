@@ -12,7 +12,7 @@ export default function Investment() {
   return (
     <div>
       <ImageJumbotron title={t('navbar.investment')} detail="" image={img} />
-      <div className=" bg-Light grid  lg:px-24 md:px-16 px-2 sm:px-4 py-16">
+      <div className=" bg-Light grid  lg:px-24 md:px-16 sm:px-4 py-16">
         <ApiSection />
       </div>
       <div className=" bg-LightGray grid  lg:px-24 md:px-16 sm:px-4 py-16">

@@ -15,11 +15,11 @@ export default function CoinWedgie() {
       </div>
       <div className="absolute top-0 bg-transparent  px-5 h-full w-full border-PrimaryLight mb-1 border items-center grid justify-center  z-40"></div>
 
-      <Ticker direction="toLeft" offset="run-in" speed={7} height={80}>
+      <Ticker direction="toLeft" offset="run-in" speed={4} height={80}>
         {() => (
           <div className=" grid grid-flow-col   ">
-            <h1 className="flex mx-5 py-4 text-PrimaryLight">
-              WELCOME TO : www.kurdchain.com
+            <h1 className="flex mx-5 py-8 text-PrimaryLight">
+              www.kurdchain.com
             </h1>
             <div
               style={{
@@ -56,6 +56,98 @@ export default function CoinWedgie() {
               <img src={logo} style={{ height: '80px' }} alt="" />
             </div>
             <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="825"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="2010"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="512"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="52"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
               className="coinmarketcap-currency-widget mx-5 "
               data-currencyid="3"
               data-base="USD"
@@ -78,7 +170,6 @@ export default function CoinWedgie() {
             >
               <img src={logo} style={{ height: '80px' }} alt="" />
             </div>
-
             <div
               className="coinmarketcap-currency-widget mx-5 "
               data-currencyid="4"
@@ -102,7 +193,6 @@ export default function CoinWedgie() {
             >
               <img src={logo} style={{ height: '80px' }} alt="" />
             </div>
-
             <div
               className="coinmarketcap-currency-widget mx-5 "
               data-currencyid="6"
@@ -126,7 +216,6 @@ export default function CoinWedgie() {
             >
               <img src={logo} style={{ height: '80px' }} alt="" />
             </div>
-
             <div
               className="coinmarketcap-currency-widget mx-5 "
               data-currencyid="7"
@@ -150,7 +239,6 @@ export default function CoinWedgie() {
             >
               <img src={logo} style={{ height: '80px' }} alt="" />
             </div>
-
             <div
               className="coinmarketcap-currency-widget mx-5 "
               data-currencyid="8"
@@ -174,7 +262,6 @@ export default function CoinWedgie() {
             >
               <img src={logo} style={{ height: '80px' }} alt="" />
             </div>
-
             <div
               className="coinmarketcap-currency-widget mx-5 "
               data-currencyid="9"
@@ -198,7 +285,6 @@ export default function CoinWedgie() {
             >
               <img src={logo} style={{ height: '80px' }} alt="" />
             </div>
-
             <div
               className="coinmarketcap-currency-widget mx-5 "
               data-currencyid="10"
@@ -248,6 +334,236 @@ export default function CoinWedgie() {
             <div
               className="coinmarketcap-currency-widget "
               data-currencyid="2"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="825"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="2010"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="512"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="52"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="100"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="1100"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>{' '}
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="2000"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="600"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="601"
+              data-base="USD"
+              data-secondary=""
+              data-ticker="false"
+              data-rank="false"
+              data-marketcap="false"
+              data-volume="false"
+              data-statsticker="false"
+              data-stats="USD"
+            ></div>
+            <div
+              style={{
+                marginRight: '20px',
+                marginLeft: '20px',
+                width: '40px',
+                height: '40px',
+                marginTop: '5px',
+              }}
+            >
+              <img src={logo} style={{ height: '80px' }} alt="" />
+            </div>
+            <div
+              className="coinmarketcap-currency-widget "
+              data-currencyid="602"
               data-base="USD"
               data-secondary=""
               data-ticker="false"

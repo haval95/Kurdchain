@@ -12,20 +12,7 @@ import LandscapeLoaderCourseLtr from '../Components/Loaders/LandscapeLoaderCours
 export default function Profile() {
   const { t } = useTranslation()
   const userCourses = useSelector(state => state.userCourses)
-  // const products = useSelector(state => state.products)
-  // const dispatch = useDispatch()
 
-  // const [userProduct, setUserProduct] = useState(false)
-  // setUserProduct(false)
-
-  // useEffect(() => {
-  //   setUserProduct(
-  //     products.data.filter(product => product.uui === user.user.uui)
-  //   )
-  // }, [products])
-  // const reFetch = () => {
-  //   dispatch(FetchProducts())
-  // }
   console.log(userCourses)
   return (
     <div className="mb-8">

@@ -34,7 +34,7 @@ export default function Exchange() {
             />
             <p className="px-4"> {t('todayPrice')}</p>
             <p className="px-4">
-              20 USDT = ${' '}
+              100 USDT = ${' '}
               {state.data && state.data.buy_dollar
                 ? ' ' + state.data.buy_dollar
                 : ' '}{' '}
