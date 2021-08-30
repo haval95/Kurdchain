@@ -17,14 +17,13 @@
   margin: 0;
   box-sizing: border-box;
   font-size: 16px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', 'CustomFont', sans-serif;
 }
 
 @font-face {
   font-family: 'CustomFont';
-  src: url('./font/custom.eot');
-  src: url('./font/custom.woff') format('woff'),
-    url('./font/custom.svg') format('svg');
+  src: url('./font/custom.eot') format('eot'),
+    url('./font/custom.woff') format('woff');
 }
 
 img {

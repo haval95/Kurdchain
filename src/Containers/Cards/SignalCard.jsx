@@ -12,7 +12,7 @@ export default function CourseCard({ name, image, color, description }) {
   const dispatch = useDispatch()
 
   return (
-    <div className="w-72 h-96 bg-white z-0 cursor-pointer border border-GrayBorder rounded-3xl    focus:outline-none relative bg-Light shadow-xl  transform  transition duration-500 ease-in-out">
+    <div className="w-80 h-96 bg-white z-0 cursor-pointer border border-GrayBorder rounded-3xl    focus:outline-none relative bg-Light shadow-xl  transform  transition duration-500 ease-in-out">
       <div className={`relative border-b border-GrayBorder mb-3 py-2`}>
         <img
           src={image}
@@ -28,11 +28,11 @@ export default function CourseCard({ name, image, color, description }) {
 
         <Paragraph
           text={description}
-          style="h-32 py-2  overflow-y-hidden turncate text-justify"
+          style="h-32 py-2  overflow-y-hidden turncate text-justify "
           colors="text-Gray"
         />
 
-        <div className="text-xs flex justify-between     ">
+        <div className="absolute bottom-4 right-5 left-5">
           <Button
             text={t('subscribe')}
             color={color}
