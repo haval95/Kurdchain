@@ -131,7 +131,7 @@ CourseDetailCard.propTypes = {
   instructor: PropTypes.string,
   price: PropTypes.number,
   type: PropTypes.string,
-  id: PropTypes.string,
+  id: PropTypes.number,
 }
 
 CourseDetailCard.defaultProps = {
@@ -141,5 +141,5 @@ CourseDetailCard.defaultProps = {
   instructor: 'mohamed',
   price: 10,
   type: 'forex',
-  id: '0',
+  id: 0,
 }

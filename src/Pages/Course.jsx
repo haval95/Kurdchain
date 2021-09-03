@@ -38,11 +38,11 @@ export default function Course() {
         title={
           data ? (
             t('currentLanguage') == 'kurdish' ? (
-              data.name_he
+              String(data.name_he)
             ) : t('currentLanguage') == 'arabic' ? (
-              data.name_ar
+              String(data.name_ar)
             ) : (
-              data.name_en
+              String(data.name_en)
             )
           ) : (
             <Loader type="Rings" color="#efefef" height={100} width={100} />
@@ -89,7 +89,6 @@ export default function Course() {
                     width: '100%',
                     height: '100%',
                   }}
-                  title="btcoin1"
                 ></iframe>
               </div>
             </div>

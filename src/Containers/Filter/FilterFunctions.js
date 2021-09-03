@@ -14,8 +14,8 @@ const FilterFunctions = () => {
   const [instructor, setInstructor] = useState([])
 
   const handleChange = e => {
-    setPriceChecked([e.target.id])
     if (e.target.name === 'price') {
+      setPriceChecked([e.target.id])
       switch (e.target.id) {
         case '0':
           setPrice([])
@@ -34,6 +34,7 @@ const FilterFunctions = () => {
           break
       }
     }
+
     if (e.target.name === 'type') {
       if (e.target.checked) {
         setType([...type, e.target.id])
