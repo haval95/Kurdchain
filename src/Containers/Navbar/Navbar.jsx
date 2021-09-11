@@ -255,7 +255,7 @@ export default function Navbar() {
                       </div>
                     </button>
                   ) : (
-                    <div className="rounded-xl border border-Primary mx-3">
+                    <div className="rounded-xl border border-Primary sm:mx-3 mx-0">
                       <button
                         type="button"
                         className="py-1  px-2 rounded-xl capitalize  items-center transition duration-500 ease-in-out  hover:bg-PrimaryHover transform hover:-translate-y-1 hover:scale-105  text-Light bg-Primary     focus:outline-none"
