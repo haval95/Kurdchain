@@ -151,6 +151,7 @@ export default function Course() {
                   : data.type.name_en
               }
               id={data.id}
+              access={data.day}
             />
           </div>
         </div>

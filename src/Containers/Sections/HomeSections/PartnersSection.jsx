@@ -20,7 +20,7 @@ export default function PartnersSection() {
         <ScrollAnimation animateIn="zoomInUp">
           <Paragraph
             text={t('partnersSlogan')}
-            style="text-lg"
+            style="text-lg capitalize"
             textalign="text-center"
           />
         </ScrollAnimation>

@@ -109,12 +109,6 @@ export default function Footer() {
             >
               <div className="text-center"> contact@kurdchain.trade</div>
             </a>
-            <a
-              href="mailto:info@kurdchain.trade"
-              className="text-start px-2 hover:text-PrimaryHover"
-            >
-              <div className="text-center">info@kurdchain.trade</div>
-            </a>
           </div>
           <FontAwesomeIcon className="text-Secondary" icon="map-marked-alt" />
           <div className=" text-center font-medium   pb-1  ">

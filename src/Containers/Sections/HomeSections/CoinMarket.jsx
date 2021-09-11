@@ -20,7 +20,7 @@ export default function CoinMarket() {
           <Paragraph
             text={t('coinMarketSlogan')}
             style="text-lg"
-            textalign="text-center"
+            textalign="text-center capitalize"
           />
         </ScrollAnimation>
       </div>

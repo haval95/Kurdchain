@@ -19,7 +19,7 @@ export default function Header() {
       <div className=" bg-Light  bg-header h-header-home  items-center justify-center  grid  grid-cols-1 sm:grid-cols-11 ">
         <div className="  bg-box text-start py-6 pb-10 px-10  sm:w-3/4 my-10 sm:my-0 mb-1 sm:py-8    sm:bg-none justify-self-center content-center self-center sm:self-center sm:col-span-7 md:col-span-6    ">
           <div className="grid  justify-center">
-            <img src={logo} className=" w-16" />
+            <img src={logo} className=" w-24" />
           </div>
 
           <ScrollAnimation animateIn="bounceIn">
@@ -31,7 +31,7 @@ export default function Header() {
             />
           </ScrollAnimation>
 
-          <h1 className="text-md md:text-xl text-center  mb-2 text-black hidden sm:block capitalize">
+          <h1 className="text-md md:text-2xl text-center py-2  mb-2 text-black hidden sm:block capitalize">
             {t('home.slogan')}
           </h1>
 

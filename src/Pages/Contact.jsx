@@ -94,12 +94,6 @@ export default function Contact() {
                   >
                     contact@kurdchain.trade
                   </a>
-                  <a
-                    href="mailto:info@kurdchain.trade"
-                    className="text-start-importan px-2 hover:text-PrimaryHover"
-                  >
-                    info@kurdchain.trade
-                  </a>
                 </div>
               </div>
 

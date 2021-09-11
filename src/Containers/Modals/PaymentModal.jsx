@@ -4,7 +4,10 @@ import { ClosePaymentModal } from '../../Redux/Modals/ModalActions'
 import { buyCourse } from '../../Redux/UserCourses/UserCoursesActions'
 import { useSelector, useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-
+import fastpay from '../../Assets/Images/fastpay.png'
+import zainCash from '../../Assets/Images/zainCash.jpg'
+import asia from '../../Assets/Images/asia.png'
+import usdt from '../../Assets/Images/usdt.png'
 export default function PaymentModal() {
   const { t } = useTranslation()
   const dispatch = useDispatch()
@@ -23,25 +26,28 @@ export default function PaymentModal() {
       closeBtnStyle={{ padding: '10px', color: 'rgb(200,200,200)' }}
     >
       <form className="  px-8 pt-6 mb-4 bg-transparent">
-        <h1 className="text-xl text-Dark  ">{t('paymentSlogan')}</h1>
-
-        <div className="grid grid-cols-2 items-center justify-center text-center">
-          <div className=" p-1 text-center grid justify-center">
-            <img
-              src="https://media-exp3.licdn.com/dms/image/C560BAQHCx0vqc-ws_A/company-logo_200_200/0/1530769908765?e=2159024400&v=beta&t=4YkWzBCA_W8EMmsbVwC85ncNgzuZ9MkWKi7Hmn5FCWA"
-              alt="asia hawala"
-              className="w-20"
-            />
+        <h1 className="text-xl text-Dark mb-2 ">{t('paymentSlogan')}</h1>
+        <div className="grid grid-cols-2 items-center justify-start text-right gap-2 ltr">
+          <div className=" p-1 text-center grid justify-start">
+            <img src={asia} alt="asia hawala" className="h-10" />
           </div>
           <p>07701659393</p>
-          <div className=" p-1 text-center grid justify-center">
-            <img
-              src="https://image.flaticon.com/icons/png/512/825/825508.png"
-              alt="asia hawala"
-              className="w-16"
-            />
+          <hr className="text-GrayBorder col-span-full" />
+          <div className=" p-1 text-center grid justify-start">
+            <img src={usdt} alt="usdt" className="h-10" />
           </div>
           <p>07701659393</p>
+          <hr className="text-GrayBorder col-span-full" />
+          <div className=" p-1 text-center grid justify-start">
+            <img src={fastpay} alt="fastpay" className="h-10" />
+          </div>
+          <p>07701659393</p>
+          <hr className="text-GrayBorder col-span-full" />
+          <div className=" p-1 text-center grid justify-start">
+            <img src={zainCash} alt="zaincash" className="h-10" />
+          </div>
+          <p>07701659393</p>
+          <hr className="text-GrayBorder col-span-full" />
         </div>
 
         {state && state.paymentForCourseId && user.isAuthenticated ? (

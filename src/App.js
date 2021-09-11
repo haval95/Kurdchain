@@ -78,6 +78,11 @@ function App() {
   useEffect(() => {
     dispatch(FetchLatestNews(t('currentLanguage')))
     dispatch(FetchNews(1, t('currentLanguage')))
+    if (t('currentLanguage') == 'arabic') {
+      document.getElementById('root').style.fontFamily = 'Almarai'
+    } else {
+      document.getElementById('root').style.fontFamily = ''
+    }
   }, [t('currentLanguage')])
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 })

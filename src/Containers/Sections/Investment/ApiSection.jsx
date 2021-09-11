@@ -97,23 +97,23 @@ export default function ApiSection() {
         </div>
       </div>
 
-      <div className="     grid justify-content-center grid-cols-1 sm:grid-cols-3 gap-2 md:gap-1 lg:gap-3   justify-items-center ">
+      <div className="     grid justify-content-center grid-cols-1 sm:grid-cols-2 nav_break:grid-cols-3 gap-2 md:gap-1 lg:gap-3   justify-items-center ">
         <PricingCard
           price="$5000 - $25,000"
           services={t('silver', { returnObjects: true })}
-          title="Silver"
+          title={t('silverName')}
         />
 
         <PricingCard
           price=" $25,000 - $100,000"
           services={t('gold', { returnObjects: true })}
           dark
-          title="Gold"
+          title={t('goldName')}
         />
         <PricingCard
           price={t('over') + '  $100,000'}
           services={t('platinum', { returnObjects: true })}
-          title="Platinum"
+          title={t('platinumName')}
         />
       </div>
       <div className=" ">

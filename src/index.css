@@ -17,6 +17,8 @@
   margin: 0;
   box-sizing: border-box;
   font-size: 16px;
+}
+#root {
   font-family: 'Source Sans Pro', 'CustomFont', sans-serif;
 }
 
@@ -83,10 +85,14 @@ img {
   padding-inline-end: 2rem;
 }
 .m-inline-end-5percent {
-  margin-inline-end: 6%;
+  margin-inline-end: 5%;
 }
+
 .m-inline-start-2 {
   margin-inline-start: 2rem;
+}
+.m-inline-start-1 {
+  margin-inline-start: 0.5rem;
 }
 .max-h {
   max-height: 200rem;
@@ -156,8 +162,8 @@ img {
 }
 
 .title {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 2.7rem;
+  line-height: 3rem;
 }
 
 .xatyZher:before {
@@ -171,13 +177,23 @@ img {
 }
 
 .subTitle {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 2rem;
 }
 
 .smallSubTitle {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 1.5rem;
+}
+@media only screen and (max-width: 950px) {
+  .m-inline-end-5percent {
+    margin-inline-end: 3.5%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .m-inline-end-5percent {
+    margin-inline-end: 3%;
+  }
 }
 @media only screen and (max-width: 800px) {
   .title {
@@ -185,6 +201,7 @@ img {
     line-height: 2.25rem;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .p-inline-start-2 {
     padding-inline-start: auto !important;

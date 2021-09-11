@@ -28,48 +28,53 @@
   "type": "Type",
   "instructor": "Instructor",
   "price": "Price",
+  "access": "Subscription Period",
+
   "newsPageSlogan": "Headlines by Kurdchain brings you the latest cryptocurrency news, coin projects, blockchain news, stock market, and generally the financial market.",
   "api": "CAPITAL MANAGEMENT - API",
   "apiSlogan": "Application Programming Interface (API) is a software intermediary that allows two applications to connect with each other.",
+  "silverName": "Silver",
+  "goldName": "Gold",
+  "platinumName": "Platinum",
   "gold": [
-    "Kurdchain’s Profit Share Rate %30",
-    "Investors’s Profit Share Rate %70",
-    "Investor’s Risk Rate %20",
+    "Kurdchain’s Profit Share Rate <b>30%</b> </b>",
+    "Investors’s Profit Share Rate <b> 70%</b>",
+    "Investor’s Risk Rate <b>20%</b>",
     "One-Time Subscription Fee $500"
   ],
   "silver": [
-    "Kurdchain’s Profit Share Rate %30",
-    "Investors’s Profit Share Rate %70",
-    "Investor’s Risk Rate %20",
+    "Kurdchain’s Profit Share Rate <b>30%</b>",
+    "Investors’s Profit Share Rate <b> 70%</b>",
+    "Investor’s Risk Rate <b>20%</b>",
     "One-Time Subscription Fee $250"
   ],
 
   "platinum": [
-    "Kurdchain’s Profit Share Rate %30",
-    "Investors’s Profit Share Rate %70",
-    "Investor’s Risk Rate %20",
+    "Kurdchain’s Profit Share Rate <b>30%</b>",
+    "Investors’s Profit Share Rate <b>70%</b>",
+    "Investor’s Risk Rate <b>20%</b>",
     "One-Time Subscription Fee $1000"
   ],
 
   "contractGold": [
     "Kurdchain’s Profit Share Rate Unspecified",
-    "Investor’s Profit Share Rate (5% - 8%)",
-    "Investor’s Risk Rate %20",
-    "One-Time Subscription Fee $50",
+    "Investor’s Profit Share Rate (<b>5%</b> - <b>8%</b>)",
+    "Investor’s Risk Rate <b>20%</b>",
+    "One-Time Subscription Fee <b>50%</b>",
     "Exchange Fee (Cash to USDT)"
   ],
   "contractSilver": [
     "Kurdchain’s Profit Share Rate Unspecified",
-    "Investor’s Profit Share Rate (5% - 8%)",
-    "Investor’s Risk Rate %20",
+    "Investor’s Profit Share Rate (<b>5%</b> - <b>8%</b>)",
+    "Investor’s Risk Rate <b>20%</b>",
     "One-Time Subscription Fee $50",
     "Exchange Fee (Cash to USDT)"
   ],
 
   "contractPlatinum": [
     "Kurdchain’s Profit Share Rate Unspecified",
-    "Investor’s Profit Share Rate (5% - 8%)",
-    "Investor’s Risk Rate %20",
+    "Investor’s Profit Share Rate (<b>5%</b> - <b>8%</b>)",
+    "Investor’s Risk Rate <b>20%</b>",
     "One-Time Subscription Fee $50",
     "Exchange Fee (Cash to USDT)"
   ],
@@ -138,7 +143,7 @@
   "partners": "partners",
   "partnersSlogan": "Official partners of Kurdchain",
   "coinMarket": "Coin Market",
-  "coinMarketSlogan": "Top coin values of the market",
+  "coinMarketSlogan": "Top 4 coins  of the market",
 
   "subscribe": "subscribe",
   "subscribeForm": "Subscribtion Form",
@@ -191,10 +196,10 @@
   "specification": "DESCRIPTION",
 
   "makeDeal": "MAKE THE DEAL",
-  "key": "Key",
-  "subscribeMsg": "To subscribe to this service, please contact us",
-  "secret": "secret",
+  "key": "API Key",
+  "secret": "Secret Key",
   "apikeyTitle": "API Key",
+  "subscribeMsg": "To subscribe to this service, please contact us",
 
   "typeOfTrade": "Type of Trade",
   "agree": "I agree with the terms and conditions",

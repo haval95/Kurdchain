@@ -22,7 +22,7 @@ export default function About() {
             <p className="text-lg"> {t('aboutSlogan')}</p>
             <img
               src={logo}
-              className="w-2/4 justify-center justify-self-center pt-4 shadow-inner mt-5 sm:mt-0  sm p-4"
+              className="w-2/4 justify-center justify-self-center pt-4  mt-5 sm:mt-0  sm p-4"
             />
           </div>
         </div>

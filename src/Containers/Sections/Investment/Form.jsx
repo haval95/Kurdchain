@@ -95,7 +95,10 @@ export default function Form() {
               ></input>
 
               <div className="mb-5">
-                <label htmlFor={t('apikeyTitle')} className="text-sm ">
+                <label
+                  htmlFor={t('apikeyTitle')}
+                  className="block text-Secondary text-sm font-bold text-start-important mb-2  "
+                >
                   {t('key')}
                 </label>
                 <input
@@ -121,7 +124,10 @@ export default function Form() {
               </div>
 
               <div className="mb-5">
-                <label htmlFor={t('secret')} className="text-start-important">
+                <label
+                  htmlFor={t('secret')}
+                  className="block text-Secondary text-sm font-bold text-start-important mb-2 "
+                >
                   {t('secret')}
                 </label>
                 <input

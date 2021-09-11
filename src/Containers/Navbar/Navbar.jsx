@@ -100,21 +100,21 @@ export default function Navbar() {
       </nav>
       <nav className="bg-Light   shadow-md  w-full z-50 sticky top-0">
         <div className=" px-2 ">
-          <div className="relative flex items-center justify-around md:justify-between h-16 w-full">
+          <div className="relative flex items-center justify-around nav_break:justify-between h-16 w-full">
             <div className=" flex items-center mx-8  md:justify-start   ">
-              <NavLink className="  grid items-center md:mx-0  " to="/">
+              <NavLink className="  grid items-center nav_break:mx-0  " to="/">
                 <img
-                  className="hidden md:block h-8 w-auto"
+                  className="hidden nav_break:block h-8 w-auto"
                   src={Logo}
                   alt="logo"
                 />
                 <img
-                  className="block md:hidden  h-8 w-auto "
+                  className="block nav_break:hidden  h-8 w-auto "
                   src={Logo}
                   alt="logo"
                 />
               </NavLink>
-              <div className="absolute inset-y-0   left-0 flex items-center md:hidden   ">
+              <div className="absolute inset-y-0   left-0 flex items-center nav_break:hidden   ">
                 <button
                   type="button"
                   className="  text-Secondary  items-center justify-center      "
@@ -158,10 +158,10 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <div className="hidden md:block w-full md:mx-2 lg:mx-6   ">
+              <div className="hidden nav_break:block w-full nav_break:mx-2 lg:mx-6   ">
                 <div className="flex   ">
                   <NavLink
-                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover    py-2   text-sm font-medium"
+                    className="m-inline-end-5percent m-inline-start-1 capitalize  hover:text-PrimaryHover    py-2  text-base font-medium"
                     exact
                     to={ROUTES.HOME_ROUTE}
                     activeClassName=" font-semibold text-Primary border-b border-Primary"
@@ -169,49 +169,49 @@ export default function Navbar() {
                     {t('navbar.home')}
                   </NavLink>
                   <NavLink
-                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover    py-2   text-sm font-medium"
+                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover    py-2  text-base font-medium"
                     to={ROUTES.COURSES_ROUTE}
                     activeClassName=" font-semibold text-Primary border-b border-Primary"
                   >
                     {t('navbar.courses')}
                   </NavLink>
                   <NavLink
-                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2   text-sm font-medium"
+                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2  text-base font-medium"
                     to={ROUTES.NEWS_ROUTE}
                     activeClassName=" font-semibold text-Primary border-b border-Primary"
                   >
                     {t('navbar.news')}
                   </NavLink>
                   <NavLink
-                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2   text-sm font-medium"
+                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2  text-base font-medium"
                     to={ROUTES.INVESTMENT_ROUTE}
                     activeClassName=" font-semibold text-Primary border-b border-Primary"
                   >
                     {t('navbar.investment')}
                   </NavLink>
                   <NavLink
-                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2   text-sm font-medium"
+                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2  text-base font-medium"
                     to={ROUTES.SIGNAL_ROUTE}
                     activeClassName=" font-semibold text-Primary border-b border-Primary"
                   >
                     {t('navbar.signal')}
                   </NavLink>
                   <NavLink
-                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2   text-sm font-medium"
+                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2  text-base font-medium"
                     to={ROUTES.EXCHANGE_ROUTE}
                     activeClassName=" font-semibold text-Primary border-b border-Primary"
                   >
                     {t('navbar.exchange')}
                   </NavLink>
                   <NavLink
-                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2   text-sm font-medium"
+                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2  text-base font-medium"
                     to={ROUTES.ABOUT_ROUTE}
                     activeClassName=" font-semibold text-Primary border-b border-Primary"
                   >
                     {t('navbar.about')}
                   </NavLink>
                   <NavLink
-                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2   text-sm font-medium"
+                    className="m-inline-end-5percent capitalize  hover:text-PrimaryHover transition ease-in-out duration-300   py-2  text-base font-medium"
                     to={ROUTES.CONTACT_ROUTE}
                     activeClassName=" font-semibold text-Primary border-b border-Primary"
                   >
@@ -220,7 +220,7 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center  md:static md:inset-auto md:ml-6 md:pr-0">
+            <div className="absolute inset-y-0 right-0 flex items-center  nav_break:static nav_break:inset-auto nav_break:ml-6 nav_break:pr-0">
               <div className=" relative">
                 <div>
                   {user.isAuthenticated ? (
@@ -310,7 +310,7 @@ export default function Navbar() {
                 <div className="">
                   <button
                     type="button"
-                    className="md:inline-flex  border-0 justify-center w-full hidden     py-2  text-xl font-medium focus:outline-none  text-Primary"
+                    className="nav_break:inline-flex  border-0 justify-center w-full hidden     py-2  text-xl font-medium focus:outline-none  text-Primary"
                     id="menu-button"
                     aria-expanded="true"
                     aria-haspopup="true"
@@ -361,7 +361,7 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`${navCollapse ? 'show' : 'hidden'} md:hidden ltr`}
+          className={`${navCollapse ? 'show' : 'hidden'} nav_break:hidden ltr`}
           id="mobile-menu"
         >
           <div className="px-2 pt-2 pb-3  text-center bg-Light border-GrayBorder">

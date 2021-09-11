@@ -19,6 +19,7 @@ export default function CourseDetailCard({
   price,
   type,
   id,
+  access,
 }) {
   const { t } = useTranslation()
   const dispatch = useDispatch()
@@ -104,6 +105,13 @@ export default function CourseDetailCard({
       </div>
       <hr className="text-GrayBorder my-2"></hr>
       <div className="grid grid-cols-2 items-center justify-items-center text-start-important">
+        <p>{t('access')}</p>{' '}
+        <p>
+          {access} <span>{t('day')}</span>
+        </p>
+      </div>
+      <hr className="text-GrayBorder my-2"></hr>
+      <div className="grid grid-cols-2 items-center justify-items-center text-start-important">
         <p>{t('type')}</p> <p>{type}</p>
       </div>
       <div className=" my-2 grid">
@@ -126,6 +134,7 @@ export default function CourseDetailCard({
 }
 CourseDetailCard.propTypes = {
   duration: PropTypes.string,
+  access: PropTypes.string,
   level: PropTypes.string,
   language: PropTypes.string,
   instructor: PropTypes.string,
@@ -136,6 +145,7 @@ CourseDetailCard.propTypes = {
 
 CourseDetailCard.defaultProps = {
   duration: '6',
+  access: '6',
   level: 'sthn',
   language: 'Kurdish',
   instructor: 'mohamed',
