@@ -61,7 +61,7 @@ export const FetchCourses = () => {
     dispatch(FetchCoursesRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/courses`)
+      .get(`https://kurdchain.trade/app/api/courses`)
       .then(response => {
         dispatch(FetchCoursesSeccess(response.data.courses))
       })

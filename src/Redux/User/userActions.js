@@ -79,7 +79,7 @@ export const loginUser = data => {
     })
     dispatch(loading())
     axios
-      .post(`https://kurdchain.dastey2.com/api/login`, data, {
+      .post(`https://kurdchain.trade/app/api/login`, data, {
         headers: {
           'content-type': 'application/json',
         },
@@ -120,7 +120,7 @@ export const changePassword = (data, token) => {
     dispatch(loading())
 
     axios
-      .post(`https://kurdchain.dastey2.com/api/change/password`, data, token)
+      .post(`https://kurdchain.trade/app/api/change/password`, data, token)
       .then(() => {
         dispatch(CloseChangePasswordModal())
         dispatch(stopLoaing())
@@ -173,7 +173,7 @@ export const registerUser = data => {
       progress: undefined,
     })
     axios
-      .post(`https://kurdchain.dastey2.com/api/register`, data, {
+      .post(`https://kurdchain.trade/app/api/register`, data, {
         headers: {
           'content-type': 'application/json',
         },
@@ -232,7 +232,7 @@ export const logOutUser = token => {
     dispatch(loading())
 
     axios
-      .post(`https://kurdchain.dastey2.com/api/logout`, {}, token)
+      .post(`https://kurdchain.trade/app/api/logout`, {}, token)
       .then(() => {
         dispatch(logout())
         localStorage.removeItem('LoggedInUser')
@@ -268,7 +268,7 @@ export const ForgotPassword = email => {
     dispatch(CloseForgotPasswordModal())
 
     axios
-      .post(`https://kurdchain.dastey2.com/api/forgetpassword`, email, {
+      .post(`https://kurdchain.trade/app/api/forgetpassword`, email, {
         headers: {
           'content-type': 'application/json',
         },

@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Header />
       <CoinFlow />
-      <div className=" bg-Light grid justify-center md:px-24 py-16">
+      <div className=" bg-Light grid justify-center nav_break:px-24 py-16">
         <CoursesSection />
       </div>
       <div className="bg-LightGray grid justify-center md:px-24 py-16  ">

@@ -30,7 +30,7 @@ export const FetchFilters = () => {
     dispatch(FetchFiltersRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/get/course/filter`)
+      .get(`https://kurdchain.trade/app/api/get/course/filter`)
       .then(response => {
         dispatch(FetchFiltersSeccess(response.data))
       })

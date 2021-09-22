@@ -30,7 +30,7 @@ export const FetchEchange = () => {
     dispatch(FetchEchangeRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/exchange`)
+      .get(`https://kurdchain.trade/app/api/exchange`)
       .then(response => {
         dispatch(FetchEchangeSeccess(response.data.exchange))
       })

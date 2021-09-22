@@ -27,7 +27,7 @@ export const FetchUserCourses = token => {
   return dispatch => {
     dispatch(FetchUserCoursesRequest())
     axios
-      .get(`https://kurdchain.dastey2.com/api/get/courses`, token)
+      .get(`https://kurdchain.trade/app/api/get/courses`, token)
       .then(response => {
         dispatch(FetchUserCoursesSeccess(response.data))
       })
@@ -41,7 +41,7 @@ export const buyCourse = (id, token) => {
   return dispatch => {
     dispatch(FetchUserCoursesRequest())
     axios
-      .post(`https://kurdchain.dastey2.com/api/buy/course/${id}`, {}, token)
+      .post(`https://kurdchain.trade/app/api/buy/course/${id}`, {}, token)
       .then(() => {
         toast.success(i18n.t('sendRequest'), {
           position: 'top-center',

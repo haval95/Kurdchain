@@ -30,7 +30,7 @@ export const FetchSignals = () => {
     dispatch(FetchSignalsRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/signal`)
+      .get(`https://kurdchain.trade/app/api/signal`)
       .then(response => {
         dispatch(FetchSignalsSeccess(response.data))
       })

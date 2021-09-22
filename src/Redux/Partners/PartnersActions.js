@@ -30,7 +30,7 @@ export const FetchPartners = () => {
     dispatch(FetchPartnersRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/view/partner`)
+      .get(`https://kurdchain.trade/app/api/view/partner`)
       .then(response => {
         dispatch(FetchPartnersSeccess(response.data.partner))
       })

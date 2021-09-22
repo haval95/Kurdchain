@@ -81,7 +81,7 @@ export const FetchNews = (page = 1, language = 'english') => {
     dispatch(FetchNewsRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/news/${language}?page=${page}`)
+      .get(`https://kurdchain.trade/app/api/news/${language}?page=${page}`)
       .then(response => {
         let data = {
           news: response.data.news.data,
@@ -102,7 +102,7 @@ export const FetchLatestNews = (language = 'english') => {
     dispatch(FetchLatesetNewsRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/news/latest/${language}`)
+      .get(`https://kurdchain.trade/app/api/news/latest/${language}`)
       .then(response => {
         let data = response.data.news
         dispatch(FetchLatesetNewsSeccess(data))
@@ -118,7 +118,7 @@ export const FetchCurrentNews = id => {
     dispatch(FetchCurrentNewsRequest())
 
     axios
-      .get(`https://kurdchain.dastey2.com/api/view/news/${id}`)
+      .get(`https://kurdchain.trade/app/api/view/news/${id}`)
       .then(response => {
         let data = response.data
         dispatch(FetchCurrentNewsSeccess(data))
