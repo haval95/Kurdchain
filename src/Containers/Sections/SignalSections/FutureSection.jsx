@@ -26,7 +26,7 @@ export default function FutureSection() {
       </div>
       <div className=" items-center mb-10 grid grid-cols-1 lg:grid-cols-3 text-start  justify-evenly justify-items-center gap-10">
         {state.data.future && state.loading == false ? (
-          state.data.future[0].signals.length ? (
+          state.data.future.length && state.data.future[0].signals.length ? (
             state.data.future[0].signals.map(eachSignal => {
               return (
                 <SiganlCard

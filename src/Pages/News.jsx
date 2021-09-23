@@ -113,6 +113,7 @@ export default function News() {
                     description={EachNews.description}
                     writer={t('by') + ' ' + EachNews.writer}
                     key={uuid()}
+                    created_at={EachNews.date_of_the_news}
                   />
                 )
               })}

@@ -38,7 +38,7 @@ export default function NewsCard({
               />
             </span>
             <p className="text-Dark font-light justify-self-center">
-              {created_at}
+              {created_at.slice(0, 10)}
             </p>
           </div>
 
@@ -78,6 +78,6 @@ NewsCard.defaultProps = {
   description:
     'lorem 1 lorem 1 lorem 1 lorem 1lorem 1lorem 1lorem 1lorem 1lorem 1lorem 2 lorem 1  lorem 2lorem 2lorem 2lorem 2lorem 2lorem 2lorem 2lorem 2lorem 2lorem 2 2lorem 22lorem 22lorem 22lorem 22lorem 22lorem 2lorem 3  lorem 3lorem 3 lorem 3lorem 3lorem 3lorem 3lorem 3lorem 3lorem 3lorem 3lorem 3lorem 3',
   image: `https://ichef.bbci.co.uk/news/976/cpsprodpb/6127/production/_117317842_065760657.jpg`,
-  created_at: '12/1/2021',
+  created_at: '',
   writer: 'Firstname Lastname',
 }

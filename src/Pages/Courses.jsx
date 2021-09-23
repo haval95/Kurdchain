@@ -59,54 +59,65 @@ export default function Courses() {
               ) : null}
             </div>
             <div className=" grid gap-8 grid-cols-1 sm:gap-5 md:gap-8 sm:grid-cols-2 xl:grid-cols-3 justify-center 2xl:grid-cols-4  mb-16">
-              {coursesData.filteredData.length ? (
-                coursesData.filteredData.map(course => {
-                  return (
-                    <CourseCard
-                      key={uuid()}
-                      id={course.id}
-                      name={
-                        t('currentLanguage') == 'kurdish'
-                          ? course.name_he
-                          : t('currentLanguage') == 'arabic'
-                          ? course.name_ar
-                          : course.name_en
-                      }
-                      language={
-                        t('currentLanguage') == 'kurdish'
-                          ? course.language.name_he
-                          : t('currentLanguage') == 'arabic'
-                          ? course.language.name_ar
-                          : course.language.name_en
-                      }
-                      image={course.image}
-                      price={course.price}
-                      date={course.created_at}
-                      description={
-                        t('currentLanguage') == 'kurdish'
-                          ? course.description_he
-                          : t('currentLanguage') == 'arabic'
-                          ? course.description_ar
-                          : course.description_en
-                      }
-                      instructor={
-                        t('currentLanguage') == 'kurdish'
-                          ? course.instructor.name_he
-                          : t('currentLanguage') == 'arabic'
-                          ? course.instructor.name_ar
-                          : course.instructor.name_en
-                      }
-                      duration={
-                        t('currentLanguage') == 'kurdish'
-                          ? course.duration.name_he
-                          : t('currentLanguage') == 'arabic'
-                          ? course.duration.name_ar
-                          : course.duration.name_en + '(s)'
-                      }
-                      time={course.time}
+              {coursesData.filteredData ? (
+                coursesData.filteredData.length ? (
+                  coursesData.filteredData.map(course => {
+                    return (
+                      <CourseCard
+                        key={uuid()}
+                        id={course.id}
+                        name={
+                          t('currentLanguage') == 'kurdish'
+                            ? course.name_he
+                            : t('currentLanguage') == 'arabic'
+                            ? course.name_ar
+                            : course.name_en
+                        }
+                        language={
+                          t('currentLanguage') == 'kurdish'
+                            ? course.language.name_he
+                            : t('currentLanguage') == 'arabic'
+                            ? course.language.name_ar
+                            : course.language.name_en
+                        }
+                        image={course.image}
+                        price={course.price}
+                        date={course.created_at}
+                        description={
+                          t('currentLanguage') == 'kurdish'
+                            ? course.description_he
+                            : t('currentLanguage') == 'arabic'
+                            ? course.description_ar
+                            : course.description_en
+                        }
+                        instructor={
+                          t('currentLanguage') == 'kurdish'
+                            ? course.instructor.name_he
+                            : t('currentLanguage') == 'arabic'
+                            ? course.instructor.name_ar
+                            : course.instructor.name_en
+                        }
+                        duration={
+                          t('currentLanguage') == 'kurdish'
+                            ? course.duration.name_he
+                            : t('currentLanguage') == 'arabic'
+                            ? course.duration.name_ar
+                            : course.duration.name_en + '(s)'
+                        }
+                        time={course.time}
+                      />
+                    )
+                  })
+                ) : (
+                  <div className="text-center w-full col-span-full text-PrimaryLight text-2xl capitalize border p-2">
+                    <FontAwesomeIcon
+                      icon="exclamation-circle"
+                      className=" text-center justify-self-center"
+                      size="1x"
                     />
-                  )
-                })
+                    <h1 className="">{t('noCourse')}</h1>
+                  </div>
+                )
               ) : (
                 <>
                   <PortraitLoader />

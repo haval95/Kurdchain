@@ -39,6 +39,7 @@ export default function NewSection() {
                 description={EachNews.description}
                 writer={EachNews.writer}
                 key={uuid()}
+                created_at={EachNews.date_of_the_news}
               />
             )
           })}
