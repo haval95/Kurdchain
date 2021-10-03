@@ -109,14 +109,17 @@ export default function Courses() {
                     )
                   })
                 ) : (
-                  <div className="text-center w-full col-span-full text-PrimaryLight text-2xl capitalize border p-2">
-                    <FontAwesomeIcon
-                      icon="exclamation-circle"
-                      className=" text-center justify-self-center"
-                      size="1x"
-                    />
-                    <h1 className="">{t('noCourse')}</h1>
-                  </div>
+                  <>
+                    <div></div>
+                    <div className="text-center py-3 w-80 grid justify-center text-PrimaryLight text-2xl capitalize border p-2">
+                      <FontAwesomeIcon
+                        icon="exclamation-circle"
+                        className=" text-center justify-self-center"
+                        size="1x"
+                      />
+                      <h1 className="">{t('noCourse')}</h1>
+                    </div>
+                  </>
                 )
               ) : (
                 <>

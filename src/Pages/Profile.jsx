@@ -13,7 +13,6 @@ export default function Profile() {
   const { t } = useTranslation()
   const userCourses = useSelector(state => state.userCourses)
 
-  console.log(userCourses)
   return (
     <div className="mb-8">
       <TopProfile />
