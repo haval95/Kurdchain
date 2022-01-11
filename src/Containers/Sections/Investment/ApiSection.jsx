@@ -5,7 +5,7 @@ import PricingCard from '../../Cards/PricingCard'
 import termsApiEn from '../../../Assets/TermsPdf/TermsApiEnglish.pdf'
 import termsApiAr from '../../../Assets/TermsPdf/TermsApiArabic.pdf'
 import termsApiKu from '../../../Assets/TermsPdf/TermsApiKurdish.pdf'
-
+import img from './../../../Assets/Images/apiSection.jpeg'
 import { useTranslation } from 'react-i18next'
 import Form from './Form'
 
@@ -61,39 +61,42 @@ export default function ApiSection() {
           </div>
         </div>
         <div className="flex flex-col ">
-          <Title
-            text={t('howItWorks')}
-            underline="none"
-            style="text-start my-2"
-            type="subTitle"
-            color="Secondary"
-            animation="fadeIn"
-          />
-          <div className=" w-full px-0 lg:w-10/12 justify-self-center sm:justify-self-center items-center  bg-Primary">
-            <div
-              className="bg-GrayBorder  border-GrayBorder border-4 p-2 shadow-md "
-              style={{
-                padding: '56.25% 0 0 0',
-                position: 'relative',
-              }}
-            >
-              <iframe
-                src={
-                  'https://player.vimeo.com/video/76979871?embedparameter=value'
-                }
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                style={{
-                  position: 'absolute',
-                  top: '0',
-                  left: '0',
-                  width: '100%',
-                  height: '100%',
-                }}
-                title="btcoin1"
-              ></iframe>
-            </div>
-          </div>
+          <img src={img} className="border border-Primary" />
+          {
+            //<Title
+            //       text={t('howItWorks')}
+            //       underline="none"
+            //       style="text-start my-2"
+            //       type="subTitle"
+            //       color="Secondary"
+            //       animation="fadeIn"
+            //     />
+            //     <div className=" w-full px-0 lg:w-10/12 justify-self-center sm:justify-self-center items-center  bg-Primary">
+            //       <div
+            //         className="bg-GrayBorder  border-GrayBorder border-4 p-2 shadow-md "
+            //         style={{
+            //           padding: '56.25% 0 0 0',
+            //           position: 'relative',
+            //         }}
+            //       >
+            //         <iframe
+            //           src={
+            //             'https://player.vimeo.com/video/76979871?embedparameter=value'
+            //           }
+            //           allow="autoplay; fullscreen; picture-in-picture"
+            //           allowFullScreen
+            //           style={{
+            //             position: 'absolute',
+            //             top: '0',
+            //             left: '0',
+            //             width: '100%',
+            //             height: '100%',
+            //           }}
+            //           title="btcoin1"
+            //         ></iframe>
+            //       </div>
+            //     </div>
+          }
         </div>
       </div>
 
