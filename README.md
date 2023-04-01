@@ -30,6 +30,21 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `yarn eject`
+##in case of package dependency errors check these:
+rm -rf node_modules
+
+yarn set version 1.22.14
+
+1 -Install nvm by following the instructions on the official nvm GitHub page: https://github.com/nvm-sh/nvm#installing-and-updating 
+OR RUN
+- curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+- export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+- nvm ls-remote
+- nvm install 14.17.0
+- nvm use  14.17.0
+- yarn install
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
