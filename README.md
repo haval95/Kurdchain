@@ -30,7 +30,9 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `yarn eject`
-##in case of package dependency errors check these:
+
+
+## in case of package dependency errors check these:
 rm -rf node_modules
 
 yarn set version 1.22.14
